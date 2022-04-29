@@ -1,8 +1,10 @@
 name: "Daily"
+
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
   - cron: '3 * * * *' # runs daily at 03:00
+
 jobs:
 
   netlify:
