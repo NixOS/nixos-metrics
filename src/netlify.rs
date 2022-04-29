@@ -1,4 +1,4 @@
-use anyhow::{anyhow, Result, Context};
+use anyhow::{anyhow, Context, Result};
 use chrono::{Duration, Local};
 use clap::AppSettings::DeriveDisplayOrder;
 use clap::Parser;
@@ -113,7 +113,8 @@ async fn get_metrics(client: &Client, token: &str, url: &str) -> Result<String> 
         .send()
         .await?
         .text()
-        .await.with_context(|| format!("Failed getting a response for {}", url))
+        .await
+        .with_context(|| format!("Failed getting a response for {}", url))
 }
 
 #[derive(Serialize, Deserialize, Debug)]

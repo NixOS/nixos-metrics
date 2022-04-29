@@ -1,0 +1,23 @@
+name: "CI"
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-flake-info:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checking out the repository
+      uses: actions/checkout@v3
+
+    - name: Setup
+      uses: ./.github/actions/nix-common-setup
+      with:
+        CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+    - name: Flake check
+      run: |
+        nix flake check
