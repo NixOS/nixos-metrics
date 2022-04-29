@@ -25,7 +25,7 @@ jobs:
 
     - name: Scrap nixos.org Netlify metrics
       run: |
-        git co -b data origing/data
+        git checkout -b data origing/data
         mkdir -p netlify
         ./result/bin/nixos-metrics netlify \
           --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
