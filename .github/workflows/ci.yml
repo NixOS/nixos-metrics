@@ -1,12 +1,14 @@
 name: "CI"
+
 on:
+  workflow_dispatch: # allows manual triggering
   pull_request:
   push:
     branches:
-      - main
+    - main
 
 jobs:
-  build-flake-info:
+  build:
     runs-on: ubuntu-latest
     steps:
 

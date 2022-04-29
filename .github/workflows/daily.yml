@@ -1,0 +1,45 @@
+name: "Daily"
+
+on:
+  workflow_dispatch: # allows manual triggering
+  schedule:
+  - cron: '3 * * * *' # runs daily at 03:00
+
+jobs:
+
+  netlify:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checking out the repository
+      uses: actions/checkout@v3
+
+    - name: Setup
+      uses: ./.github/actions/nix-common-setup
+      with:
+        CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+    - name: Build nixos-metrics
+      run: |
+        nix build
+
+    - name: Scrap nixos.org Netlify metrics
+      run: |
+        git co -b data origing/data
+        mkdir -p netlify
+        ./result/bin/nixos-metrics netlify \
+          --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
+          --token ${{ secrets.NETLIFY_NIXOS_AUTH_TOKEN }} \
+          --days 1 \
+            > netlify/`date +"%Y-%m-%d"`.json
+
+    - name: Commit scrapped metrics to data branch
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: 'Daily Netlify metrics'
+        branch: 'data'
+        file_pattern: netlify/*
+        commit_user_name: NixOS webmaster
+        commit_user_email: webmaster@nixos.org
+        commit_author: GitHub Actions <webmaster@nixos.org>
+      if: github.repository == 'NixOS/nixos-metrics'
