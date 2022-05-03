@@ -11,8 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Checking out the repository
+    - name: Checking out main branch
       uses: actions/checkout@v3
+      with:
+        path: main
+
+    - name: Checking out the data branch 
+      uses: actions/checkout@v3
+      with:
+        path: data
 
     - name: Setup
       uses: ./.github/actions/nix-common-setup
@@ -21,23 +28,18 @@ jobs:
 
     - name: Scrap nixos.org Netlify metrics
       run: |
-        nix run . -- netlify \
+        mkdir -p data/netlify
+        nix run ./main -- netlify \
           --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
           --token ${{ secrets.NETLIFY_NIXOS_AUTH_TOKEN }} \
-          --days 1 \
-            > netlify.json
-
-    - name: Checkout data branch
-      run: |
-        git checkout -b data origin/data
-        mkdir -p netlify
-        mv netlify.json netlify/`date +"%Y-%m-%d"`.json
+            > data/netlify/`date +"%Y-%m-%d"`.json
 
     - name: Commit scrapped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: 'Daily Netlify metrics'
-        branch: 'data'
+        commit_message: Daily Scrap of Netlify metrics
+        repository: ./data
+        branch: data
         file_pattern: netlify/*
         commit_user_name: NixOS webmaster
         commit_user_email: webmaster@nixos.org
