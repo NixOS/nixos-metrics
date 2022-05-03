@@ -19,19 +19,19 @@ jobs:
       with:
         CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-    - name: Build nixos-metrics
-      run: |
-        nix build
-
     - name: Scrap nixos.org Netlify metrics
       run: |
-        git checkout -b data origin/data
-        mkdir -p netlify
-        ./result/bin/nixos-metrics netlify \
+        nix run -- netlify \
           --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
           --token ${{ secrets.NETLIFY_NIXOS_AUTH_TOKEN }} \
           --days 1 \
-            > netlify/`date +"%Y-%m-%d"`.json
+            > netlify.json
+
+    - name: Checkout data branch
+      run: |
+        git checkout -b data origin/data
+        mkdir -p netlify
+        mv netlify.json netlify/`date +"%Y-%m-%d"`.json
 
     - name: Commit scrapped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
