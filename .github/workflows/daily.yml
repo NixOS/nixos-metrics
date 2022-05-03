@@ -21,7 +21,7 @@ jobs:
 
     - name: Scrap nixos.org Netlify metrics
       run: |
-        nix run -- netlify \
+        nix run . -- netlify \
           --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
           --token ${{ secrets.NETLIFY_NIXOS_AUTH_TOKEN }} \
           --days 1 \
