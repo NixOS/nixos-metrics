@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  netlify:
+  netlify-metrics:
     runs-on: ubuntu-latest
     steps:
 
@@ -25,7 +25,7 @@ jobs:
 
     - name: Scrap nixos.org Netlify metrics
       run: |
-        git checkout -b data origing/data
+        git checkout -b data origin/data
         mkdir -p netlify
         ./result/bin/nixos-metrics netlify \
           --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
