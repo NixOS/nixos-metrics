@@ -22,7 +22,7 @@ jobs:
         path: data
 
     - name: Setup
-      uses: ./.github/actions/nix-common-setup
+      uses: ./main/.github/actions/nix-common-setup
       with:
         CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
