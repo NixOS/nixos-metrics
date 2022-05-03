@@ -44,4 +44,7 @@ jobs:
         commit_user_name: NixOS webmaster
         commit_user_email: webmaster@nixos.org
         commit_author: GitHub Actions <webmaster@nixos.org>
+        skip_dirty_check: true
+        skip_fetch: true
+        skip_checkout: true
       if: github.repository == 'NixOS/nixos-metrics'
