@@ -123,7 +123,7 @@
       ],
       [
         1655942400000,
-        9488
+        9762
       ]
     ]
   },
@@ -251,7 +251,7 @@
       ],
       [
         1655942400000,
-        1766
+        1826
       ]
     ]
   },
@@ -259,39 +259,39 @@
     "data": [
       {
         "path": "/",
-        "count": 521521
+        "count": 521686
       },
       {
         "path": "/download.html",
-        "count": 62966
+        "count": 62980
       },
       {
         "path": "/blog/announcements.html",
-        "count": 43873
+        "count": 43885
       },
       {
         "path": "/learn.html",
-        "count": 29725
+        "count": 29735
       },
       {
         "path": "/manual/nixos/stable/index.html",
-        "count": 25319
+        "count": 25324
       },
       {
         "path": "/manual/nixos/stable/",
-        "count": 23988
+        "count": 23994
       },
       {
         "path": "/manual/nixpkgs/stable/",
-        "count": 20406
+        "count": 20415
       },
       {
         "path": "/explore.html",
-        "count": 17308
+        "count": 17310
       },
       {
         "path": "/manual/nix/stable/",
-        "count": 11239
+        "count": 11240
       },
       {
         "path": "/manual/nixos/stable/release-notes.html",
@@ -484,7 +484,7 @@
       {
         "start": 1655942400000,
         "end": 1656028800000,
-        "siteBandwidth": 2386612645,
+        "siteBandwidth": 2469089082,
         "accountBandwidth": 0
       }
     ]
@@ -493,15 +493,15 @@
     "data": [
       {
         "path": "/blogs.xml",
-        "count": 54988
+        "count": 55002
       },
       {
         "path": "/apple-touch-icon.png",
-        "count": 6791
+        "count": 6794
       },
       {
         "path": "/apple-touch-icon-precomposed.png",
-        "count": 4137
+        "count": 4139
       },
       {
         "path": "/w/index.php",
@@ -537,23 +537,23 @@
     "data": [
       {
         "path": "",
-        "count": 586310
+        "count": 586477
       },
       {
         "path": "google.com",
-        "count": 81035
+        "count": 81061
       },
       {
         "path": "duckduckgo.com",
-        "count": 21753
+        "count": 21759
       },
       {
         "path": "github.com",
-        "count": 8916
+        "count": 8919
       },
       {
         "path": "nixos.wiki",
-        "count": 5885
+        "count": 5891
       },
       {
         "path": "discourse.nixos.org",
@@ -569,7 +569,7 @@
       },
       {
         "path": "reddit.com",
-        "count": 1706
+        "count": 1707
       },
       {
         "path": "phoronix.com",
