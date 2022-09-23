@@ -11,11 +11,6 @@
   inputs.pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix";
   inputs.pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
   inputs.pre-commit-hooks.inputs.flake-utils.follows = "flake-utils";
-  inputs.rust-overlay.url = "github:oxalica/rust-overlay";
-  inputs.rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
-  inputs.rust-overlay.inputs.flake-utils.follows = "flake-utils";
-  inputs.naersk.url = "github:nmattia/naersk";
-  inputs.naersk.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs = {
     self,
@@ -23,8 +18,6 @@
     flake-compat,
     flake-utils,
     pre-commit-hooks,
-    rust-overlay,
-    naersk,
   }:
     flake-utils.lib.eachSystem
     [
@@ -40,40 +33,8 @@
         inherit (nixpkgs) lib;
 
         warnToUpdateNix = lib.warn "Consider updating to Nix > 2.7 to remove this warning!";
-        pkgCargo = lib.importTOML ./Cargo.toml;
-        version = "${pkgCargo.package.version}_${builtins.substring 0 8 self.lastModifiedDate}_${self.shortRev or "dirty"}";
 
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [(import rust-overlay)];
-        };
-
-        rust = let
-          _rust = pkgs.rust-bin.stable.latest.default.override {
-            extensions = [
-              "rust-src"
-              "rust-analysis"
-              "rls-preview"
-              "rustfmt-preview"
-              "clippy-preview"
-            ];
-          };
-        in
-          pkgs.buildEnv {
-            name = _rust.name;
-            inherit (_rust) meta;
-            buildInputs = [pkgs.makeWrapper];
-            paths = [_rust];
-            pathsToLink = ["/" "/bin"];
-            # XXX: This is needed because cargo and clippy commands need to
-            # also be aware of other binaries in order to work properly.
-            # https://github.com/cachix/pre-commit-hooks.nix/issues/126
-            postBuild = ''
-              for i in $out/bin/*; do
-                wrapProgram "$i" --prefix PATH : "$out/bin"
-              done
-            '';
-          };
+        pkgs = nixpkgs.legacyPackages.${system};
 
         pre-commit = pre-commit-hooks.lib.${system}.run {
           src = self;
@@ -81,48 +42,27 @@
             alejandra = {
               enable = true;
             };
-            rustfmt = {
+            black = {
               enable = true;
-              entry = pkgs.lib.mkForce "${rust}/bin/cargo-fmt fmt -- --check --color always";
+            };
+            isort = {
+              enable = true;
             };
           };
         };
-
-        naersk-lib = naersk.lib."${system}".override {
-          cargo = rust;
-          rustc = rust;
-        };
-
-        nixos-metrics = naersk-lib.buildPackage {
-          inherit (pkgCargo.package) name;
-          inherit version;
-
-          root = self;
-
-          buildInputs = with pkgs; [
-            openssl
-            openssl.dev
-            pkg-config
-          ];
-        };
+        process-data = pkgs.writers.writePython3Bin "process-data" {flakeIgnore = ["E501"];} ./process.py;
       in rec {
-        checks = {inherit pre-commit nixos-metrics;};
+        checks = {inherit pre-commit;};
 
-        packages = {inherit nixos-metrics;};
-        packages.default = packages.nixos-metrics;
+        packages = {inherit process-data;};
+        packages.default = packages.process-data;
 
         devShells.default = pkgs.mkShell {
-          buildInputs =
-            [rust]
-            ++ (with pkgs; [
-              openssl
-              openssl.dev
-              pkg-config
-            ]);
+          buildInputs = [pkgs.python3];
           shellHook =
             pre-commit.shellHook
             + ''
-              echo "=== NixOS metrics development shell ==="
+              echo "=== NixOS metrics website development shell ==="
               echo "Info: Git hooks can be installed using \`pre-commit install\`"
             '';
         };

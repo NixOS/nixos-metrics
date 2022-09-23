@@ -3,24 +3,24 @@ name: "Daily"
 on:
   workflow_dispatch: # allows manual triggering
   schedule:
-  - cron: '0 3 * * *' # runs daily at 03:00
+  - cron: '0 4 * * *' # runs daily at 04:00, right after the `data` branch is updated
 
 jobs:
 
-  netlify-metrics:
+  process:
     runs-on: ubuntu-latest
     steps:
 
     - name: Checking out main branch
       uses: actions/checkout@v3
       with:
-        path: main
+        path: data
 
-    - name: Checking out the data branch 
+    - name: Checking out the data branch
       uses: actions/checkout@v3
       with:
-        path: data
-        ref: data
+        path: website
+        ref: website
 
     - name: Setup
       uses: ./main/.github/actions/nix-common-setup
@@ -29,19 +29,15 @@ jobs:
 
     - name: Scrap nixos.org Netlify metrics
       run: |
-        mkdir -p data/netlify
-        nix run ./main -- netlify \
-          --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
-          --token ${{ secrets.NETLIFY_NIXOS_AUTH_TOKEN }} \
-            > data/netlify/`date +"%Y-%m-%d"`.json
+        nix run ./website > website/data.json
 
     - name: Commit scrapped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Daily Scrap of Netlify metrics
-        repository: ./data
-        branch: data
-        file_pattern: netlify/*
+        commit_message: Daily Process of Netlify metrics
+        repository: ./website
+        branch: website
+        file_pattern: data.json
         commit_user_name: NixOS webmaster
         commit_user_email: webmaster@nixos.org
         commit_author: GitHub Actions <webmaster@nixos.org>
