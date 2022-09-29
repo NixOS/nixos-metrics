@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<head>
 <meta charset="utf-8">
 <style>
 
@@ -30,7 +31,21 @@ body {
 }
 
 </style>
+</head>
+
 <body>
+<div id="wrapper">
+  <h1> NixOS Metrics</h1>
+<div id="pageviews">
+  <h2>Pageviews</h2>
+</div>
+<div id="visitors">
+  <h2>Visitors</h2>
+</div>
+<div id="sources">
+  <h2>Sources of traffic</h2>
+</div>
+</div>
 <script src="https://d3js.org/d3.v3.js"></script>
 <script>
 
@@ -40,13 +55,18 @@ fetch('./data.json')
       })
     .then(data => main(data));
 
-function main(data) {
+function main(all_data) {
+    for (let name in all_data) {
+        make_chart(name, all_data[name])
+    }
+}
+function make_chart(name, data) {
     var xy_chart = d3_xy_chart()
         .width(960)
         .height(500)
         .xlabel("Date")
-        .ylabel("Views") ;
-    var svg = d3.select("body").append("svg")
+        .ylabel("") ;
+    var svg = d3.select("#" + name).append("svg")
         .datum(data)
         .call(xy_chart) ;
 }
@@ -199,3 +219,5 @@ function d3_xy_chart() {
 }
 
 </script>
+</body>
+</html>
