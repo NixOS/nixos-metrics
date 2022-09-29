@@ -113,7 +113,7 @@
           ];
         };
 
-        process-data = pkgs.writers.writePython3Bin "process-data" {flakeIgnore = ["E501"];} ./process.py;
+        process-data = pkgs.writers.writePython3Bin "process-data" {flakeIgnore = ["E501"];} ./src/process.py;
       in rec {
         checks = {inherit pre-commit nixos-metrics;};
 
