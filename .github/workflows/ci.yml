@@ -1,11 +1,11 @@
-name: "CI"
+name: "CI for website"
 
 on:
   workflow_dispatch: # allows manual triggering
   pull_request:
   push:
     branches:
-    - main
+    - website
 
 jobs:
   build:
@@ -14,6 +14,9 @@ jobs:
 
     - name: Checking out the repository
       uses: actions/checkout@v3
+      with:
+        ref: website
+
 
     - name: Setup
       uses: ./.github/actions/nix-common-setup

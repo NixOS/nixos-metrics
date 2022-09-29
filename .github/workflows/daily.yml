@@ -1,4 +1,4 @@
-name: "Daily"
+name: "Daily website"
 
 on:
   workflow_dispatch: # allows manual triggering
@@ -16,7 +16,7 @@ jobs:
       with:
         path: data
 
-    - name: Checking out the data branch
+    - name: Checking out the website branch
       uses: actions/checkout@v3
       with:
         path: website
@@ -27,14 +27,14 @@ jobs:
       with:
         CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-    - name: Scrap nixos.org Netlify metrics
+    - name: Process scraped data
       run: |
         nix run ./website > website/data.json
 
-    - name: Commit scrapped metrics to data branch
+    - name: Commit processed data to website branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Daily Process of Netlify metrics
+        commit_message: Daily generation of website graph
         repository: ./website
         branch: website
         file_pattern: data.json
