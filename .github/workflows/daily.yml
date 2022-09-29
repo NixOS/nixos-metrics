@@ -16,11 +16,17 @@ jobs:
       with:
         path: main
 
-    - name: Checking out the data branch 
+    - name: Checking out the data branch
       uses: actions/checkout@v3
       with:
         path: data
         ref: data
+
+    - name: Checking out the website branch
+      uses: actions/checkout@v3
+      with:
+        path: website
+        ref: website
 
     - name: Setup
       uses: ./main/.github/actions/nix-common-setup
@@ -42,6 +48,22 @@ jobs:
         repository: ./data
         branch: data
         file_pattern: netlify/*
+        commit_user_name: NixOS webmaster
+        commit_user_email: webmaster@nixos.org
+        commit_author: GitHub Actions <webmaster@nixos.org>
+      if: github.repository == 'NixOS/nixos-metrics'
+
+    - name: Process scraped data
+      run: |
+        nix run ./main#process-data > website/data.json
+
+    - name: Commit processed data to website branch
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Daily generation of website graph
+        repository: ./website
+        branch: website
+        file_pattern: data.json
         commit_user_name: NixOS webmaster
         commit_user_email: webmaster@nixos.org
         commit_author: GitHub Actions <webmaster@nixos.org>
