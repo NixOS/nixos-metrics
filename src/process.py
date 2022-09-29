@@ -14,7 +14,13 @@ def toDatestamp(ms):
     return datetime.datetime.fromtimestamp(int(ms / 1000)).strftime("%Y-%m-%d")
 
 
-data = {"pageviews": {}, "pageviews_7day": {}, "visitors": {}, "visitors_7day": {}}
+data = {
+    "pageviews": {},
+    "pageviews_7day": {},
+    "visitors": {},
+    "visitors_7day": {},
+    "sources": {},
+}
 
 for fn in os.listdir("./data/netlify"):
     f = open(f"./data/netlify/{fn}")
@@ -43,54 +49,66 @@ for fn in os.listdir("./data/netlify"):
                 exit(1)
         else:
             data["visitors"][date] = datum[1]
+    current_date = jdata["pageviews"]["data"][-1][0]
+    for source in jdata["sources"]["data"]:
+        if source["path"] not in data["sources"]:
+            data["sources"][source["path"]] = {}
+        data["sources"][source["path"]][current_date] = source["count"]
 
-avg = {}
-for date, pv in data["pageviews"].items():
-    for i in range(-3, 4):
-        newDate = date + (i * msPerDay)
-        if newDate in avg:
-            avg[newDate]["pageviews"] += pv
-            avg[newDate]["daysInAvg"] += 1
-        else:
-            avg[newDate] = {"pageviews": pv, "daysInAvg": 1}
-for date in avg:
-    if avg[date]["daysInAvg"] == 7:
-        data["pageviews_7day"][date] = avg[date]["pageviews"] / 7.0
 
-avg = {}
-for date, pv in data["visitors"].items():
-    for i in range(-3, 4):
-        newDate = date + (i * msPerDay)
-        if newDate in avg:
-            avg[newDate]["visitors"] += pv
-            avg[newDate]["daysInAvg"] += 1
-        else:
-            avg[newDate] = {"visitors": pv, "daysInAvg": 1}
-for date in avg:
-    if avg[date]["daysInAvg"] == 7:
-        data["visitors_7day"][date] = avg[date]["visitors"] / 7.0
+def avg7day(data):
+    avg = {}
+    nDays = {}
+    for date, datum in data.items():
+        for i in range(0, 7):
+            newDate = date + (i * msPerDay)
+            if newDate not in avg:
+                avg[newDate] = 0
+                nDays[newDate] = 0
+            avg[newDate] += datum / 7.0
+            nDays[newDate] += 1
+    for date in nDays:
+        if nDays[date] != 7:
+            del avg[date]
+    return avg
 
-graph = [
-    {
-        "label": "Pageviews",
-        "x": [pair[0] for pair in sorted(data["pageviews"].items())],
-        "y": [pair[1] for pair in sorted(data["pageviews"].items())],
-    },
-    {
-        "label": "PV (7 day)",
-        "x": [pair[0] for pair in sorted(data["pageviews_7day"].items())],
-        "y": [pair[1] for pair in sorted(data["pageviews_7day"].items())],
-    },
-    {
-        "label": "Visitors",
-        "x": [pair[0] for pair in sorted(data["visitors"].items())],
-        "y": [pair[1] for pair in sorted(data["visitors"].items())],
-    },
-    {
-        "label": "Visitors (7 day)",
-        "x": [pair[0] for pair in sorted(data["visitors_7day"].items())],
-        "y": [pair[1] for pair in sorted(data["visitors_7day"].items())],
-    },
-]
 
-json.dump(graph, sys.stdout)
+data["pageviews_7day"] = avg7day(data["pageviews"])
+data["visitors_7day"] = avg7day(data["visitors"])
+
+graphs = {
+    "pageviews": [
+        {
+            "label": "Pageviews",
+            "x": [pair[0] for pair in sorted(data["pageviews"].items())],
+            "y": [pair[1] for pair in sorted(data["pageviews"].items())],
+        },
+        {
+            "label": "7 day avg",
+            "x": [pair[0] for pair in sorted(data["pageviews_7day"].items())],
+            "y": [pair[1] for pair in sorted(data["pageviews_7day"].items())],
+        },
+    ],
+    "visitors": [
+        {
+            "label": "Visitors",
+            "x": [pair[0] for pair in sorted(data["visitors"].items())],
+            "y": [pair[1] for pair in sorted(data["visitors"].items())],
+        },
+        {
+            "label": "7 day avg",
+            "x": [pair[0] for pair in sorted(data["visitors_7day"].items())],
+            "y": [pair[1] for pair in sorted(data["visitors_7day"].items())],
+        },
+    ],
+    "sources": [
+        {
+            "label": source if source != "" else "direct",
+            "x": [pair[0] for pair in sorted(data["sources"][source].items())],
+            "y": [pair[1] for pair in sorted(data["sources"][source].items())],
+        }
+        for source in data["sources"]
+    ],
+}
+
+json.dump(graphs, sys.stdout)
