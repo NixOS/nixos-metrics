@@ -14,12 +14,12 @@ keywords = [ "nix", "nixos", "metrics" ]
 [dependencies]
 anyhow = "*"
 chrono = { version = "*", features = ["serde"] }
-clap = "*"
+clap = { version = "*", features = ["derive"] }
 clap-verbosity-flag = "*"
 futures = "*"
 log = "*"
 reqwest = { version = "*", features = ["json"] }
-simplelog = "*"
+env_logger = "*"
 tokio = { version = "*", features = ["full"] }
 serde_json = "*"
 serde = { version = "*", features = ["derive"] }
