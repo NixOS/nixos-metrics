@@ -1,6 +1,5 @@
 use anyhow::{anyhow, Context, Result};
 use chrono::{Duration, Local};
-use clap::AppSettings::DeriveDisplayOrder;
 use clap::Parser;
 use futures::stream::iter as stream_iter;
 use futures::StreamExt;
@@ -28,19 +27,19 @@ fn parse_days(src: &str) -> Result<i64> {
 }
 
 #[derive(Parser, Debug, Clone)]
-#[clap(version, about, author, long_about = None)]
-#[clap(global_setting(DeriveDisplayOrder))]
+#[command(version, about, author, long_about = None)]
 pub struct Cli {
     /// Netlify Site Id
-    #[clap(long)]
+    #[arg(long)]
     site_id: String,
 
     /// Netlify token
-    #[clap(long)]
+    #[arg(long)]
     token: String,
 
     /// Number of days in the past from today to collect analytics data for
-    #[clap(long, default_value_t = 30, parse(try_from_str = parse_days))]
+    //#[clap(long, default_value_t = 30)]
+    #[clap(long, default_value_t = 30, value_parser = parse_days)]
     days: i64,
 }
 
