@@ -55,7 +55,7 @@ jobs:
 
     - name: Process scraped data
       run: |
-        nix run ./main#process-data > website/data.json
+        nix run ./main -- process --dir ./data/netlify > website/data.json
 
     - name: Commit processed data to website branch
       uses: stefanzweifel/git-auto-commit-action@v4

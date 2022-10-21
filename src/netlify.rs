@@ -117,43 +117,43 @@ async fn get_metrics(client: &Client, token: &str, url: &str) -> Result<String> 
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-struct TupleResult {
-    data: Vec<(u64, u64)>,
+pub struct TupleResult {
+    pub data: Vec<(u64, u64)>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-struct PathItemResult {
-    path: String,
-    count: u64,
+pub struct PathItemResult {
+    pub path: String,
+    pub count: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-struct PathResult {
-    data: Vec<PathItemResult>,
+pub struct PathResult {
+    pub data: Vec<PathItemResult>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-struct BandwidthDataItemResult {
-    start: u64,
-    end: u64,
-    site_bandwidth: u64,
-    account_bandwidth: u64,
+pub struct BandwidthDataItemResult {
+    pub start: u64,
+    pub end: u64,
+    pub site_bandwidth: u64,
+    pub account_bandwidth: u64,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-struct BandwidthResult {
-    data: Vec<BandwidthDataItemResult>,
+pub struct BandwidthResult {
+    pub data: Vec<BandwidthDataItemResult>,
 }
 
-#[derive(Serialize, Debug)]
-struct MetricsResult {
-    pageviews: Option<TupleResult>,
-    visitors: Option<TupleResult>,
-    pages: Option<PathResult>,
-    bandwidth: Option<BandwidthResult>,
-    not_found: Option<PathResult>,
-    sources: Option<PathResult>,
+#[derive(Serialize, Deserialize, Debug)]
+pub struct MetricsResult {
+    pub pageviews: Option<TupleResult>,
+    pub visitors: Option<TupleResult>,
+    pub pages: Option<PathResult>,
+    pub bandwidth: Option<BandwidthResult>,
+    pub not_found: Option<PathResult>,
+    pub sources: Option<PathResult>,
 }
 
 impl MetricsResult {
