@@ -1,0 +1,580 @@
+{
+  "pageviews": {
+    "data": [
+      [
+        1663891200000,
+        32629
+      ],
+      [
+        1663977600000,
+        30612
+      ],
+      [
+        1664064000000,
+        29493
+      ],
+      [
+        1664150400000,
+        31428
+      ],
+      [
+        1664236800000,
+        32697
+      ],
+      [
+        1664323200000,
+        31945
+      ],
+      [
+        1664409600000,
+        31822
+      ],
+      [
+        1664496000000,
+        30550
+      ],
+      [
+        1664582400000,
+        27639
+      ],
+      [
+        1664668800000,
+        29087
+      ],
+      [
+        1664755200000,
+        33266
+      ],
+      [
+        1664841600000,
+        31956
+      ],
+      [
+        1664928000000,
+        32637
+      ],
+      [
+        1665014400000,
+        30715
+      ],
+      [
+        1665100800000,
+        31605
+      ],
+      [
+        1665187200000,
+        29192
+      ],
+      [
+        1665273600000,
+        28327
+      ],
+      [
+        1665360000000,
+        31574
+      ],
+      [
+        1665446400000,
+        31579
+      ],
+      [
+        1665532800000,
+        32294
+      ],
+      [
+        1665619200000,
+        32132
+      ],
+      [
+        1665705600000,
+        32285
+      ],
+      [
+        1665792000000,
+        28438
+      ],
+      [
+        1665878400000,
+        27883
+      ],
+      [
+        1665964800000,
+        31588
+      ],
+      [
+        1666051200000,
+        33090
+      ],
+      [
+        1666137600000,
+        31599
+      ],
+      [
+        1666224000000,
+        33284
+      ],
+      [
+        1666310400000,
+        32901
+      ],
+      [
+        1666396800000,
+        34546
+      ],
+      [
+        1666483200000,
+        4159
+      ]
+    ]
+  },
+  "visitors": {
+    "data": [
+      [
+        1663891200000,
+        6671
+      ],
+      [
+        1663977600000,
+        5510
+      ],
+      [
+        1664064000000,
+        5595
+      ],
+      [
+        1664150400000,
+        6686
+      ],
+      [
+        1664236800000,
+        7610
+      ],
+      [
+        1664323200000,
+        7080
+      ],
+      [
+        1664409600000,
+        7080
+      ],
+      [
+        1664496000000,
+        6686
+      ],
+      [
+        1664582400000,
+        5734
+      ],
+      [
+        1664668800000,
+        5776
+      ],
+      [
+        1664755200000,
+        6913
+      ],
+      [
+        1664841600000,
+        7237
+      ],
+      [
+        1664928000000,
+        7368
+      ],
+      [
+        1665014400000,
+        6831
+      ],
+      [
+        1665100800000,
+        6915
+      ],
+      [
+        1665187200000,
+        5778
+      ],
+      [
+        1665273600000,
+        5518
+      ],
+      [
+        1665360000000,
+        6692
+      ],
+      [
+        1665446400000,
+        7384
+      ],
+      [
+        1665532800000,
+        6974
+      ],
+      [
+        1665619200000,
+        6865
+      ],
+      [
+        1665705600000,
+        6924
+      ],
+      [
+        1665792000000,
+        5715
+      ],
+      [
+        1665878400000,
+        5689
+      ],
+      [
+        1665964800000,
+        7082
+      ],
+      [
+        1666051200000,
+        7227
+      ],
+      [
+        1666137600000,
+        7307
+      ],
+      [
+        1666224000000,
+        7662
+      ],
+      [
+        1666310400000,
+        7138
+      ],
+      [
+        1666396800000,
+        6161
+      ],
+      [
+        1666483200000,
+        921
+      ]
+    ]
+  },
+  "pages": {
+    "data": [
+      {
+        "path": "/",
+        "count": 514114
+      },
+      {
+        "path": "/download.html",
+        "count": 54355
+      },
+      {
+        "path": "/blog/announcements.html",
+        "count": 27841
+      },
+      {
+        "path": "/learn.html",
+        "count": 24611
+      },
+      {
+        "path": "/manual/nixos/stable/",
+        "count": 21244
+      },
+      {
+        "path": "/manual/nixpkgs/stable/",
+        "count": 20954
+      },
+      {
+        "path": "/manual/nixos/stable/index.html",
+        "count": 18180
+      },
+      {
+        "path": "/explore.html",
+        "count": 12879
+      },
+      {
+        "path": "/manual/nix/stable/",
+        "count": 9276
+      },
+      {
+        "path": "/guides/ad-hoc-developer-environments.html",
+        "count": 9014
+      }
+    ]
+  },
+  "bandwidth": {
+    "data": [
+      {
+        "start": 1663891200000,
+        "end": 1663977600000,
+        "siteBandwidth": 9220163580,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1663977600000,
+        "end": 1664064000000,
+        "siteBandwidth": 8406255509,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664064000000,
+        "end": 1664150400000,
+        "siteBandwidth": 8652943494,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664150400000,
+        "end": 1664236800000,
+        "siteBandwidth": 9968067315,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664236800000,
+        "end": 1664323200000,
+        "siteBandwidth": 9680151326,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664323200000,
+        "end": 1664409600000,
+        "siteBandwidth": 9392563131,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664409600000,
+        "end": 1664496000000,
+        "siteBandwidth": 9586280953,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664496000000,
+        "end": 1664582400000,
+        "siteBandwidth": 9536876237,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664582400000,
+        "end": 1664668800000,
+        "siteBandwidth": 8387558980,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664668800000,
+        "end": 1664755200000,
+        "siteBandwidth": 8759838371,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664755200000,
+        "end": 1664841600000,
+        "siteBandwidth": 10471090734,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664841600000,
+        "end": 1664928000000,
+        "siteBandwidth": 9320094931,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1664928000000,
+        "end": 1665014400000,
+        "siteBandwidth": 10025705666,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665014400000,
+        "end": 1665100800000,
+        "siteBandwidth": 9123428276,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665100800000,
+        "end": 1665187200000,
+        "siteBandwidth": 9288516586,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665187200000,
+        "end": 1665273600000,
+        "siteBandwidth": 8444762698,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665273600000,
+        "end": 1665360000000,
+        "siteBandwidth": 7835725571,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665360000000,
+        "end": 1665446400000,
+        "siteBandwidth": 9510776633,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665446400000,
+        "end": 1665532800000,
+        "siteBandwidth": 9505201884,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665532800000,
+        "end": 1665619200000,
+        "siteBandwidth": 9691425744,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665619200000,
+        "end": 1665705600000,
+        "siteBandwidth": 9704673112,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665705600000,
+        "end": 1665792000000,
+        "siteBandwidth": 10037433072,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665792000000,
+        "end": 1665878400000,
+        "siteBandwidth": 8491782793,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665878400000,
+        "end": 1665964800000,
+        "siteBandwidth": 8159486425,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1665964800000,
+        "end": 1666051200000,
+        "siteBandwidth": 10004652577,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1666051200000,
+        "end": 1666137600000,
+        "siteBandwidth": 9925854115,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1666137600000,
+        "end": 1666224000000,
+        "siteBandwidth": 9948402582,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1666224000000,
+        "end": 1666310400000,
+        "siteBandwidth": 10189142200,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1666310400000,
+        "end": 1666396800000,
+        "siteBandwidth": 9821815212,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1666396800000,
+        "end": 1666483200000,
+        "siteBandwidth": 9361103394,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1666483200000,
+        "end": 1666569600000,
+        "siteBandwidth": 976330969,
+        "accountBandwidth": 0
+      }
+    ]
+  },
+  "not_found": {
+    "data": [
+      {
+        "path": "/blogs.xml",
+        "count": 33452
+      },
+      {
+        "path": "/apple-touch-icon.png",
+        "count": 8142
+      },
+      {
+        "path": "/apple-touch-icon-precomposed.png",
+        "count": 6229
+      },
+      {
+        "path": "/static/img/logo.1a41f6387d69.svg",
+        "count": 3075
+      },
+      {
+        "path": "/guides/nix-language.html",
+        "count": 1010
+      },
+      {
+        "path": "/index.php/PHP%0ABonusChallengeExploits.php",
+        "count": 900
+      },
+      {
+        "path": "/w/index.php",
+        "count": 883
+      },
+      {
+        "path": "/wp-login.php",
+        "count": 789
+      },
+      {
+        "path": "/wp-content/themes/seotheme/db.php",
+        "count": 753
+      },
+      {
+        "path": "/.well-known/traffic-advice",
+        "count": 670
+      }
+    ]
+  },
+  "sources": {
+    "data": [
+      {
+        "path": "",
+        "count": 583350
+      },
+      {
+        "path": "google.com",
+        "count": 84345
+      },
+      {
+        "path": "duckduckgo.com",
+        "count": 19435
+      },
+      {
+        "path": "github.com",
+        "count": 9555
+      },
+      {
+        "path": "nixos.wiki",
+        "count": 6090
+      },
+      {
+        "path": "search.nixos.org",
+        "count": 3867
+      },
+      {
+        "path": "search.brave.com",
+        "count": 2448
+      },
+      {
+        "path": "discourse.nixos.org",
+        "count": 2298
+      },
+      {
+        "path": "startpage.com",
+        "count": 1775
+      },
+      {
+        "path": "reddit.com",
+        "count": 1414
+      }
+    ]
+  }
+}
