@@ -123,7 +123,7 @@
       ],
       [
         1666656000000,
-        5033
+        30046
       ]
     ]
   },
@@ -251,7 +251,7 @@
       ],
       [
         1666656000000,
-        1080
+        6531
       ]
     ]
   },
@@ -259,43 +259,43 @@
     "data": [
       {
         "path": "/",
-        "count": 513670
+        "count": 525810
       },
       {
         "path": "/download.html",
-        "count": 54511
+        "count": 55987
       },
       {
         "path": "/blog/announcements.html",
-        "count": 28033
+        "count": 28700
       },
       {
         "path": "/learn.html",
-        "count": 24648
+        "count": 25367
       },
       {
         "path": "/manual/nixos/stable/",
-        "count": 21432
+        "count": 21988
       },
       {
         "path": "/manual/nixpkgs/stable/",
-        "count": 21191
+        "count": 21952
       },
       {
         "path": "/manual/nixos/stable/index.html",
-        "count": 18357
+        "count": 18913
       },
       {
         "path": "/explore.html",
-        "count": 12857
+        "count": 13217
       },
       {
         "path": "/manual/nix/stable/",
-        "count": 9274
+        "count": 9584
       },
       {
         "path": "/guides/ad-hoc-developer-environments.html",
-        "count": 9070
+        "count": 9337
       }
     ]
   },
@@ -484,7 +484,7 @@
       {
         "start": 1666656000000,
         "end": 1666742400000,
-        "siteBandwidth": 1215854040,
+        "siteBandwidth": 9119882367,
         "accountBandwidth": 0
       }
     ]
@@ -493,15 +493,15 @@
     "data": [
       {
         "path": "/blogs.xml",
-        "count": 31432
+        "count": 31981
       },
       {
         "path": "/apple-touch-icon.png",
-        "count": 8260
+        "count": 8730
       },
       {
         "path": "/apple-touch-icon-precomposed.png",
-        "count": 6409
+        "count": 6815
       },
       {
         "path": "/static/img/logo.1a41f6387d69.svg",
@@ -513,23 +513,23 @@
       },
       {
         "path": "/guides/nix-language.html",
-        "count": 1130
+        "count": 1181
       },
       {
         "path": "/w/index.php",
-        "count": 819
-      },
-      {
-        "path": "/wp-content/themes/seotheme/db.php",
-        "count": 784
+        "count": 893
       },
       {
         "path": "/wp-login.php",
-        "count": 779
+        "count": 797
+      },
+      {
+        "path": "/wp-content/themes/seotheme/db.php",
+        "count": 790
       },
       {
         "path": "/.well-known/traffic-advice",
-        "count": 670
+        "count": 685
       }
     ]
   },
@@ -537,43 +537,43 @@
     "data": [
       {
         "path": "",
-        "count": 583874
+        "count": 598394
       },
       {
         "path": "google.com",
-        "count": 84731
+        "count": 87093
       },
       {
         "path": "duckduckgo.com",
-        "count": 19507
+        "count": 20069
       },
       {
         "path": "github.com",
-        "count": 9621
+        "count": 9891
       },
       {
         "path": "nixos.wiki",
-        "count": 6121
+        "count": 6261
       },
       {
         "path": "search.nixos.org",
-        "count": 3890
+        "count": 3979
       },
       {
         "path": "search.brave.com",
-        "count": 2475
+        "count": 2549
       },
       {
         "path": "discourse.nixos.org",
-        "count": 2475
+        "count": 2539
       },
       {
         "path": "startpage.com",
-        "count": 1844
+        "count": 1900
       },
       {
         "path": "reddit.com",
-        "count": 1439
+        "count": 1482
       }
     ]
   }
