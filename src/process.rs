@@ -55,6 +55,7 @@ pub async fn run(args: &Cli) -> Result<()> {
     let mut data = Data::new();
 
     for path in fs::read_dir(&args.dir)
+        // XXX: I would put .expect() here, but then i can't use the format string. what's idiomatic here?
         .unwrap_or_else(|e| panic!("Error listing directory {}: {}", args.dir.display(), e))
     {
         let path = path
@@ -65,6 +66,7 @@ pub async fn run(args: &Cli) -> Result<()> {
         let json: netlify::MetricsResult = serde_json::from_str(&file_content)
             .unwrap_or_else(|e| panic!("Unable to parse file {}: {}", path.display(), e));
         let pviews = &json.pageviews.as_ref().unwrap().data;
+        // XXX: I don't really understand what &(x, y) means
         for &(tstamp, datum) in pviews[..pviews.len() - 1].iter() {
             if let Some(v) = data.pageviews.insert(tstamp, datum) {
                 if v != datum {
@@ -113,10 +115,12 @@ pub async fn run(args: &Cli) -> Result<()> {
 
     let graphs: Graphs = HashMap::from([
         (
+            // XXX: is there any reason not to use .to_string() here?
             String::from("pageviews"),
             Vec::from([
                 Line {
                     label: String::from("Pageviews"),
+                    // XXX: these are super ugly and repetitive, but I'm not sure how to make it much better
                     x: data
                         .pageviews
                         .iter()
@@ -208,6 +212,7 @@ pub async fn run(args: &Cli) -> Result<()> {
 }
 
 fn to_date(ms: u64) -> String {
+    // XXX: this seems very cumbersome. is it the best way?
     DateTime::<Utc>::from(UNIX_EPOCH + Duration::from_millis(ms))
         .format("%Y-%m-%d")
         .to_string()
