@@ -120,13 +120,13 @@ pub async fn run(args: &Cli) -> Result<()> {
                     x: data
                         .pageviews
                         .iter()
-                        .sorted()
+                        .sorted_by_key(|x| x.0)
                         .map(|(a, _)| *a as f64)
                         .collect(),
                     y: data
                         .pageviews
                         .iter()
-                        .sorted()
+                        .sorted_by_key(|x| x.0)
                         .map(|(_, b)| *b as f64)
                         .collect(),
                 },
