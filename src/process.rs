@@ -151,7 +151,11 @@ pub async fn run(args: &Cli) -> Result<()> {
             data.sources
                 .iter()
                 .map(|(name, source)| Line {
-                    label: name.clone(),
+                    label: if name == "" {
+                        "direct".to_owned()
+                    } else {
+                        name.clone()
+                    },
                     x: fsts(source),
                     y: snds(source),
                 })
