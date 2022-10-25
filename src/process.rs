@@ -3,6 +3,7 @@ use anyhow::{anyhow, bail, Result};
 use chrono::{prelude::DateTime, Utc};
 use clap::Parser;
 use itertools::Itertools;
+use num_traits::cast::NumCast;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
@@ -98,39 +99,35 @@ pub async fn run(args: &Cli) -> Result<()> {
     data.pageviews_7day = avg_7day(&data.pageviews);
     data.visitors_7day = avg_7day(&data.visitors);
 
+    fn fsts<V>(hm: &HashMap<u64, V>) -> Vec<f64> {
+        hm.iter()
+            .sorted_by_key(|x| x.0)
+            .map(|x| <f64 as NumCast>::from(*x.0).unwrap())
+            .collect()
+    }
+    fn snds<V>(hm: &HashMap<u64, V>) -> Vec<f64>
+    where
+        V: NumCast + Copy,
+    {
+        hm.iter()
+            .sorted_by_key(|x| x.0)
+            .map(|x| <f64 as NumCast>::from(*x.1).unwrap())
+            .collect()
+    }
+
     let graphs: Graphs = HashMap::from([
         (
             "pageviews".to_owned(),
             Vec::from([
                 Line {
-                    x: data
-                        .pageviews
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(a, _)| *a as f64)
-                        .collect(),
-                    y: data
-                        .pageviews
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(_, b)| *b as f64)
-                        .collect(),
                     label: "Pageviews".to_owned(),
+                    x: fsts(&data.pageviews),
+                    y: snds(&data.pageviews),
                 },
                 Line {
-                    x: data
-                        .pageviews_7day
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(a, _)| *a as f64)
-                        .collect(),
-                    y: data
-                        .pageviews_7day
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(_, b)| *b as f64)
-                        .collect(),
                     label: "7 day avg".to_owned(),
+                    x: fsts(&data.pageviews_7day),
+                    y: snds(&data.pageviews_7day),
                 },
             ]),
         ),
@@ -138,34 +135,14 @@ pub async fn run(args: &Cli) -> Result<()> {
             "visitors".to_owned(),
             Vec::from([
                 Line {
-                    x: data
-                        .visitors
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(a, _)| *a as f64)
-                        .collect(),
-                    y: data
-                        .visitors
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(_, b)| *b as f64)
-                        .collect(),
                     label: "Visitors".to_owned(),
+                    x: fsts(&data.visitors),
+                    y: snds(&data.visitors),
                 },
                 Line {
-                    x: data
-                        .visitors_7day
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(a, _)| *a as f64)
-                        .collect(),
-                    y: data
-                        .visitors_7day
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(_, b)| *b as f64)
-                        .collect(),
                     label: "7 day avg".to_owned(),
+                    x: fsts(&data.visitors_7day),
+                    y: snds(&data.visitors_7day),
                 },
             ]),
         ),
@@ -175,16 +152,8 @@ pub async fn run(args: &Cli) -> Result<()> {
                 .iter()
                 .map(|(name, source)| Line {
                     label: name.clone(),
-                    x: source
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(a, _)| *a as f64)
-                        .collect(),
-                    y: source
-                        .iter()
-                        .sorted_by_key(|x| x.0)
-                        .map(|(_, b)| *b as f64)
-                        .collect(),
+                    x: fsts(source),
+                    y: snds(source),
                 })
                 .collect(),
         ),

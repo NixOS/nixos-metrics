@@ -588,6 +588,7 @@ dependencies = [
  "futures",
  "itertools",
  "log",
+ "num-traits",
  "reqwest",
  "serde",
  "serde_json",
