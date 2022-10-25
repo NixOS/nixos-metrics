@@ -30,7 +30,7 @@ struct Line {
 type Graph = Vec<Line>;
 type Graphs = HashMap<String, Graph>;
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Default)]
 struct Data {
     pageviews: HashMap<u64, u64>,
     pageviews_7day: HashMap<u64, f64>,
@@ -39,20 +39,8 @@ struct Data {
     sources: HashMap<String, HashMap<u64, u64>>,
 }
 
-impl Data {
-    fn new() -> Self {
-        Self {
-            pageviews: HashMap::new(),
-            pageviews_7day: HashMap::new(),
-            visitors: HashMap::new(),
-            visitors_7day: HashMap::new(),
-            sources: HashMap::new(),
-        }
-    }
-}
-
 pub async fn run(args: &Cli) -> Result<()> {
-    let mut data = Data::new();
+    let mut data = Data::default();
 
     for path in fs::read_dir(&args.dir)
         // XXX: I would put .expect() here, but then i can't use the format string. what's idiomatic here?
