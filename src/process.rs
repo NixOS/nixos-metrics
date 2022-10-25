@@ -97,6 +97,7 @@ pub async fn run(args: &Cli) -> Result<()> {
                 }
             }
         }
+
         let current_date = pviews
             .last()
             .unwrap_or_else(|| panic!("Error empty pageviews in file {}", path.display()))
@@ -206,6 +207,7 @@ pub async fn run(args: &Cli) -> Result<()> {
                 .collect(),
         ),
     ]);
+
     println!("{}", serde_json::to_string_pretty(&graphs)?);
 
     Ok(())
@@ -219,19 +221,27 @@ fn to_date(ms: u64) -> String {
 }
 
 fn avg_7day(data: &HashMap<u64, u64>) -> HashMap<u64, f64> {
-    let mut avg: HashMap<u64, (f64, u8)> = HashMap::new();
+    let mut avgs: HashMap<u64, f64> = HashMap::new();
+    let mut days: HashMap<u64, u8> = HashMap::new();
 
-    for (date, datum) in data {
+    // average over the 7 days after a date
+    for (&date, &datum) in data {
         for i in 0..7 {
-            let date = *date + (i * MS_PER_DAY);
+            let date = date + (i * MS_PER_DAY);
 
-            let (ref mut avg, ref mut days) = avg.entry(date).or_insert((0.0, 0));
+            let avg = avgs.entry(date).or_insert(0.0);
+            let n = days.entry(date).or_insert(0);
 
-            *avg += *datum as f64 / 7.0;
-            *days += 1
+            *avg += datum as f64 / 7.0;
+            *n += 1
         }
     }
-    avg.iter()
-        .filter_map(|(date, (avg, days))| (*days == 7).then_some((*date, *avg)))
-        .collect()
+
+    // only keep the ones we have a full 7 days of data for
+    for (date, n) in days {
+        if n != 7 {
+            avgs.remove(&date);
+        }
+    }
+    avgs
 }
