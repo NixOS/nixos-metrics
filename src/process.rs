@@ -1,5 +1,5 @@
 use super::netlify;
-use anyhow::Result;
+use anyhow::{anyhow, bail, Result};
 use chrono::{prelude::DateTime, Utc};
 use clap::Parser;
 use itertools::Itertools;
@@ -7,7 +7,6 @@ use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fs;
 use std::path::PathBuf;
-use std::process::exit;
 use std::time::{Duration, UNIX_EPOCH};
 
 const MS_PER_DAY: u64 = 1000 * 60 * 60 * 24;
@@ -43,58 +42,55 @@ pub async fn run(args: &Cli) -> Result<()> {
     let mut data = Data::default();
 
     for path in fs::read_dir(&args.dir)
-        // XXX: I would put .expect() here, but then i can't use the format string. what's idiomatic here?
-        .unwrap_or_else(|e| panic!("Error listing directory {}: {}", args.dir.display(), e))
+        .map_err(|e| anyhow!("Error listing directory {}: {}", args.dir.display(), e))?
     {
         let path = path
-            .unwrap_or_else(|e| panic!("Error listing directory {}: {}", args.dir.display(), e))
+            .map_err(|e| anyhow!("Error listing directory {}: {}", args.dir.display(), e))?
             .path();
         let file_content = fs::read_to_string(&path)
-            .unwrap_or_else(|e| panic!("Unable to read file {}: {}", path.display(), e));
+            .map_err(|e| anyhow!("Unable to read file {}: {}", path.display(), e))?;
         let json: netlify::MetricsResult = serde_json::from_str(&file_content)
-            .unwrap_or_else(|e| panic!("Unable to parse file {}: {}", path.display(), e));
-        let pviews = &json.pageviews.as_ref().unwrap().data;
-        // XXX: I don't really understand what &(x, y) means
-        for &(tstamp, datum) in pviews[..pviews.len() - 1].iter() {
-            if let Some(v) = data.pageviews.insert(tstamp, datum) {
-                if v != datum {
-                    println!(
-                        "data mistmatch on {} (pageviews): {} from before and {} found in file {}",
-                        to_date(tstamp),
-                        v,
-                        datum,
-                        path.display()
-                    );
-                    exit(1)
-                }
-            }
-        }
-
-        let visitors = &json.visitors.as_ref().unwrap().data;
-        for &(tstamp, datum) in visitors[..visitors.len() - 1].iter() {
-            if let Some(v) = data.visitors.insert(tstamp, datum) {
-                if v != datum {
-                    println!(
-                        "data mistmatch on {} (visitors): {} from before and {} found in file {}",
-                        to_date(tstamp),
-                        v,
-                        datum,
-                        path.display()
-                    );
-                    exit(1)
-                }
-            }
-        }
-
+            .map_err(|e| anyhow!("Unable to parse file {}: {}", path.display(), e))?;
+        let mut pviews = json.pageviews.unwrap().data;
         let current_date = pviews
             .last()
-            .unwrap_or_else(|| panic!("Error empty pageviews in file {}", path.display()))
+            .ok_or_else(|| anyhow!("Error empty pageviews in file {}", path.display()))?
             .0;
-        let sources = &json.sources.as_ref().unwrap().data;
-        for source in sources[..sources.len() - 1].iter() {
+        pviews.truncate(pviews.len() - 1);
+        for (tstamp, datum) in pviews {
+            let v = *data.pageviews.entry(tstamp).or_insert(datum);
+            if v != datum {
+                bail!(
+                    "data mistmatch on {} (pageviews): {} from before and {} found in file {}",
+                    to_date(tstamp),
+                    v,
+                    datum,
+                    path.display()
+                );
+            }
+        }
+
+        let mut visitors = json.visitors.unwrap().data;
+        visitors.truncate(visitors.len() - 1);
+        for (tstamp, datum) in visitors {
+            let v = *data.visitors.entry(tstamp).or_insert(datum);
+            if v != datum {
+                bail!(
+                    "data mistmatch on {} (visitors): {} from before and {} found in file {}",
+                    to_date(tstamp),
+                    v,
+                    datum,
+                    path.display()
+                );
+            }
+        }
+
+        let mut sources = json.sources.unwrap().data;
+        sources.truncate(sources.len() - 1);
+        for source in sources {
             data.sources
-                .entry(source.path.clone())
-                .or_insert(HashMap::new())
+                .entry(source.path)
+                .or_default()
                 .insert(current_date, source.count);
         }
     }
@@ -104,12 +100,9 @@ pub async fn run(args: &Cli) -> Result<()> {
 
     let graphs: Graphs = HashMap::from([
         (
-            // XXX: is there any reason not to use .to_string() here?
-            String::from("pageviews"),
+            "pageviews".to_owned(),
             Vec::from([
                 Line {
-                    label: String::from("Pageviews"),
-                    // XXX: these are super ugly and repetitive, but I'm not sure how to make it much better
                     x: data
                         .pageviews
                         .iter()
@@ -122,9 +115,9 @@ pub async fn run(args: &Cli) -> Result<()> {
                         .sorted_by_key(|x| x.0)
                         .map(|(_, b)| *b as f64)
                         .collect(),
+                    label: "Pageviews".to_owned(),
                 },
                 Line {
-                    label: String::from("7 day avg"),
                     x: data
                         .pageviews_7day
                         .iter()
@@ -137,14 +130,14 @@ pub async fn run(args: &Cli) -> Result<()> {
                         .sorted_by_key(|x| x.0)
                         .map(|(_, b)| *b as f64)
                         .collect(),
+                    label: "7 day avg".to_owned(),
                 },
             ]),
         ),
         (
-            String::from("visitors"),
+            "visitors".to_owned(),
             Vec::from([
                 Line {
-                    label: String::from("Visitors"),
                     x: data
                         .visitors
                         .iter()
@@ -157,9 +150,9 @@ pub async fn run(args: &Cli) -> Result<()> {
                         .sorted_by_key(|x| x.0)
                         .map(|(_, b)| *b as f64)
                         .collect(),
+                    label: "Visitors".to_owned(),
                 },
                 Line {
-                    label: String::from("7 day avg"),
                     x: data
                         .visitors_7day
                         .iter()
@@ -172,11 +165,12 @@ pub async fn run(args: &Cli) -> Result<()> {
                         .sorted_by_key(|x| x.0)
                         .map(|(_, b)| *b as f64)
                         .collect(),
+                    label: "7 day avg".to_owned(),
                 },
             ]),
         ),
         (
-            String::from("sources"),
+            "sources".to_owned(),
             data.sources
                 .iter()
                 .map(|(name, source)| Line {
@@ -202,15 +196,14 @@ pub async fn run(args: &Cli) -> Result<()> {
 }
 
 fn to_date(ms: u64) -> String {
-    // XXX: this seems very cumbersome. is it the best way?
     DateTime::<Utc>::from(UNIX_EPOCH + Duration::from_millis(ms))
         .format("%Y-%m-%d")
         .to_string()
 }
 
 fn avg_7day(data: &HashMap<u64, u64>) -> HashMap<u64, f64> {
-    let mut avgs: HashMap<u64, f64> = HashMap::new();
-    let mut days: HashMap<u64, u8> = HashMap::new();
+    let mut avgs = HashMap::<u64, f64>::default();
+    let mut days = HashMap::<u64, u8>::default();
 
     // average over the 7 days after a date
     for (&date, &datum) in data {
