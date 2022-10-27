@@ -1,4 +1,4 @@
-use super::netlify;
+use super::{gtrends, netlify};
 use anyhow::{anyhow, bail, Result};
 use chrono::{prelude::DateTime, Utc};
 use clap::Parser;
@@ -37,22 +37,22 @@ struct Data {
     visitors: HashMap<u64, u64>,
     visitors_7day: HashMap<u64, f64>,
     sources: HashMap<String, HashMap<u64, u64>>,
+    gtrends: HashMap<String, HashMap<u64, f64>>,
 }
 
-pub async fn run(args: &Cli) -> Result<()> {
-    let mut data = Data::default();
-
-    for path in fs::read_dir(&args.dir)
-        .map_err(|e| anyhow!("Error listing directory {}: {}", args.dir.display(), e))?
+fn process_netlify(data: &mut Data, dir: &PathBuf) -> Result<()> {
+    for path in fs::read_dir(dir)
+        .map_err(|e| anyhow!("Error listing directory {}: {}", dir.display(), e))?
     {
         let path = path
-            .map_err(|e| anyhow!("Error listing directory {}: {}", args.dir.display(), e))?
+            .map_err(|e| anyhow!("Error listing directory {}: {}", dir.display(), e))?
             .path();
         let file_content = fs::read_to_string(&path)
             .map_err(|e| anyhow!("Unable to read file {}: {}", path.display(), e))?;
         let json: netlify::MetricsResult = serde_json::from_str(&file_content)
             .map_err(|e| anyhow!("Unable to parse file {}: {}", path.display(), e))?;
         let mut pviews = json.pageviews.unwrap().data;
+        // grab this for later, since we're not going to own pviews then
         let current_date = pviews
             .last()
             .ok_or_else(|| anyhow!("Error empty pageviews in file {}", path.display()))?
@@ -98,6 +98,87 @@ pub async fn run(args: &Cli) -> Result<()> {
 
     data.pageviews_7day = avg_7day(&data.pageviews);
     data.visitors_7day = avg_7day(&data.visitors);
+
+    Ok(())
+}
+
+fn process_gtrends(data: &mut Data, dir: &PathBuf) -> Result<()> {
+    // we have to iterate the directory in order so we have overlap
+    let mut paths: Vec<PathBuf> = fs::read_dir(dir)
+        .map_err(|e| anyhow!("Error listing directory {}: {}", dir.display(), e))?
+        .map(|r| {
+            r.map(|x| x.path())
+                .map_err(|e| anyhow!("Error listing directory {}: {}", dir.display(), e))
+        })
+        .collect::<Result<_>>()?;
+    paths.sort();
+    for path in paths {
+        let file_content = fs::read_to_string(&path)
+            .map_err(|e| anyhow!("Unable to read file {}: {}", path.display(), e))?;
+        let json: gtrends::GtrendsData = serde_json::from_str(&file_content)
+            .map_err(|e| anyhow!("Unable to parse file {}: {}", path.display(), e))?;
+
+        let mut norm_factor: Option<f64> = None;
+
+        // skip if we're on the fist iteration and are setting the norm
+        if data.gtrends.is_empty() {
+            norm_factor = Some(1.0);
+        }
+        // find some overlap and normalize based on that
+        else {
+            for datum in &json.result.default.timeline_data {
+                if datum.is_partial.unwrap_or(false) {
+                    continue;
+                }
+                for (i, name) in json.query.iter().enumerate() {
+                    if !datum.has_data[i] {
+                        continue;
+                    }
+                    let time_ms = datum.time.parse::<u64>().unwrap() * 1000;
+                    let value = datum.value[i];
+
+                    if let Some(&v) = data.gtrends.get(name).and_then(|x| x.get(&time_ms)) {
+                        norm_factor = Some(value as f64 / v as f64);
+                        break;
+                    }
+                }
+            }
+        }
+
+        let norm_factor = norm_factor.ok_or(anyhow!("Unable to normalize data. There is no overlap between the data in {} and previous days.", path.display()))?;
+
+        for datum in &json.result.default.timeline_data {
+            if datum.is_partial.unwrap_or(false) {
+                continue;
+            }
+            for (i, name) in json.query.iter().enumerate() {
+                if !datum.has_data[i] {
+                    continue;
+                }
+                let time_ms = datum.time.parse::<u64>().unwrap() * 1000;
+                let value = datum.value[i] as f64 * norm_factor;
+                let v = data
+                    .gtrends
+                    .entry(name.to_owned())
+                    .or_default()
+                    .entry(time_ms)
+                    .or_insert(value as f64 * norm_factor);
+                // make sure the normalization factor is consistent
+                if (*v - value).abs() > f64::EPSILON {
+                    bail!("Unable to normalize data: inconsistent normalization factor");
+                }
+            }
+        }
+    }
+
+    Ok(())
+}
+
+pub async fn run(args: &Cli) -> Result<()> {
+    let mut data = Data::default();
+
+    process_netlify(&mut data, &args.dir.join("netlify"))?;
+    process_gtrends(&mut data, &args.dir.join("gtrends"))?;
 
     fn fsts<V>(hm: &HashMap<u64, V>) -> Vec<f64> {
         hm.iter()
@@ -158,6 +239,17 @@ pub async fn run(args: &Cli) -> Result<()> {
                     },
                     x: fsts(source),
                     y: snds(source),
+                })
+                .collect(),
+        ),
+        (
+            "gtrends".to_owned(),
+            data.gtrends
+                .iter()
+                .map(|(name, gtrend)| Line {
+                    label: name.clone(),
+                    x: fsts(gtrend),
+                    y: snds(gtrend),
                 })
                 .collect(),
         ),

@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  netlify-metrics:
+  metrics:
     runs-on: ubuntu-latest
     steps:
 
@@ -33,13 +33,19 @@ jobs:
       with:
         CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-    - name: Scrap nixos.org Netlify metrics
+    - name: Scrape nixos.org Netlify metrics
       run: |
         mkdir -p data/netlify
         nix run ./main -- netlify \
           --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
           --token ${{ secrets.NETLIFY_NIXOS_AUTH_TOKEN }} \
             > data/netlify/`date +"%Y-%m-%d"`.json
+
+    - name: Scrape google trends metrics
+      run: |
+        mkdir -p data/netlify
+        nix run ./main -- gtrends \
+            > data/gtrends/`date +"%Y-%m-%d"`.json
 
     - name: Commit scrapped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
@@ -55,7 +61,7 @@ jobs:
 
     - name: Process scraped data
       run: |
-        nix run ./main -- process --dir ./data/netlify > website/data.json
+        nix run ./main -- process --dir ./data > website/data.json
 
     - name: Commit processed data to website branch
       uses: stefanzweifel/git-auto-commit-action@v4
