@@ -26,4 +26,3 @@ serde = { version = "*", features = ["derive"] }
 itertools = "*"
 num-traits = "*"
 rtrend = "*"
-gag = "*"

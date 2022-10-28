@@ -1,6 +1,5 @@
 use anyhow::Result;
 use clap::Parser;
-use gag::Gag;
 use rtrend::{Client, Country, Keywords, SearchInterest};
 use serde::{Deserialize, Serialize};
 use serde_json::to_string_pretty;
@@ -44,8 +43,6 @@ pub struct GtrendsData {
 
 pub async fn run(_args: &Cli) -> Result<()> {
     let result = tokio::task::spawn_blocking(move || {
-        // rtrend prints garbage. see https://github.com/shadawck/rust-trend/issues/2
-        let _gag_stdout = Gag::stdout().unwrap();
         let keywords = Keywords::new(Vec::from(KEYWORDS));
         let client = Client::new(keywords, Country::US).build();
         let raw = SearchInterest::new(client).get();
