@@ -1,4 +1,4 @@
-use super::netlify;
+use crate::netlify;
 use anyhow::{anyhow, bail, Result};
 use chrono::{prelude::DateTime, Utc};
 use clap::Parser;
@@ -6,6 +6,7 @@ use itertools::Itertools;
 use num_traits::cast::NumCast;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+use std::fmt::Debug;
 use std::fs;
 use std::path::PathBuf;
 use std::time::{Duration, UNIX_EPOCH};
@@ -52,7 +53,10 @@ pub async fn run(args: &Cli) -> Result<()> {
             .map_err(|e| anyhow!("Unable to read file {}: {}", path.display(), e))?;
         let json: netlify::MetricsResult = serde_json::from_str(&file_content)
             .map_err(|e| anyhow!("Unable to parse file {}: {}", path.display(), e))?;
-        let mut pviews = json.pageviews.unwrap().data;
+        let mut pviews = json
+            .pageviews
+            .ok_or(anyhow!("No pageviews data in {}", path.display()))?
+            .data;
         let current_date = pviews
             .last()
             .ok_or_else(|| anyhow!("Error empty pageviews in file {}", path.display()))?
@@ -71,7 +75,10 @@ pub async fn run(args: &Cli) -> Result<()> {
             }
         }
 
-        let mut visitors = json.visitors.unwrap().data;
+        let mut visitors = json
+            .visitors
+            .ok_or(anyhow!("No visitors data in {}", path.display()))?
+            .data;
         visitors.truncate(visitors.len() - 1);
         for (tstamp, datum) in visitors {
             let v = *data.visitors.entry(tstamp).or_insert(datum);
@@ -86,7 +93,10 @@ pub async fn run(args: &Cli) -> Result<()> {
             }
         }
 
-        let mut sources = json.sources.unwrap().data;
+        let mut sources = json
+            .sources
+            .ok_or(anyhow!("No sources data in {}", path.display()))?
+            .data;
         sources.truncate(sources.len() - 1);
         for source in sources {
             data.sources
@@ -99,19 +109,19 @@ pub async fn run(args: &Cli) -> Result<()> {
     data.pageviews_7day = avg_7day(&data.pageviews);
     data.visitors_7day = avg_7day(&data.visitors);
 
-    fn fsts<V>(hm: &HashMap<u64, V>) -> Vec<f64> {
+    fn fsts<V>(hm: &HashMap<u64, V>) -> Result<Vec<f64>> {
         hm.iter()
             .sorted_by_key(|x| x.0)
-            .map(|x| <f64 as NumCast>::from(*x.0).unwrap())
+            .map(|x| <f64 as NumCast>::from(*x.0).ok_or(anyhow!("Failed casting {:?} to f64", x.0)))
             .collect()
     }
-    fn snds<V>(hm: &HashMap<u64, V>) -> Vec<f64>
+    fn snds<V>(hm: &HashMap<u64, V>) -> Result<Vec<f64>>
     where
-        V: NumCast + Copy,
+        V: NumCast + Copy + Debug,
     {
         hm.iter()
             .sorted_by_key(|x| x.0)
-            .map(|x| <f64 as NumCast>::from(*x.1).unwrap())
+            .map(|x| <f64 as NumCast>::from(*x.1).ok_or(anyhow!("Failed casting {:?} to f64", x.1)))
             .collect()
     }
 
@@ -121,13 +131,13 @@ pub async fn run(args: &Cli) -> Result<()> {
             Vec::from([
                 Line {
                     label: "Pageviews".to_owned(),
-                    x: fsts(&data.pageviews),
-                    y: snds(&data.pageviews),
+                    x: fsts(&data.pageviews)?,
+                    y: snds(&data.pageviews)?,
                 },
                 Line {
                     label: "7 day avg".to_owned(),
-                    x: fsts(&data.pageviews_7day),
-                    y: snds(&data.pageviews_7day),
+                    x: fsts(&data.pageviews_7day)?,
+                    y: snds(&data.pageviews_7day)?,
                 },
             ]),
         ),
@@ -136,13 +146,13 @@ pub async fn run(args: &Cli) -> Result<()> {
             Vec::from([
                 Line {
                     label: "Visitors".to_owned(),
-                    x: fsts(&data.visitors),
-                    y: snds(&data.visitors),
+                    x: fsts(&data.visitors)?,
+                    y: snds(&data.visitors)?,
                 },
                 Line {
                     label: "7 day avg".to_owned(),
-                    x: fsts(&data.visitors_7day),
-                    y: snds(&data.visitors_7day),
+                    x: fsts(&data.visitors_7day)?,
+                    y: snds(&data.visitors_7day)?,
                 },
             ]),
         ),
@@ -150,16 +160,18 @@ pub async fn run(args: &Cli) -> Result<()> {
             "sources".to_owned(),
             data.sources
                 .iter()
-                .map(|(name, source)| Line {
-                    label: if name == "" {
-                        "direct".to_owned()
-                    } else {
-                        name.clone()
-                    },
-                    x: fsts(source),
-                    y: snds(source),
+                .map(|(name, source)| {
+                    Ok(Line {
+                        label: if name == "" {
+                            "direct".to_owned()
+                        } else {
+                            name.clone()
+                        },
+                        x: fsts(source)?,
+                        y: snds(source)?,
+                    })
                 })
-                .collect(),
+                .collect::<Result<_>>()?,
         ),
     ]);
 
