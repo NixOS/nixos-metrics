@@ -85,13 +85,6 @@
               enable = true;
               entry = pkgs.lib.mkForce "${rust}/bin/cargo-fmt fmt -- --check --color always";
             };
-            #TODO: remove when python is gone
-            black = {
-              enable = true;
-            };
-            isort = {
-              enable = true;
-            };
           };
         };
 
@@ -112,17 +105,15 @@
             pkg-config
           ];
         };
-
-        process-data = pkgs.writers.writePython3Bin "process-data" {flakeIgnore = ["E501"];} ./src/process.py;
       in rec {
         checks = {inherit pre-commit nixos-metrics;};
 
-        packages = {inherit nixos-metrics process-data;};
+        packages = {inherit nixos-metrics;};
         packages.default = packages.nixos-metrics;
 
         devShells.default = pkgs.mkShell {
           buildInputs =
-            [rust pkgs.python3]
+            [rust]
             ++ (with pkgs; [
               openssl
               openssl.dev

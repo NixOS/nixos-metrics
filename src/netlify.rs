@@ -9,6 +9,8 @@ use serde::{Deserialize, Serialize};
 use serde_json::{from_str, to_string_pretty};
 use std::fmt::{Display, Formatter, Result as FmtResult};
 
+pub mod process;
+
 fn parse_days(src: &str) -> Result<i64> {
     let days = src.parse()?;
     if days > 30 {
@@ -146,7 +148,7 @@ struct BandwidthResult {
     data: Vec<BandwidthDataItemResult>,
 }
 
-#[derive(Serialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 struct MetricsResult {
     pageviews: Option<TupleResult>,
     visitors: Option<TupleResult>,

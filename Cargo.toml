@@ -23,4 +23,5 @@ env_logger = "*"
 tokio = { version = "*", features = ["full"] }
 serde_json = "*"
 serde = { version = "*", features = ["derive"] }
-
+itertools = "*"
+num-traits = "*"

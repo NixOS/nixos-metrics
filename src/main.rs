@@ -8,6 +8,7 @@ use nixos_metrics::netlify;
 enum Commands {
     /// Export netlify metrics, prints to stdout
     Netlify(netlify::Cli),
+    Process(netlify::process::Cli),
 }
 
 #[derive(Parser, Debug)]
@@ -31,6 +32,7 @@ async fn run() -> Result<()> {
 
     match &cli.command {
         Commands::Netlify(cmd_args) => netlify::run(&cmd_args).await?,
+        Commands::Process(cmd_args) => netlify::process::run(&cmd_args).await?,
     }
 
     Ok(())
