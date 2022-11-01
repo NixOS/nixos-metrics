@@ -52,7 +52,7 @@ pub async fn run(args: &Cli) -> Result<()> {
         }
         // find some overlap and normalize based on that
         else {
-            for datum in &json.result.default.timeline_data {
+            'find_norm: for datum in &json.result.default.timeline_data {
                 if datum.is_partial.unwrap_or(false) {
                     continue;
                 }
@@ -64,8 +64,8 @@ pub async fn run(args: &Cli) -> Result<()> {
                     let value = datum.value[i];
 
                     if let Some(&v) = data.gtrends.get(name).and_then(|x| x.get(&time_ms)) {
-                        norm_factor = Some(value as f64 / v as f64);
-                        break;
+                        norm_factor = Some(v as f64 / value as f64);
+                        break 'find_norm;
                     }
                 }
             }
@@ -88,10 +88,10 @@ pub async fn run(args: &Cli) -> Result<()> {
                     .entry(name.to_owned())
                     .or_default()
                     .entry(time_ms)
-                    .or_insert(value as f64 * norm_factor);
+                    .or_insert(value);
                 // make sure the normalization factor is consistent
-                if (*v - value).abs() > f64::EPSILON {
-                    bail!("Unable to normalize data: inconsistent normalization factor");
+                if (*v - value).abs() > 0.001 {
+                    bail!("Unable to normalize data: inconsistent normalization factor produces values {} and {} on day {}", v, value, time_ms);
                 }
             }
         }
