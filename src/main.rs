@@ -2,13 +2,15 @@ use anyhow::Result;
 use clap::{Parser, Subcommand};
 use clap_verbosity_flag::Verbosity;
 use env_logger;
-use nixos_metrics::netlify;
+use nixos_metrics::{gtrends, netlify};
 
 #[derive(Subcommand, Debug)]
 enum Commands {
     /// Export netlify metrics, prints to stdout
-    Netlify(netlify::Cli),
-    Process(netlify::process::Cli),
+    ScrapeNetlify(netlify::Cli),
+    ProcessNetlify(netlify::process::Cli),
+    ScrapeGtrends(gtrends::Cli),
+    ProcessGtrends(gtrends::process::Cli),
 }
 
 #[derive(Parser, Debug)]
@@ -31,8 +33,10 @@ async fn run() -> Result<()> {
         .init();
 
     match &cli.command {
-        Commands::Netlify(cmd_args) => netlify::run(&cmd_args).await?,
-        Commands::Process(cmd_args) => netlify::process::run(&cmd_args).await?,
+        Commands::ScrapeNetlify(cmd_args) => netlify::run(&cmd_args).await?,
+        Commands::ProcessNetlify(cmd_args) => netlify::process::run(&cmd_args).await?,
+        Commands::ScrapeGtrends(cmd_args) => gtrends::run(&cmd_args).await?,
+        Commands::ProcessGtrends(cmd_args) => gtrends::process::run(&cmd_args).await?,
     }
 
     Ok(())

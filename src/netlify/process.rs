@@ -1,9 +1,10 @@
-use crate::netlify;
+use crate::{
+    netlify,
+    process::{Graphs, Line},
+};
 use anyhow::{anyhow, bail, Result};
 use chrono::{prelude::DateTime, Utc};
 use clap::Parser;
-use itertools::Itertools;
-use num_traits::cast::NumCast;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fmt::Debug;
@@ -20,16 +21,6 @@ pub struct Cli {
     #[clap(long, default_value = ".", value_parser = clap::value_parser!(PathBuf))]
     dir: PathBuf,
 }
-
-#[derive(Serialize, Deserialize, Debug)]
-struct Line {
-    label: String,
-    x: Vec<f64>,
-    y: Vec<f64>,
-}
-
-type Graph = Vec<Line>;
-type Graphs = HashMap<String, Graph>;
 
 #[derive(Serialize, Deserialize, Debug, Default)]
 struct Data {
@@ -109,51 +100,19 @@ pub async fn run(args: &Cli) -> Result<()> {
     data.pageviews_7day = avg_7day(&data.pageviews);
     data.visitors_7day = avg_7day(&data.visitors);
 
-    fn fsts<V>(hm: &HashMap<u64, V>) -> Result<Vec<f64>> {
-        hm.iter()
-            .sorted_by_key(|x| x.0)
-            .map(|x| <f64 as NumCast>::from(*x.0).ok_or(anyhow!("Failed casting {:?} to f64", x.0)))
-            .collect()
-    }
-    fn snds<V>(hm: &HashMap<u64, V>) -> Result<Vec<f64>>
-    where
-        V: NumCast + Copy + Debug,
-    {
-        hm.iter()
-            .sorted_by_key(|x| x.0)
-            .map(|x| <f64 as NumCast>::from(*x.1).ok_or(anyhow!("Failed casting {:?} to f64", x.1)))
-            .collect()
-    }
-
     let graphs: Graphs = HashMap::from([
         (
             "pageviews".to_owned(),
             Vec::from([
-                Line {
-                    label: "Pageviews".to_owned(),
-                    x: fsts(&data.pageviews)?,
-                    y: snds(&data.pageviews)?,
-                },
-                Line {
-                    label: "7 day avg".to_owned(),
-                    x: fsts(&data.pageviews_7day)?,
-                    y: snds(&data.pageviews_7day)?,
-                },
+                Line::try_new("Pageviews", &data.pageviews)?,
+                Line::try_new("7 day avg", &data.pageviews)?,
             ]),
         ),
         (
             "visitors".to_owned(),
             Vec::from([
-                Line {
-                    label: "Visitors".to_owned(),
-                    x: fsts(&data.visitors)?,
-                    y: snds(&data.visitors)?,
-                },
-                Line {
-                    label: "7 day avg".to_owned(),
-                    x: fsts(&data.visitors_7day)?,
-                    y: snds(&data.visitors_7day)?,
-                },
+                Line::try_new("Visitors", &data.visitors)?,
+                Line::try_new("7 day avg", &data.visitors_7day)?,
             ]),
         ),
         (
@@ -161,15 +120,14 @@ pub async fn run(args: &Cli) -> Result<()> {
             data.sources
                 .iter()
                 .map(|(name, source)| {
-                    Ok(Line {
-                        label: if name == "" {
+                    Line::try_new(
+                        if name == "" {
                             "direct".to_owned()
                         } else {
                             name.clone()
                         },
-                        x: fsts(source)?,
-                        y: snds(source)?,
-                    })
+                        source,
+                    )
                 })
                 .collect::<Result<_>>()?,
         ),

@@ -7,6 +7,66 @@ on:
 
 jobs:
 
+  netlify-gtrends:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checking out main branch
+      uses: actions/checkout@v3
+      with:
+        path: main
+
+    - name: Checking out the data branch
+      uses: actions/checkout@v3
+      with:
+        path: data
+        ref: data
+
+    - name: Checking out the website branch
+      uses: actions/checkout@v3
+      with:
+        path: website
+        ref: website
+
+    - name: Setup
+      uses: ./main/.github/actions/nix-common-setup
+      with:
+        CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+    - name: Scrape google trends data
+      run: |
+        mkdir -p data/gtrends
+        nix run ./main -- scrape-gtrends \
+            > data/gtrends/`date +"%Y-%m-%d"`.json
+
+    - name: Commit scrapped metrics to data branch
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Daily Scrape of google trends data
+        repository: ./data
+        branch: data
+        file_pattern: gtrends/*
+        commit_user_name: NixOS webmaster
+        commit_user_email: webmaster@nixos.org
+        commit_author: GitHub Actions <webmaster@nixos.org>
+      if: github.repository == 'NixOS/nixos-metrics'
+
+    - name: Process scraped google trends data
+      run: |
+        nix run ./main -- process-gtrends --dir ./data/gtrends > website/data-gtrends.json
+
+    - name: Commit processed data to website branch
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Daily generation of google trends graph
+        repository: ./website
+        branch: website
+        file_pattern: data-gtrends.json
+        commit_user_name: NixOS webmaster
+        commit_user_email: webmaster@nixos.org
+        commit_author: GitHub Actions <webmaster@nixos.org>
+      if: github.repository == 'NixOS/nixos-metrics'
+
   netlify-metrics:
     runs-on: ubuntu-latest
     steps:
@@ -33,10 +93,10 @@ jobs:
       with:
         CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
-    - name: Scrap nixos.org Netlify metrics
+    - name: Scrape nixos.org Netlify metrics
       run: |
         mkdir -p data/netlify
-        nix run ./main -- netlify \
+        nix run ./main -- scrape-netlify \
           --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
           --token ${{ secrets.NETLIFY_NIXOS_AUTH_TOKEN }} \
             > data/netlify/`date +"%Y-%m-%d"`.json
@@ -44,7 +104,7 @@ jobs:
     - name: Commit scrapped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Daily Scrap of Netlify metrics
+        commit_message: Daily Scrape of Netlify metrics
         repository: ./data
         branch: data
         file_pattern: netlify/*
@@ -53,17 +113,17 @@ jobs:
         commit_author: GitHub Actions <webmaster@nixos.org>
       if: github.repository == 'NixOS/nixos-metrics'
 
-    - name: Process scraped data
+    - name: Process scraped netlify data
       run: |
-        nix run ./main -- process --dir ./data/netlify > website/data.json
+        nix run ./main -- process-netlify --dir ./data/netlify > website/data-netlify.json
 
     - name: Commit processed data to website branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Daily generation of website graph
+        commit_message: Daily generation of netlify graphs
         repository: ./website
         branch: website
-        file_pattern: data.json
+        file_pattern: data-netlify.json
         commit_user_name: NixOS webmaster
         commit_user_email: webmaster@nixos.org
         commit_author: GitHub Actions <webmaster@nixos.org>
