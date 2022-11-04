@@ -7,7 +7,7 @@ on:
 
 jobs:
 
-  netlify-gtrends:
+  gtrends-metrics:
     runs-on: ubuntu-latest
     steps:
 
@@ -42,7 +42,7 @@ jobs:
     - name: Commit scraped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Daily Scrape of google trends data
+        commit_message: Daily scrape of google trends data
         repository: ./data
         branch: data
         file_pattern: gtrends.json
@@ -68,6 +68,9 @@ jobs:
       if: github.repository == 'NixOS/nixos-metrics'
 
   netlify-metrics:
+    # If the jobs are in parallel, the data branch will get out of sync with local copy and fail to push
+    # TODO: fix this in a better way so we can reenable parallelism
+    needs: gtrends-metrics
     runs-on: ubuntu-latest
     steps:
 
@@ -104,7 +107,7 @@ jobs:
     - name: Commit scraped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Daily Scrape of Netlify metrics
+        commit_message: Daily scrape of Netlify metrics
         repository: ./data
         branch: data
         file_pattern: netlify/*
