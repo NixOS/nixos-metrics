@@ -105,7 +105,7 @@ pub async fn run(args: &Cli) -> Result<()> {
             "pageviews".to_owned(),
             Vec::from([
                 Line::try_new("Pageviews", &data.pageviews)?,
-                Line::try_new("7 day avg", &data.pageviews)?,
+                Line::try_new("7 day avg", &data.pageviews_7day)?,
             ]),
         ),
         (
