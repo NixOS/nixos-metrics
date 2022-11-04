@@ -14,33 +14,33 @@ pub struct Cli {}
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct TimelineDatum {
-    pub has_data: Vec<bool>,
-    pub is_partial: Option<bool>,
-    pub time: String,
-    pub value: Vec<u64>,
-    pub formatted_axis_time: String,
-    pub formatted_time: String,
-    pub formatted_value: Vec<String>,
+struct TimelineDatum {
+    has_data: Vec<bool>,
+    is_partial: Option<bool>,
+    time: String,
+    value: Vec<u64>,
+    formatted_axis_time: String,
+    formatted_time: String,
+    formatted_value: Vec<String>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct ResponseDefault {
-    pub timeline_data: Vec<TimelineDatum>,
+struct ResponseDefault {
+    timeline_data: Vec<TimelineDatum>,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct GtrendsResult {
-    pub default: ResponseDefault,
+struct GtrendsResult {
+    default: ResponseDefault,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "camelCase")]
-pub struct GtrendsData {
-    pub query: Vec<String>,
-    pub result: GtrendsResult,
+struct GtrendsData {
+    query: Vec<String>,
+    result: GtrendsResult,
 }
 
 pub async fn run(_args: &Cli) -> Result<()> {
