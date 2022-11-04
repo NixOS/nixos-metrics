@@ -1,4 +1,5 @@
 use anyhow::Result;
+use chrono::{Date, TimeZone, Utc};
 use clap::Parser;
 use rtrend::{Client, Country, Keywords, SearchInterest};
 use serde::{Deserialize, Serialize};
@@ -44,14 +45,17 @@ struct GtrendsData {
 }
 
 pub async fn run(_args: &Cli) -> Result<()> {
-    let result = tokio::task::spawn_blocking(move || {
-        let keywords = Keywords::new(Vec::from(KEYWORDS));
-        let client = Client::new(keywords, Country::US).build();
+    let result = tokio::task::spawn_blocking(move || -> Result<_> {
+        let keywords = Keywords::new(KEYWORDS.to_vec());
+        let country = Country::ALL;
+        let start: Date<Utc> = Utc.ymd(2012, 1, 1);
+        let end: Date<Utc> = Utc::today();
+        let client = Client::new(keywords, country).with_date(start, end).build();
         let raw = SearchInterest::new(client).get();
-        let res: GtrendsResult = serde_json::from_value(raw).unwrap();
-        res
+        let res: GtrendsResult = serde_json::from_value(raw)?;
+        Ok(res)
     })
-    .await?;
+    .await??;
 
     let output = GtrendsData {
         query: KEYWORDS.map(|x| x.to_string()).to_vec(),

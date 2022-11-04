@@ -2,10 +2,8 @@ use crate::{
     gtrends,
     process::{Graphs, Line},
 };
-use anyhow::{anyhow, bail, Result};
+use anyhow::{anyhow, Result};
 use clap::Parser;
-use itertools::Itertools;
-use num_traits::cast::NumCast;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::fmt::Debug;
@@ -17,7 +15,7 @@ use std::path::PathBuf;
 pub struct Cli {
     // directory where the data has been collected.
     #[clap(long, default_value = ".", value_parser = clap::value_parser!(PathBuf))]
-    dir: PathBuf,
+    data: PathBuf,
 }
 
 #[derive(Serialize, Deserialize, Debug, Default)]
@@ -27,73 +25,28 @@ struct Data {
 
 pub async fn run(args: &Cli) -> Result<()> {
     let mut data = Data::default();
+    let path = &args.data;
 
-    // we have to sort the directory before we iterate so we have overlap between subsequent datasets
-    let mut paths: Vec<PathBuf> = fs::read_dir(&args.dir)
-        .map_err(|e| anyhow!("Error listing directory {}: {}", args.dir.display(), e))?
-        .map(|r| {
-            r.map(|x| x.path())
-                .map_err(|e| anyhow!("Error listing directory {}: {}", args.dir.display(), e))
-        })
-        .collect::<Result<_>>()?;
-    paths.sort();
+    let file_content = fs::read_to_string(&path)
+        .map_err(|e| anyhow!("Unable to read file {}: {}", path.display(), e))?;
+    let json: gtrends::GtrendsData = serde_json::from_str(&file_content)
+        .map_err(|e| anyhow!("Unable to parse file {}: {}", path.display(), e))?;
 
-    for path in paths {
-        let file_content = fs::read_to_string(&path)
-            .map_err(|e| anyhow!("Unable to read file {}: {}", path.display(), e))?;
-        let json: gtrends::GtrendsData = serde_json::from_str(&file_content)
-            .map_err(|e| anyhow!("Unable to parse file {}: {}", path.display(), e))?;
-
-        let mut norm_factor: Option<f64> = None;
-
-        // skip if we're on the fist iteration and are setting the norm
-        if data.gtrends.is_empty() {
-            norm_factor = Some(1.0);
+    for datum in &json.result.default.timeline_data {
+        if datum.is_partial.unwrap_or(false) {
+            continue;
         }
-        // find some overlap and normalize based on that
-        else {
-            'find_norm: for datum in &json.result.default.timeline_data {
-                if datum.is_partial.unwrap_or(false) {
-                    continue;
-                }
-                for (i, name) in json.query.iter().enumerate() {
-                    if !datum.has_data[i] {
-                        continue;
-                    }
-                    let time_ms = datum.time.parse::<u64>().unwrap() * 1000;
-                    let value = datum.value[i];
-
-                    if let Some(&v) = data.gtrends.get(name).and_then(|x| x.get(&time_ms)) {
-                        norm_factor = Some(v as f64 / value as f64);
-                        break 'find_norm;
-                    }
-                }
-            }
-        }
-
-        let norm_factor = norm_factor.ok_or(anyhow!("Unable to normalize data. There is no overlap between the data in {} and previous days.", path.display()))?;
-
-        for datum in &json.result.default.timeline_data {
-            if datum.is_partial.unwrap_or(false) {
+        for (i, name) in json.query.iter().enumerate() {
+            if !datum.has_data[i] {
                 continue;
             }
-            for (i, name) in json.query.iter().enumerate() {
-                if !datum.has_data[i] {
-                    continue;
-                }
-                let time_ms = datum.time.parse::<u64>().unwrap() * 1000;
-                let value = datum.value[i] as f64 * norm_factor;
-                let v = data
-                    .gtrends
-                    .entry(name.to_owned())
-                    .or_default()
-                    .entry(time_ms)
-                    .or_insert(value);
-                // make sure the normalization factor is consistent
-                if (*v - value).abs() > 0.001 {
-                    bail!("Unable to normalize data: inconsistent normalization factor produces values {} and {} on day {}", v, value, time_ms);
-                }
-            }
+            let time_ms = datum.time.parse::<u64>().unwrap() * 1000;
+            let value = datum.value[i] as f64;
+            data.gtrends
+                .entry(name.to_owned())
+                .or_default()
+                .entry(time_ms)
+                .or_insert(value);
         }
     }
 
@@ -114,7 +67,7 @@ pub async fn run(args: &Cli) -> Result<()> {
     }
 
     let graphs: Graphs = HashMap::from([(
-        "grends".to_owned(),
+        "gtrends".to_owned(),
         data.gtrends
             .iter()
             .map(|(name, gtrend)| {
