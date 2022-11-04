@@ -43,13 +43,23 @@ body {
   <h2>Visitors</h2>
 </div>
 <div id="sources">
-  <h2>Sources of traffic</h2>
+  <h2>Sources of traffic (monthly)</h2>
+</div>
+<div id="gtrends">
+  <h2>Google Trends</h2>
+  <p>Note: data starts in 2012 because there is a huge unexplainable spike starting when the data begins in 2004 that seems suspect / incorrect.</p>
 </div>
 </div>
 <script src="https://d3js.org/d3.v3.js"></script>
 <script>
 
-fetch('./data.json')
+fetch('./data-gtrends.json')
+    .then(response => {
+        return response.json();
+      })
+    .then(data => main(data));
+
+fetch('./data-netlify.json')
     .then(response => {
         return response.json();
       })
