@@ -37,7 +37,7 @@ jobs:
       run: |
         mkdir -p data/gtrends
         nix run ./main -- scrape-gtrends \
-            > data/gtrends/`date +"%Y-%m-%d"`.json
+            > data/gtrends.json
 
     - name: Commit scrapped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
@@ -53,7 +53,7 @@ jobs:
 
     - name: Process scraped google trends data
       run: |
-        nix run ./main -- process-gtrends --dir ./data/gtrends > website/data-gtrends.json
+        nix run ./main -- process-gtrends --data ./data/gtrends.json > website/data-gtrends.json
 
     - name: Commit processed data to website branch
       uses: stefanzweifel/git-auto-commit-action@v4
