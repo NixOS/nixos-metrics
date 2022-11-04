@@ -39,13 +39,13 @@ jobs:
         nix run ./main -- scrape-gtrends \
             > data/gtrends.json
 
-    - name: Commit scrapped metrics to data branch
+    - name: Commit scraped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Daily Scrape of google trends data
         repository: ./data
         branch: data
-        file_pattern: gtrends/*
+        file_pattern: gtrends.json
         commit_user_name: NixOS webmaster
         commit_user_email: webmaster@nixos.org
         commit_author: GitHub Actions <webmaster@nixos.org>
@@ -101,7 +101,7 @@ jobs:
           --token ${{ secrets.NETLIFY_NIXOS_AUTH_TOKEN }} \
             > data/netlify/`date +"%Y-%m-%d"`.json
 
-    - name: Commit scrapped metrics to data branch
+    - name: Commit scraped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Daily Scrape of Netlify metrics
