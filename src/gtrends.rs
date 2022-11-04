@@ -48,6 +48,7 @@ pub async fn run(_args: &Cli) -> Result<()> {
     let result = tokio::task::spawn_blocking(move || -> Result<_> {
         let keywords = Keywords::new(KEYWORDS.to_vec());
         let country = Country::ALL;
+        // start at 2012, because before that the data gets weirdly high. maybe "nixos" meant something else?
         let start: Date<Utc> = Utc.ymd(2012, 1, 1);
         let end: Date<Utc> = Utc::today();
         let client = Client::new(keywords, country).with_date(start, end).build();
