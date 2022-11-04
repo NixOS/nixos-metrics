@@ -50,33 +50,11 @@ pub async fn run(args: &Cli) -> Result<()> {
         }
     }
 
-    fn fsts<V>(hm: &HashMap<u64, V>) -> Result<Vec<f64>> {
-        hm.iter()
-            .sorted_by_key(|x| x.0)
-            .map(|x| <f64 as NumCast>::from(*x.0).ok_or(anyhow!("Failed casting {:?} to f64", x.0)))
-            .collect()
-    }
-    fn snds<V>(hm: &HashMap<u64, V>) -> Result<Vec<f64>>
-    where
-        V: NumCast + Copy + Debug,
-    {
-        hm.iter()
-            .sorted_by_key(|x| x.0)
-            .map(|x| <f64 as NumCast>::from(*x.1).ok_or(anyhow!("Failed casting {:?} to f64", x.1)))
-            .collect()
-    }
-
     let graphs: Graphs = HashMap::from([(
         "gtrends".to_owned(),
         data.gtrends
             .iter()
-            .map(|(name, gtrend)| {
-                Ok(Line {
-                    label: name.clone(),
-                    x: fsts(gtrend)?,
-                    y: snds(gtrend)?,
-                })
-            })
+            .map(|(name, gtrend)| Line::try_new(name, gtrend))
             .collect::<Result<_>>()?,
     )]);
 
