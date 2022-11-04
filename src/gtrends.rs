@@ -7,7 +7,7 @@ use serde_json::to_string_pretty;
 
 pub mod process;
 
-const KEYWORDS: [&str; 2] = ["NixOS", "nix-shell"];
+const KEYWORDS: [&str; 3] = ["NixOS", "nix-shell", "nixpkgs"];
 
 #[derive(Parser, Debug, Clone)]
 #[command(version, about, author, long_about = None)]
