@@ -103,7 +103,7 @@ jobs:
           --site-id ${{ secrets.NETLIFY_NIXOS_SITE_ID }} \
           --token ${{ secrets.NETLIFY_NIXOS_AUTH_TOKEN }} \
             > data/netlify/current.json
-        cp data/netlify{current,`date +"%Y-m-%d"`}.json
+        cp data/netlify/{current,`date +"%Y-m-%d"`}.json
 
     - name: Commit scraped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
