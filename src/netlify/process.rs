@@ -6,7 +6,7 @@ use anyhow::{anyhow, bail, Result};
 use chrono::{prelude::DateTime, Utc};
 use clap::Parser;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::{BTreeMap, HashMap};
 use std::fmt::Debug;
 use std::fs;
 use std::path::PathBuf;
@@ -24,11 +24,11 @@ pub struct Cli {
 
 #[derive(Serialize, Deserialize, Debug, Default)]
 struct Data {
-    pageviews: HashMap<u64, u64>,
-    pageviews_7day: HashMap<u64, f64>,
-    visitors: HashMap<u64, u64>,
-    visitors_7day: HashMap<u64, f64>,
-    sources: HashMap<String, HashMap<u64, u64>>,
+    pageviews: BTreeMap<u64, u64>,
+    pageviews_7day: BTreeMap<u64, f64>,
+    visitors: BTreeMap<u64, u64>,
+    visitors_7day: BTreeMap<u64, f64>,
+    sources: HashMap<String, BTreeMap<u64, u64>>,
 }
 
 pub async fn run(args: &Cli) -> Result<()> {
@@ -144,9 +144,9 @@ fn to_date(ms: u64) -> String {
         .to_string()
 }
 
-fn avg_7day(data: &HashMap<u64, u64>) -> HashMap<u64, f64> {
-    let mut avgs = HashMap::<u64, f64>::default();
-    let mut days = HashMap::<u64, u8>::default();
+fn avg_7day(data: &BTreeMap<u64, u64>) -> BTreeMap<u64, f64> {
+    let mut avgs = BTreeMap::<u64, f64>::default();
+    let mut days = BTreeMap::<u64, u8>::default();
 
     // average over the 7 days after a date
     for (&date, &datum) in data {

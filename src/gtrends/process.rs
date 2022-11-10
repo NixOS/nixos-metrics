@@ -5,7 +5,7 @@ use crate::{
 use anyhow::{anyhow, Result};
 use clap::Parser;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::collections::{BTreeMap, HashMap};
 use std::fmt::Debug;
 use std::fs;
 use std::path::PathBuf;
@@ -20,7 +20,7 @@ pub struct Cli {
 
 #[derive(Serialize, Deserialize, Debug, Default)]
 struct Data {
-    gtrends: HashMap<String, HashMap<u64, f64>>,
+    gtrends: BTreeMap<String, BTreeMap<u64, f64>>,
 }
 
 pub async fn run(args: &Cli) -> Result<()> {
