@@ -15,37 +15,28 @@ pub struct Line {
 pub type Graph = Vec<Line>;
 pub type Graphs = HashMap<String, Graph>;
 
-fn fsts<K, V>(hm: &HashMap<K, V>) -> Result<Vec<f64>>
-where
-    K: NumCast + Ord + Copy + Debug,
-{
-    hm.iter()
-        .sorted_by_key(|x| x.0)
-        .map(|x| <f64 as NumCast>::from(*x.0).ok_or(anyhow!("Failed casting {:?} to f64", x.0)))
-        .collect()
-}
-fn snds<K, V>(hm: &HashMap<K, V>) -> Result<Vec<f64>>
-where
-    K: Ord,
-    V: NumCast + Copy + Debug,
-{
-    hm.iter()
-        .sorted_by_key(|x| x.0)
-        .map(|x| <f64 as NumCast>::from(*x.1).ok_or(anyhow!("Failed casting {:?} to f64", x.1)))
-        .collect()
-}
-
 impl Line {
-    pub fn try_new<S, K, V>(label: S, hm: &HashMap<K, V>) -> Result<Line>
+    pub fn try_new<K, V>(label: impl Into<String>, hm: &HashMap<K, V>) -> Result<Line>
     where
         K: NumCast + Ord + Copy + Debug,
         V: NumCast + Copy + Debug,
-        S: Into<String>,
     {
+        let (x, y) = hm
+            .into_iter()
+            .sorted_by_key(|x| x.0)
+            .map(|(x, y)| {
+                let x = x.to_f64().ok_or(anyhow!("Failed casting {:?} to f64", x))?;
+                let y = y.to_f64().ok_or(anyhow!("Failed casting {:?} to f64", y))?;
+                Ok((x, y))
+            })
+            .collect::<Result<Vec<_>>>()?
+            .into_iter()
+            .unzip();
+
         Ok(Line {
             label: label.into(),
-            x: fsts(hm)?,
-            y: snds(hm)?,
+            x,
+            y,
         })
     }
 }
