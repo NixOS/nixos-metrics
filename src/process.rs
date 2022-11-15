@@ -25,7 +25,7 @@ impl Line {
             |(mut xs, mut ys), (x, y)| {
                 xs.push(x.to_f64().ok_or(anyhow!("Failed casting {:?} to f64", x))?);
                 ys.push(y.to_f64().ok_or(anyhow!("Failed casting {:?} to f64", y))?);
-                anyhow::Ok((xs, ys))
+                Ok((xs, ys))
             },
         )?;
 
