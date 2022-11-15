@@ -1,4 +1,4 @@
-name: "Daily"
+name: "Netlify"
 
 on:
   workflow_dispatch: # allows manual triggering
@@ -7,70 +7,7 @@ on:
 
 jobs:
 
-  gtrends-metrics:
-    runs-on: ubuntu-latest
-    steps:
-
-    - name: Checking out main branch
-      uses: actions/checkout@v3
-      with:
-        path: main
-
-    - name: Checking out the data branch
-      uses: actions/checkout@v3
-      with:
-        path: data
-        ref: data
-
-    - name: Checking out the website branch
-      uses: actions/checkout@v3
-      with:
-        path: website
-        ref: website
-
-    - name: Setup
-      uses: ./main/.github/actions/nix-common-setup
-      with:
-        CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
-
-    - name: Scrape google trends data
-      run: |
-        mkdir -p data/gtrends
-        nix run ./main -- scrape-gtrends \
-            > data/gtrends.json
-
-    - name: Commit scraped metrics to data branch
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: Daily scrape of google trends data
-        repository: ./data
-        branch: data
-        file_pattern: gtrends.json
-        commit_user_name: NixOS webmaster
-        commit_user_email: webmaster@nixos.org
-        commit_author: GitHub Actions <webmaster@nixos.org>
-      if: github.repository == 'NixOS/nixos-metrics'
-
-    - name: Process scraped google trends data
-      run: |
-        nix run ./main -- process-gtrends --data ./data/gtrends.json > website/data-gtrends.json
-
-    - name: Commit processed data to website branch
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: Daily generation of google trends graph
-        repository: ./website
-        branch: website
-        file_pattern: data-gtrends.json
-        commit_user_name: NixOS webmaster
-        commit_user_email: webmaster@nixos.org
-        commit_author: GitHub Actions <webmaster@nixos.org>
-      if: github.repository == 'NixOS/nixos-metrics'
-
   netlify-metrics:
-    # If the jobs are in parallel, the data branch will get out of sync with local copy and fail to push
-    # TODO: fix this in a better way so we can reenable parallelism
-    needs: gtrends-metrics
     runs-on: ubuntu-latest
     steps:
 
