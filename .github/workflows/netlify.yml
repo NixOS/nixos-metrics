@@ -42,21 +42,21 @@ jobs:
             > data/netlify/current.json
         cp data/netlify/{current,`date +"%Y-m-%d"`}.json
 
+    - name: Process scraped netlify data
+      run: |
+        nix run ./main -- process-netlify --dir ./data/netlify --graphs-out website/data-netlify.json --victoriametrics-out data/victoriametrics/netlify.jsonl
+
     - name: Commit scraped metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Daily scrape of Netlify metrics
         repository: ./data
         branch: data
-        file_pattern: netlify/*
+        file_pattern: 'netlify/* victoriametrics/netlify.jsonl'
         commit_user_name: NixOS webmaster
         commit_user_email: webmaster@nixos.org
         commit_author: GitHub Actions <webmaster@nixos.org>
       if: github.repository == 'NixOS/nixos-metrics'
-
-    - name: Process scraped netlify data
-      run: |
-        nix run ./main -- process-netlify --dir ./data/netlify > website/data-netlify.json
 
     - name: Commit processed data to website branch
       uses: stefanzweifel/git-auto-commit-action@v4

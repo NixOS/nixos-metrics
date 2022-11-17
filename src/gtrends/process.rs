@@ -1,6 +1,6 @@
 use crate::{
     gtrends,
-    process::{Graphs, Line},
+    process::{Graphs, Line, VictoriaMetric, VictoriaMetrics},
 };
 use anyhow::{anyhow, Result};
 use clap::Parser;
@@ -8,6 +8,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, HashMap};
 use std::fmt::Debug;
 use std::fs;
+use std::io::Write;
 use std::path::PathBuf;
 
 #[derive(Parser, Debug, Clone)]
@@ -16,6 +17,12 @@ pub struct Cli {
     // directory where the data has been collected.
     #[clap(long, default_value = ".", value_parser = clap::value_parser!(PathBuf))]
     data: PathBuf,
+
+    #[clap(long, value_parser = clap::value_parser!(PathBuf))]
+    graphs_out: PathBuf,
+
+    #[clap(long, value_parser = clap::value_parser!(PathBuf))]
+    victoriametrics_out: PathBuf,
 }
 
 #[derive(Serialize, Deserialize, Debug, Default)]
@@ -58,7 +65,29 @@ pub async fn run(args: &Cli) -> Result<()> {
             .collect::<Result<_>>()?,
     )]);
 
-    println!("{}", serde_json::to_string_pretty(&graphs)?);
+    let victoriametrics: VictoriaMetrics = graphs
+        .get("gtrends")
+        .expect("hard-coded hashmap access of hard-coded entry")
+        .into_iter()
+        .map(|line| VictoriaMetric::try_new("gtrends", "search_term", line))
+        .collect::<Result<_>>()?;
+
+    let mut graphs_out = fs::File::create(&args.graphs_out)?;
+    let mut victoriametrics_out = fs::File::create(&args.victoriametrics_out)?;
+
+    writeln!(
+        &mut graphs_out,
+        "{}",
+        serde_json::to_string_pretty(&graphs)?
+    )?;
+    for victoriametric in victoriametrics {
+        writeln!(
+            &mut victoriametrics_out,
+            "{}",
+            // Output file is jsonlines; this must be a single line (no pretty print)
+            serde_json::to_string(&victoriametric)?
+        )?;
+    }
 
     Ok(())
 }

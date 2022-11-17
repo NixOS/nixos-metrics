@@ -38,21 +38,21 @@ jobs:
         nix run ./main -- scrape-gtrends \
             > data/gtrends.json
 
-    - name: Commit scraped metrics to data branch
+    - name: Process scraped google trends data
+      run: |
+        nix run ./main -- process-gtrends --data ./data/gtrends.json --graphs-out website/data-gtrends.json --victoriametrics-out data/victoriametrics/gtrends.jsonl
+
+    - name: Commit metrics to data branch
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Daily scrape of google trends data
         repository: ./data
         branch: data
-        file_pattern: gtrends.json
+        file_pattern: 'gtrends.json victoriametrics/gtrends.jsonl'
         commit_user_name: NixOS webmaster
         commit_user_email: webmaster@nixos.org
         commit_author: GitHub Actions <webmaster@nixos.org>
       if: github.repository == 'NixOS/nixos-metrics'
-
-    - name: Process scraped google trends data
-      run: |
-        nix run ./main -- process-gtrends --data ./data/gtrends.json > website/data-gtrends.json
 
     - name: Commit processed data to website branch
       uses: stefanzweifel/git-auto-commit-action@v4

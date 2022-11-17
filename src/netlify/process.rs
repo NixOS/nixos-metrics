@@ -1,6 +1,6 @@
 use crate::{
     netlify,
-    process::{Graphs, Line},
+    process::{Graphs, Line, VictoriaMetric, VictoriaMetrics},
 };
 use anyhow::{anyhow, bail, Result};
 use chrono::{prelude::DateTime, Utc};
@@ -9,6 +9,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, HashMap};
 use std::fmt::Debug;
 use std::fs;
+use std::io::Write;
 use std::path::PathBuf;
 use std::time::{Duration, UNIX_EPOCH};
 
@@ -20,6 +21,12 @@ pub struct Cli {
     // directory where the data has been collected.
     #[clap(long, default_value = ".", value_parser = clap::value_parser!(PathBuf))]
     dir: PathBuf,
+
+    #[clap(long, value_parser = clap::value_parser!(PathBuf))]
+    graphs_out: PathBuf,
+
+    #[clap(long, value_parser = clap::value_parser!(PathBuf))]
+    victoriametrics_out: PathBuf,
 }
 
 #[derive(Serialize, Deserialize, Debug, Default)]
@@ -133,7 +140,46 @@ pub async fn run(args: &Cli) -> Result<()> {
         ),
     ]);
 
-    println!("{}", serde_json::to_string_pretty(&graphs)?);
+    let mut victoriametrics: VictoriaMetrics = vec![
+        VictoriaMetric::try_new(
+            "pageviews",
+            "",
+            &graphs
+                .get("pageviews")
+                .expect("hard-coded hashmap access of hard-coded entry")[0],
+        )?,
+        VictoriaMetric::try_new(
+            "pageviews",
+            "",
+            &graphs
+                .get("visitors")
+                .expect("hard-coded hashmap access of hard-coded entry")[0],
+        )?,
+    ];
+
+    for source in graphs
+        .get("sources")
+        .expect("hard-coded hashmap access of hard-coded entry")
+    {
+        victoriametrics.push(VictoriaMetric::try_new("sources", "source", &source)?);
+    }
+
+    let mut graphs_out = fs::File::create(&args.graphs_out)?;
+    let mut victoriametrics_out = fs::File::create(&args.victoriametrics_out)?;
+
+    writeln!(
+        &mut graphs_out,
+        "{}",
+        serde_json::to_string_pretty(&graphs)?
+    )?;
+    for victoriametric in victoriametrics {
+        writeln!(
+            &mut victoriametrics_out,
+            "{}",
+            // Output file is jsonlines; this must be a single line (no pretty print)
+            serde_json::to_string(&victoriametric)?
+        )?;
+    }
 
     Ok(())
 }
