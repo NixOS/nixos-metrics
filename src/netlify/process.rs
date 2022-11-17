@@ -158,10 +158,14 @@ pub async fn run(args: &Cli) -> Result<()> {
     ];
 
     for source in graphs
-        .get("netlify.sources")
+        .get("sources")
         .expect("hard-coded hashmap access of hard-coded entry")
     {
-        victoriametrics.push(VictoriaMetric::try_new("sources", "source", &source)?);
+        victoriametrics.push(VictoriaMetric::try_new(
+            "netlify.sources",
+            "source",
+            &source,
+        )?);
     }
 
     if let Some(graphs_out) = &args.graphs_out {
