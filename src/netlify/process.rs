@@ -142,14 +142,14 @@ pub async fn run(args: &Cli) -> Result<()> {
 
     let mut victoriametrics: VictoriaMetrics = vec![
         VictoriaMetric::try_new(
-            "pageviews",
+            "netlify.pageviews",
             "",
             &graphs
                 .get("pageviews")
                 .expect("hard-coded hashmap access of hard-coded entry")[0],
         )?,
         VictoriaMetric::try_new(
-            "pageviews",
+            "netlify.visitors",
             "",
             &graphs
                 .get("visitors")
@@ -158,7 +158,7 @@ pub async fn run(args: &Cli) -> Result<()> {
     ];
 
     for source in graphs
-        .get("sources")
+        .get("netlify.sources")
         .expect("hard-coded hashmap access of hard-coded entry")
     {
         victoriametrics.push(VictoriaMetric::try_new("sources", "source", &source)?);
