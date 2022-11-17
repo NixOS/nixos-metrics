@@ -1,0 +1,33 @@
+name: "Aggregate VictoriaMetrics"
+
+on:
+  workflow_dispatch: # allows manual triggering
+  schedule:
+  - cron: '0 7 * * *' # runs daily at 07:00
+
+jobs:
+
+  netlify-metrics:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Checking out the data branch
+      uses: actions/checkout@v3
+      with:
+        path: data
+        ref: data
+
+    - name: aggregate jsonl files
+      run: cat data/victoriametrics/*.jsonl > data/victoriametrics.jsonl
+
+    - name: Commit aggregate file to data branch
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Merge .jsonl files
+        repository: ./data
+        branch: data
+        file_pattern: victoriametrics.jsonl
+        commit_user_name: NixOS webmaster
+        commit_user_email: webmaster@nixos.org
+        commit_author: GitHub Actions <webmaster@nixos.org>
+      if: github.repository == 'NixOS/nixos-metrics'
