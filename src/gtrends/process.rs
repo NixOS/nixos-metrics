@@ -85,12 +85,9 @@ pub async fn run(args: &Cli) -> Result<()> {
     if let Some(victoriametrics_out) = &args.victoriametrics_out {
         let mut victoriametrics_out = fs::File::create(victoriametrics_out)?;
         for victoriametric in victoriametrics {
-            writeln!(
-                &mut victoriametrics_out,
-                "{}",
-                // Output file is jsonlines; this must be a single line (no pretty print)
-                serde_json::to_string(&victoriametric)?
-            )?;
+            serde_json::to_writer(&mut victoriametrics_out, &victoriametric)?;
+            // above doesn't end in a newline
+            writeln!(&mut victoriametrics_out, "")?;
         }
     }
 
