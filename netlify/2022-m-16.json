@@ -2,256 +2,256 @@
   "pageviews": {
     "data": [
       [
-        1665964800000,
-        31588
-      ],
-      [
-        1666051200000,
-        33090
-      ],
-      [
-        1666137600000,
-        31599
-      ],
-      [
-        1666224000000,
-        33284
-      ],
-      [
-        1666310400000,
-        32901
-      ],
-      [
-        1666396800000,
-        34546
-      ],
-      [
-        1666483200000,
-        29915
-      ],
-      [
-        1666569600000,
-        33508
-      ],
-      [
-        1666656000000,
-        35166
-      ],
-      [
-        1666742400000,
-        51214
-      ],
-      [
-        1666828800000,
-        43133
-      ],
-      [
-        1666915200000,
-        34810
-      ],
-      [
-        1667001600000,
-        30945
-      ],
-      [
-        1667088000000,
-        29257
-      ],
-      [
-        1667174400000,
-        33231
-      ],
-      [
-        1667260800000,
-        35494
-      ],
-      [
-        1667347200000,
-        34453
-      ],
-      [
-        1667433600000,
-        35701
-      ],
-      [
-        1667520000000,
-        35067
-      ],
-      [
-        1667606400000,
-        31853
-      ],
-      [
-        1667692800000,
-        32564
-      ],
-      [
-        1667779200000,
-        35962
-      ],
-      [
-        1667865600000,
-        36727
-      ],
-      [
-        1667952000000,
-        36090
-      ],
-      [
-        1668038400000,
-        36045
-      ],
-      [
-        1668124800000,
-        34685
-      ],
-      [
-        1668211200000,
-        31127
-      ],
-      [
-        1668297600000,
-        31873
-      ],
-      [
-        1668384000000,
-        36856
-      ],
-      [
-        1668470400000,
-        35307
-      ],
-      [
         1668556800000,
-        4720
+        38517
+      ],
+      [
+        1668643200000,
+        35819
+      ],
+      [
+        1668729600000,
+        35122
+      ],
+      [
+        1668816000000,
+        31118
+      ],
+      [
+        1668902400000,
+        35688
+      ],
+      [
+        1668988800000,
+        35678
+      ],
+      [
+        1669075200000,
+        35853
+      ],
+      [
+        1669161600000,
+        35806
+      ],
+      [
+        1669248000000,
+        35269
+      ],
+      [
+        1669334400000,
+        34083
+      ],
+      [
+        1669420800000,
+        31980
+      ],
+      [
+        1669507200000,
+        33292
+      ],
+      [
+        1669593600000,
+        36971
+      ],
+      [
+        1669680000000,
+        37269
+      ],
+      [
+        1669766400000,
+        39254
+      ],
+      [
+        1669852800000,
+        87647
+      ],
+      [
+        1669939200000,
+        57148
+      ],
+      [
+        1670025600000,
+        43036
+      ],
+      [
+        1670112000000,
+        44968
+      ],
+      [
+        1670198400000,
+        45333
+      ],
+      [
+        1670284800000,
+        37493
+      ],
+      [
+        1670371200000,
+        39350
+      ],
+      [
+        1670457600000,
+        40966
+      ],
+      [
+        1670544000000,
+        42324
+      ],
+      [
+        1670630400000,
+        39283
+      ],
+      [
+        1670716800000,
+        37829
+      ],
+      [
+        1670803200000,
+        36248
+      ],
+      [
+        1670889600000,
+        35420
+      ],
+      [
+        1670976000000,
+        36406
+      ],
+      [
+        1671062400000,
+        34038
+      ],
+      [
+        1671148800000,
+        4103
       ]
     ]
   },
   "visitors": {
     "data": [
       [
-        1665964800000,
-        7082
-      ],
-      [
-        1666051200000,
-        7227
-      ],
-      [
-        1666137600000,
-        7307
-      ],
-      [
-        1666224000000,
-        7662
-      ],
-      [
-        1666310400000,
-        7138
-      ],
-      [
-        1666396800000,
-        6161
-      ],
-      [
-        1666483200000,
-        5722
-      ],
-      [
-        1666569600000,
-        7497
-      ],
-      [
-        1666656000000,
-        7530
-      ],
-      [
-        1666742400000,
-        7144
-      ],
-      [
-        1666828800000,
-        6997
-      ],
-      [
-        1666915200000,
-        7527
-      ],
-      [
-        1667001600000,
-        5993
-      ],
-      [
-        1667088000000,
-        5600
-      ],
-      [
-        1667174400000,
-        7268
-      ],
-      [
-        1667260800000,
-        7688
-      ],
-      [
-        1667347200000,
-        7637
-      ],
-      [
-        1667433600000,
-        7757
-      ],
-      [
-        1667520000000,
-        7240
-      ],
-      [
-        1667606400000,
-        5816
-      ],
-      [
-        1667692800000,
-        6135
-      ],
-      [
-        1667779200000,
-        7752
-      ],
-      [
-        1667865600000,
-        7622
-      ],
-      [
-        1667952000000,
-        7742
-      ],
-      [
-        1668038400000,
-        7391
-      ],
-      [
-        1668124800000,
-        7111
-      ],
-      [
-        1668211200000,
-        6052
-      ],
-      [
-        1668297600000,
-        6284
-      ],
-      [
-        1668384000000,
-        8455
-      ],
-      [
-        1668470400000,
-        7613
-      ],
-      [
         1668556800000,
-        1128
+        7567
+      ],
+      [
+        1668643200000,
+        7643
+      ],
+      [
+        1668729600000,
+        7080
+      ],
+      [
+        1668816000000,
+        6760
+      ],
+      [
+        1668902400000,
+        7560
+      ],
+      [
+        1668988800000,
+        7672
+      ],
+      [
+        1669075200000,
+        7745
+      ],
+      [
+        1669161600000,
+        8327
+      ],
+      [
+        1669248000000,
+        7459
+      ],
+      [
+        1669334400000,
+        7450
+      ],
+      [
+        1669420800000,
+        6238
+      ],
+      [
+        1669507200000,
+        6248
+      ],
+      [
+        1669593600000,
+        7886
+      ],
+      [
+        1669680000000,
+        7502
+      ],
+      [
+        1669766400000,
+        7649
+      ],
+      [
+        1669852800000,
+        27641
+      ],
+      [
+        1669939200000,
+        15182
+      ],
+      [
+        1670025600000,
+        9575
+      ],
+      [
+        1670112000000,
+        8442
+      ],
+      [
+        1670198400000,
+        9888
+      ],
+      [
+        1670284800000,
+        8437
+      ],
+      [
+        1670371200000,
+        8367
+      ],
+      [
+        1670457600000,
+        8016
+      ],
+      [
+        1670544000000,
+        7627
+      ],
+      [
+        1670630400000,
+        6777
+      ],
+      [
+        1670716800000,
+        6273
+      ],
+      [
+        1670803200000,
+        7723
+      ],
+      [
+        1670889600000,
+        7456
+      ],
+      [
+        1670976000000,
+        7467
+      ],
+      [
+        1671062400000,
+        7486
+      ],
+      [
+        1671148800000,
+        969
       ]
     ]
   },
@@ -259,232 +259,232 @@
     "data": [
       {
         "path": "/",
-        "count": 524425
+        "count": 537928
       },
       {
         "path": "/download.html",
-        "count": 61015
+        "count": 70164
       },
       {
         "path": "/blog/announcements.html",
-        "count": 35171
+        "count": 66869
+      },
+      {
+        "path": "/blog/announcements",
+        "count": 34242
       },
       {
         "path": "/learn.html",
-        "count": 27238
-      },
-      {
-        "path": "/manual/nixpkgs/stable/",
-        "count": 26255
-      },
-      {
-        "path": "/manual/nixos/stable/",
-        "count": 22842
+        "count": 31581
       },
       {
         "path": "/manual/nixos/stable/index.html",
-        "count": 22619
+        "count": 27808
       },
       {
-        "path": "/blog/index.html",
-        "count": 15209
+        "path": "/manual/nixos/stable/",
+        "count": 25950
+      },
+      {
+        "path": "/manual/nixpkgs/stable/",
+        "count": 25913
       },
       {
         "path": "/explore.html",
-        "count": 13710
+        "count": 17820
       },
       {
-        "path": "/manual/nix/stable/",
-        "count": 12303
+        "path": "/blog/index.html",
+        "count": 14162
       }
     ]
   },
   "bandwidth": {
     "data": [
       {
-        "start": 1665964800000,
-        "end": 1666051200000,
-        "siteBandwidth": 10004652577,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666051200000,
-        "end": 1666137600000,
-        "siteBandwidth": 9925854115,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666137600000,
-        "end": 1666224000000,
-        "siteBandwidth": 9948402582,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666224000000,
-        "end": 1666310400000,
-        "siteBandwidth": 10189142200,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666310400000,
-        "end": 1666396800000,
-        "siteBandwidth": 9821815212,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666396800000,
-        "end": 1666483200000,
-        "siteBandwidth": 9361103394,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666483200000,
-        "end": 1666569600000,
-        "siteBandwidth": 8415335249,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666569600000,
-        "end": 1666656000000,
-        "siteBandwidth": 10372055816,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666656000000,
-        "end": 1666742400000,
-        "siteBandwidth": 10734507225,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666742400000,
-        "end": 1666828800000,
-        "siteBandwidth": 13269772109,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666828800000,
-        "end": 1666915200000,
-        "siteBandwidth": 10895079923,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1666915200000,
-        "end": 1667001600000,
-        "siteBandwidth": 10478022115,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667001600000,
-        "end": 1667088000000,
-        "siteBandwidth": 8643206603,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667088000000,
-        "end": 1667174400000,
-        "siteBandwidth": 8312566192,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667174400000,
-        "end": 1667260800000,
-        "siteBandwidth": 9882916784,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667260800000,
-        "end": 1667347200000,
-        "siteBandwidth": 11001506868,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667347200000,
-        "end": 1667433600000,
-        "siteBandwidth": 10535203828,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667433600000,
-        "end": 1667520000000,
-        "siteBandwidth": 10630862470,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667520000000,
-        "end": 1667606400000,
-        "siteBandwidth": 10085861271,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667606400000,
-        "end": 1667692800000,
-        "siteBandwidth": 8789742977,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667692800000,
-        "end": 1667779200000,
-        "siteBandwidth": 9255138622,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667779200000,
-        "end": 1667865600000,
-        "siteBandwidth": 11463311616,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667865600000,
-        "end": 1667952000000,
-        "siteBandwidth": 11023228782,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1667952000000,
-        "end": 1668038400000,
-        "siteBandwidth": 10760142339,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1668038400000,
-        "end": 1668124800000,
-        "siteBandwidth": 10698882467,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1668124800000,
-        "end": 1668211200000,
-        "siteBandwidth": 10156981283,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1668211200000,
-        "end": 1668297600000,
-        "siteBandwidth": 8954133870,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1668297600000,
-        "end": 1668384000000,
-        "siteBandwidth": 9314096000,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1668384000000,
-        "end": 1668470400000,
-        "siteBandwidth": 11848621897,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1668470400000,
-        "end": 1668556800000,
-        "siteBandwidth": 11048032978,
-        "accountBandwidth": 0
-      },
-      {
         "start": 1668556800000,
         "end": 1668643200000,
-        "siteBandwidth": 1328848855,
+        "siteBandwidth": 11051117872,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1668643200000,
+        "end": 1668729600000,
+        "siteBandwidth": 10607822381,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1668729600000,
+        "end": 1668816000000,
+        "siteBandwidth": 10337680874,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1668816000000,
+        "end": 1668902400000,
+        "siteBandwidth": 9709919253,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1668902400000,
+        "end": 1668988800000,
+        "siteBandwidth": 12016936701,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1668988800000,
+        "end": 1669075200000,
+        "siteBandwidth": 11341426904,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669075200000,
+        "end": 1669161600000,
+        "siteBandwidth": 11020898119,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669161600000,
+        "end": 1669248000000,
+        "siteBandwidth": 11128512985,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669248000000,
+        "end": 1669334400000,
+        "siteBandwidth": 10710032666,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669334400000,
+        "end": 1669420800000,
+        "siteBandwidth": 10258385316,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669420800000,
+        "end": 1669507200000,
+        "siteBandwidth": 9483819041,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669507200000,
+        "end": 1669593600000,
+        "siteBandwidth": 9776134036,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669593600000,
+        "end": 1669680000000,
+        "siteBandwidth": 11426879710,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669680000000,
+        "end": 1669766400000,
+        "siteBandwidth": 11172834213,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669766400000,
+        "end": 1669852800000,
+        "siteBandwidth": 12153169245,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669852800000,
+        "end": 1669939200000,
+        "siteBandwidth": 36401960125,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1669939200000,
+        "end": 1670025600000,
+        "siteBandwidth": 20664899978,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670025600000,
+        "end": 1670112000000,
+        "siteBandwidth": 14364321461,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670112000000,
+        "end": 1670198400000,
+        "siteBandwidth": 13841741810,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670198400000,
+        "end": 1670284800000,
+        "siteBandwidth": 13904760659,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670284800000,
+        "end": 1670371200000,
+        "siteBandwidth": 12326712320,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670371200000,
+        "end": 1670457600000,
+        "siteBandwidth": 12957887684,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670457600000,
+        "end": 1670544000000,
+        "siteBandwidth": 12254798771,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670544000000,
+        "end": 1670630400000,
+        "siteBandwidth": 12167417084,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670630400000,
+        "end": 1670716800000,
+        "siteBandwidth": 10595501922,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670716800000,
+        "end": 1670803200000,
+        "siteBandwidth": 10413590452,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670803200000,
+        "end": 1670889600000,
+        "siteBandwidth": 11028277821,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670889600000,
+        "end": 1670976000000,
+        "siteBandwidth": 11072118118,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1670976000000,
+        "end": 1671062400000,
+        "siteBandwidth": 11115405563,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1671062400000,
+        "end": 1671148800000,
+        "siteBandwidth": 10759669050,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1671148800000,
+        "end": 1671235200000,
+        "siteBandwidth": 986950690,
         "accountBandwidth": 0
       }
     ]
@@ -493,43 +493,43 @@
     "data": [
       {
         "path": "/blogs.xml",
-        "count": 28145
+        "count": 33793
       },
       {
         "path": "/apple-touch-icon.png",
-        "count": 14584
+        "count": 21972
       },
       {
         "path": "/apple-touch-icon-precomposed.png",
-        "count": 12500
-      },
-      {
-        "path": "/wp-content/plugins/ioptimization/IOptimize.php",
-        "count": 1094
+        "count": 18179
       },
       {
         "path": "/index.php",
-        "count": 1078
+        "count": 1128
       },
       {
-        "path": "/wp-content/plugins/wp-file-manager/lib/php/connector.minimal.php",
-        "count": 1071
+        "path": "/apple-touch-icon-120x120.png",
+        "count": 870
+      },
+      {
+        "path": "/apple-touch-icon-120x120-precomposed.png",
+        "count": 870
       },
       {
         "path": "/w/index.php",
-        "count": 973
+        "count": 857
       },
       {
-        "path": "/wp-content/themes/seotheme/db.php",
-        "count": 960
+        "path": "//xmlrpc.php",
+        "count": 594
       },
       {
-        "path": "/index.php/PHP%0ABonusChallengeExploits.php",
-        "count": 900
+        "path": "//wp/wp-includes/wlwmanifest.xml",
+        "count": 593
       },
       {
-        "path": "/wp-login.php",
-        "count": 805
+        "path": "//wordpress/wp-includes/wlwmanifest.xml",
+        "count": 579
       }
     ]
   },
@@ -537,43 +537,43 @@
     "data": [
       {
         "path": "",
-        "count": 654384
+        "count": 721663
       },
       {
         "path": "google.com",
-        "count": 90033
+        "count": 96667
       },
       {
         "path": "duckduckgo.com",
-        "count": 21031
+        "count": 22958
+      },
+      {
+        "path": "google.co.uk",
+        "count": 11332
       },
       {
         "path": "github.com",
-        "count": 9850
+        "count": 10343
+      },
+      {
+        "path": "news.ycombinator.com",
+        "count": 7112
       },
       {
         "path": "nixos.wiki",
-        "count": 6511
+        "count": 6852
       },
       {
         "path": "search.nixos.org",
-        "count": 4379
-      },
-      {
-        "path": "discourse.nixos.org",
-        "count": 2743
+        "count": 5131
       },
       {
         "path": "search.brave.com",
-        "count": 2675
+        "count": 3317
       },
       {
-        "path": "startpage.com",
-        "count": 1881
-      },
-      {
-        "path": "reddit.com",
-        "count": 1638
+        "path": "discourse.nixos.org",
+        "count": 3166
       }
     ]
   }
