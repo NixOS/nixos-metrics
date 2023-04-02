@@ -2,10 +2,6 @@
   "pageviews": {
     "data": [
       [
-        1677715200000,
-        40560
-      ],
-      [
         1677801600000,
         37153
       ],
@@ -123,16 +119,16 @@
       ],
       [
         1680307200000,
-        3905
+        32641
+      ],
+      [
+        1680393600000,
+        3890
       ]
     ]
   },
   "visitors": {
     "data": [
-      [
-        1677715200000,
-        10161
-      ],
       [
         1677801600000,
         8262
@@ -251,7 +247,11 @@
       ],
       [
         1680307200000,
-        939
+        6598
+      ],
+      [
+        1680393600000,
+        863
       ]
     ]
   },
@@ -259,54 +259,48 @@
     "data": [
       {
         "path": "/",
-        "count": 548077
+        "count": 546888
       },
       {
         "path": "/download.html",
-        "count": 67871
+        "count": 67583
       },
       {
         "path": "/blog/announcements.html",
-        "count": 48209
+        "count": 48399
       },
       {
         "path": "/learn.html",
-        "count": 33175
+        "count": 33110
       },
       {
         "path": "/manual/nixos/stable/index.html",
-        "count": 29977
+        "count": 30576
       },
       {
         "path": "/manual/nixpkgs/stable/",
-        "count": 29839
+        "count": 27880
       },
       {
         "path": "/manual/nixos/stable/",
-        "count": 23076
+        "count": 23128
       },
       {
         "path": "/explore.html",
-        "count": 16685
+        "count": 16461
       },
       {
         "path": "/manual/nix/stable/",
-        "count": 14824
+        "count": 14702
       },
       {
         "path": "/guides/ad-hoc-developer-environments.html",
-        "count": 12560
+        "count": 12493
       }
     ]
   },
   "bandwidth": {
     "data": [
-      {
-        "start": 1677715200000,
-        "end": 1677801600000,
-        "siteBandwidth": 13647519230,
-        "accountBandwidth": 0
-      },
       {
         "start": 1677801600000,
         "end": 1677888000000,
@@ -484,7 +478,13 @@
       {
         "start": 1680307200000,
         "end": 1680393600000,
-        "siteBandwidth": 1038276736,
+        "siteBandwidth": 10253712565,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1680393600000,
+        "end": 1680480000000,
+        "siteBandwidth": 1026796601,
         "accountBandwidth": 0
       }
     ]
@@ -493,19 +493,19 @@
     "data": [
       {
         "path": "/blogs.xml",
-        "count": 21381
+        "count": 21555
       },
       {
         "path": "/apple-touch-icon.png",
-        "count": 10291
+        "count": 10281
       },
       {
         "path": "/apple-touch-icon-precomposed.png",
-        "count": 7789
+        "count": 7795
       },
       {
         "path": "/wp-login.php",
-        "count": 4871
+        "count": 5001
       },
       {
         "path": "/login",
@@ -513,7 +513,7 @@
       },
       {
         "path": "/xmlrpc.php",
-        "count": 4366
+        "count": 4500
       },
       {
         "path": "/cgi-bin/redirect.cgi",
@@ -537,43 +537,43 @@
     "data": [
       {
         "path": "",
-        "count": 671764
+        "count": 667161
       },
       {
         "path": "google.com",
-        "count": 101973
+        "count": 100988
       },
       {
         "path": "duckduckgo.com",
-        "count": 30655
+        "count": 30576
       },
       {
         "path": "google.co.uk",
-        "count": 25870
+        "count": 25860
       },
       {
         "path": "github.com",
-        "count": 11794
+        "count": 11671
       },
       {
         "path": "nixos.wiki",
-        "count": 7380
+        "count": 7366
       },
       {
         "path": "search.nixos.org",
-        "count": 5867
+        "count": 5907
       },
       {
         "path": "search.brave.com",
-        "count": 3973
+        "count": 3978
       },
       {
         "path": "discourse.nixos.org",
-        "count": 3926
+        "count": 3900
       },
       {
         "path": "bing.com",
-        "count": 3248
+        "count": 3241
       }
     ]
   }
