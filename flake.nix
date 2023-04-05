@@ -32,7 +32,7 @@
       # TODO: test and add to CI
       #flake-utils.lib.system.aarch64-linux
       #flake-utils.lib.system.aarch64-linux
-      #flake-utils.lib.system.aarch64-darwin
+      flake-utils.lib.system.aarch64-darwin
       #flake-utils.lib.system.x86_64-darwin
     ]
     (
@@ -99,11 +99,15 @@
 
           root = self;
 
-          buildInputs = with pkgs; [
-            openssl
-            openssl.dev
-            pkg-config
-          ];
+          buildInputs = with pkgs;
+            [
+              openssl
+              openssl.dev
+              pkg-config
+            ]
+            ++ lib.optional pkgs.hostPlatform.isDarwin [
+              pkgs.libiconv
+            ];
         };
       in rec {
         checks = {inherit pre-commit nixos-metrics;};
@@ -112,13 +116,7 @@
         packages.default = packages.nixos-metrics;
 
         devShells.default = pkgs.mkShell {
-          buildInputs =
-            [rust]
-            ++ (with pkgs; [
-              openssl
-              openssl.dev
-              pkg-config
-            ]);
+          inputsFrom = [nixos-metrics];
           shellHook =
             pre-commit.shellHook
             + ''
