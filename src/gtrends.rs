@@ -1,5 +1,5 @@
 use anyhow::Result;
-use chrono::{Date, TimeZone, Utc};
+use chrono::{NaiveDate, TimeZone, Utc};
 use clap::Parser;
 use rtrend::{Client, Country, Keywords, SearchInterest};
 use serde::{Deserialize, Serialize};
@@ -49,8 +49,11 @@ pub async fn run(_args: &Cli) -> Result<()> {
         let keywords = Keywords::new(KEYWORDS.to_vec());
         let country = Country::ALL;
         // start at 2012, because before that the data gets weirdly high. maybe "nixos" meant something else?
-        let start: Date<Utc> = Utc.ymd(2012, 1, 1);
-        let end: Date<Utc> = Utc::today();
+        let start: NaiveDate = Utc
+            .with_ymd_and_hms(2012, 1, 1, 0, 0, 0)
+            .unwrap()
+            .date_naive();
+        let end: NaiveDate = Utc::now().date_naive();
         let client = Client::new(keywords, country).with_date(start, end).build();
         let raw = SearchInterest::new(client).get();
         let res: GtrendsResult = serde_json::from_value(raw)?;
