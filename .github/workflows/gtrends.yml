@@ -11,18 +11,18 @@ jobs:
     steps:
 
     - name: Checking out main branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: main
 
     - name: Checking out the data branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: data
         ref: data
 
     - name: Checking out the website branch
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         path: website
         ref: website
