@@ -47,7 +47,7 @@ jobs:
         nix run ./main -- process-netlify --dir ./data/netlify --graphs-out website/data-netlify.json --victoriametrics-out data/victoriametrics/netlify.jsonl
 
     - name: Commit scraped metrics to data branch
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: Daily scrape of Netlify metrics
         repository: ./data
@@ -59,7 +59,7 @@ jobs:
       if: github.repository == 'NixOS/nixos-metrics'
 
     - name: Commit processed data to website branch
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: Daily generation of netlify graphs
         repository: ./website

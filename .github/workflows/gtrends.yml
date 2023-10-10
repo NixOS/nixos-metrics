@@ -43,7 +43,7 @@ jobs:
         nix run ./main -- process-gtrends --data ./data/gtrends.json --graphs-out website/data-gtrends.json --victoriametrics-out data/victoriametrics/gtrends.jsonl
 
     - name: Commit metrics to data branch
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: Daily scrape of google trends data
         repository: ./data
@@ -55,7 +55,7 @@ jobs:
       if: github.repository == 'NixOS/nixos-metrics'
 
     - name: Commit processed data to website branch
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: Daily generation of google trends graph
         repository: ./website

@@ -21,7 +21,7 @@ jobs:
       run: cat data/victoriametrics/*.jsonl > data/victoriametrics.jsonl
 
     - name: Commit aggregate file to data branch
-      uses: stefanzweifel/git-auto-commit-action@v4
+      uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: Merge .jsonl files
         repository: ./data
