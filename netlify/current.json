@@ -2,78 +2,6 @@
   "pageviews": {
     "data": [
       [
-        1694563200000,
-        44115
-      ],
-      [
-        1694649600000,
-        51647
-      ],
-      [
-        1694736000000,
-        47458
-      ],
-      [
-        1694822400000,
-        39620
-      ],
-      [
-        1694908800000,
-        47026
-      ],
-      [
-        1694995200000,
-        44125
-      ],
-      [
-        1695081600000,
-        41210
-      ],
-      [
-        1695168000000,
-        42752
-      ],
-      [
-        1695254400000,
-        40847
-      ],
-      [
-        1695340800000,
-        39865
-      ],
-      [
-        1695427200000,
-        36854
-      ],
-      [
-        1695513600000,
-        38229
-      ],
-      [
-        1695600000000,
-        39034
-      ],
-      [
-        1695686400000,
-        41216
-      ],
-      [
-        1695772800000,
-        40305
-      ],
-      [
-        1695859200000,
-        39688
-      ],
-      [
-        1695945600000,
-        39658
-      ],
-      [
-        1696032000000,
-        38127
-      ],
-      [
         1696118400000,
         37769
       ],
@@ -123,84 +51,84 @@
       ],
       [
         1697155200000,
-        4442
+        40429
+      ],
+      [
+        1697241600000,
+        36672
+      ],
+      [
+        1697328000000,
+        37431
+      ],
+      [
+        1697414400000,
+        40690
+      ],
+      [
+        1697500800000,
+        43497
+      ],
+      [
+        1697587200000,
+        44327
+      ],
+      [
+        1697673600000,
+        46550
+      ],
+      [
+        1697760000000,
+        43263
+      ],
+      [
+        1697846400000,
+        45438
+      ],
+      [
+        1697932800000,
+        46931
+      ],
+      [
+        1698019200000,
+        40291
+      ],
+      [
+        1698105600000,
+        40542
+      ],
+      [
+        1698192000000,
+        39841
+      ],
+      [
+        1698278400000,
+        43142
+      ],
+      [
+        1698364800000,
+        43712
+      ],
+      [
+        1698451200000,
+        36989
+      ],
+      [
+        1698537600000,
+        45293
+      ],
+      [
+        1698624000000,
+        43066
+      ],
+      [
+        1698710400000,
+        4647
       ]
     ]
   },
   "visitors": {
     "data": [
-      [
-        1694563200000,
-        11487
-      ],
-      [
-        1694649600000,
-        11487
-      ],
-      [
-        1694736000000,
-        10938
-      ],
-      [
-        1694822400000,
-        9580
-      ],
-      [
-        1694908800000,
-        9963
-      ],
-      [
-        1694995200000,
-        11353
-      ],
-      [
-        1695081600000,
-        11106
-      ],
-      [
-        1695168000000,
-        10835
-      ],
-      [
-        1695254400000,
-        10427
-      ],
-      [
-        1695340800000,
-        10174
-      ],
-      [
-        1695427200000,
-        8646
-      ],
-      [
-        1695513600000,
-        8741
-      ],
-      [
-        1695600000000,
-        9835
-      ],
-      [
-        1695686400000,
-        10528
-      ],
-      [
-        1695772800000,
-        11073
-      ],
-      [
-        1695859200000,
-        11097
-      ],
-      [
-        1695945600000,
-        10562
-      ],
-      [
-        1696032000000,
-        9471
-      ],
       [
         1696118400000,
         9171
@@ -251,7 +179,79 @@
       ],
       [
         1697155200000,
-        1241
+        10767
+      ],
+      [
+        1697241600000,
+        8489
+      ],
+      [
+        1697328000000,
+        9012
+      ],
+      [
+        1697414400000,
+        11026
+      ],
+      [
+        1697500800000,
+        10880
+      ],
+      [
+        1697587200000,
+        10817
+      ],
+      [
+        1697673600000,
+        11875
+      ],
+      [
+        1697760000000,
+        10429
+      ],
+      [
+        1697846400000,
+        8297
+      ],
+      [
+        1697932800000,
+        8350
+      ],
+      [
+        1698019200000,
+        10570
+      ],
+      [
+        1698105600000,
+        10656
+      ],
+      [
+        1698192000000,
+        10156
+      ],
+      [
+        1698278400000,
+        10442
+      ],
+      [
+        1698364800000,
+        10028
+      ],
+      [
+        1698451200000,
+        8749
+      ],
+      [
+        1698537600000,
+        9721
+      ],
+      [
+        1698624000000,
+        11283
+      ],
+      [
+        1698710400000,
+        1249
       ]
     ]
   },
@@ -259,156 +259,48 @@
     "data": [
       {
         "path": "/",
-        "count": 586463
+        "count": 593329
       },
       {
         "path": "/download",
-        "count": 62796
+        "count": 56080
       },
       {
         "path": "/blog/announcements.html",
-        "count": 48059
+        "count": 49016
       },
       {
         "path": "/manual/nixos/stable/",
-        "count": 37940
+        "count": 36569
       },
       {
         "path": "/learn",
-        "count": 35075
-      },
-      {
-        "path": "/manual/nixpkgs/stable/",
-        "count": 27834
+        "count": 35292
       },
       {
         "path": "/download.html",
-        "count": 25901
+        "count": 28703
+      },
+      {
+        "path": "/manual/nixpkgs/stable/",
+        "count": 28387
       },
       {
         "path": "/explore",
-        "count": 18900
+        "count": 20255
       },
       {
         "path": "/manual/nix/stable/",
-        "count": 15448
+        "count": 15506
       },
       {
         "path": "/manual/nixos/stable/index.html",
-        "count": 13217
+        "count": 13644
       }
     ]
   },
   "bandwidth": {
     "data": [
-      {
-        "start": 1694563200000,
-        "end": 1694649600000,
-        "siteBandwidth": 17682983158,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1694649600000,
-        "end": 1694736000000,
-        "siteBandwidth": 17936091106,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1694736000000,
-        "end": 1694822400000,
-        "siteBandwidth": 17105407161,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1694822400000,
-        "end": 1694908800000,
-        "siteBandwidth": 14792244113,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1694908800000,
-        "end": 1694995200000,
-        "siteBandwidth": 15731540148,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1694995200000,
-        "end": 1695081600000,
-        "siteBandwidth": 17290882692,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695081600000,
-        "end": 1695168000000,
-        "siteBandwidth": 16387345788,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695168000000,
-        "end": 1695254400000,
-        "siteBandwidth": 16721911080,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695254400000,
-        "end": 1695340800000,
-        "siteBandwidth": 15680335077,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695340800000,
-        "end": 1695427200000,
-        "siteBandwidth": 15564729749,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695427200000,
-        "end": 1695513600000,
-        "siteBandwidth": 14072536047,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695513600000,
-        "end": 1695600000000,
-        "siteBandwidth": 13939724489,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695600000000,
-        "end": 1695686400000,
-        "siteBandwidth": 15310468920,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695686400000,
-        "end": 1695772800000,
-        "siteBandwidth": 16329430436,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695772800000,
-        "end": 1695859200000,
-        "siteBandwidth": 16733564287,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695859200000,
-        "end": 1695945600000,
-        "siteBandwidth": 16187521490,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1695945600000,
-        "end": 1696032000000,
-        "siteBandwidth": 16333202475,
-        "accountBandwidth": 0
-      },
-      {
-        "start": 1696032000000,
-        "end": 1696118400000,
-        "siteBandwidth": 15193833552,
-        "accountBandwidth": 0
-      },
       {
         "start": 1696118400000,
         "end": 1696204800000,
@@ -484,7 +376,115 @@
       {
         "start": 1697155200000,
         "end": 1697241600000,
-        "siteBandwidth": 1299410114,
+        "siteBandwidth": 14651532034,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1697241600000,
+        "end": 1697328000000,
+        "siteBandwidth": 13022369971,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1697328000000,
+        "end": 1697414400000,
+        "siteBandwidth": 14084600117,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1697414400000,
+        "end": 1697500800000,
+        "siteBandwidth": 15792979059,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1697500800000,
+        "end": 1697587200000,
+        "siteBandwidth": 16072563759,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1697587200000,
+        "end": 1697673600000,
+        "siteBandwidth": 15476057910,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1697673600000,
+        "end": 1697760000000,
+        "siteBandwidth": 15452208504,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1697760000000,
+        "end": 1697846400000,
+        "siteBandwidth": 16327036015,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1697846400000,
+        "end": 1697932800000,
+        "siteBandwidth": 17120841436,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1697932800000,
+        "end": 1698019200000,
+        "siteBandwidth": 17674896568,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1698019200000,
+        "end": 1698105600000,
+        "siteBandwidth": 15107725607,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1698105600000,
+        "end": 1698192000000,
+        "siteBandwidth": 15284784268,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1698192000000,
+        "end": 1698278400000,
+        "siteBandwidth": 15053964492,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1698278400000,
+        "end": 1698364800000,
+        "siteBandwidth": 15482445216,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1698364800000,
+        "end": 1698451200000,
+        "siteBandwidth": 15259614387,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1698451200000,
+        "end": 1698537600000,
+        "siteBandwidth": 12846574064,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1698537600000,
+        "end": 1698624000000,
+        "siteBandwidth": 15189266656,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1698624000000,
+        "end": 1698710400000,
+        "siteBandwidth": 17265026514,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1698710400000,
+        "end": 1698796800000,
+        "siteBandwidth": 1447482538,
         "accountBandwidth": 0
       }
     ]
@@ -493,43 +493,43 @@
     "data": [
       {
         "path": "/blogs.xml",
-        "count": 14846
+        "count": 14517
       },
       {
         "path": "/apple-touch-icon.png",
-        "count": 9785
+        "count": 8172
       },
       {
         "path": "/apple-touch-icon-precomposed.png",
-        "count": 5700
-      },
-      {
-        "path": "/",
-        "count": 4341
+        "count": 5106
       },
       {
         "path": "/wp-login.php",
-        "count": 3684
+        "count": 3717
       },
       {
         "path": "/xmlrpc.php",
-        "count": 3333
+        "count": 3158
       },
       {
-        "path": "/webdav/",
-        "count": 1726
+        "path": "/socket.io/",
+        "count": 1436
       },
       {
-        "path": "/sling/",
-        "count": 1719
+        "path": "/",
+        "count": 1026
       },
       {
-        "path": "/javax.faces.resource.../WEB-INF/web.xml.jsf",
-        "count": 1706
+        "path": "/index.php",
+        "count": 970
       },
       {
-        "path": "/bootstrap/",
-        "count": 964
+        "path": "/w/index.php",
+        "count": 948
+      },
+      {
+        "path": "/.well-known/traffic-advice",
+        "count": 695
       }
     ]
   },
@@ -537,43 +537,43 @@
     "data": [
       {
         "path": "",
-        "count": 691766
+        "count": 718812
       },
       {
         "path": "google.com",
-        "count": 140263
+        "count": 135252
       },
       {
         "path": "duckduckgo.com",
-        "count": 40856
+        "count": 38815
       },
       {
         "path": "google.co.uk",
-        "count": 27251
-      },
-      {
-        "path": "github.com",
-        "count": 11085
+        "count": 28793
       },
       {
         "path": "nixos.wiki",
-        "count": 10725
+        "count": 11247
+      },
+      {
+        "path": "github.com",
+        "count": 10639
       },
       {
         "path": "search.nixos.org",
-        "count": 6990
-      },
-      {
-        "path": "discourse.nixos.org",
-        "count": 6903
+        "count": 6796
       },
       {
         "path": "search.brave.com",
-        "count": 6809
+        "count": 6178
+      },
+      {
+        "path": "discourse.nixos.org",
+        "count": 5825
       },
       {
         "path": "bing.com",
-        "count": 4572
+        "count": 4232
       }
     ]
   }
