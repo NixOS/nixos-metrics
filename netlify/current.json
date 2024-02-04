@@ -2,10 +2,6 @@
   "pageviews": {
     "data": [
       [
-        1704326400000,
-        46709
-      ],
-      [
         1704412800000,
         45380
       ],
@@ -123,16 +119,16 @@
       ],
       [
         1706918400000,
-        5774
+        48034
+      ],
+      [
+        1707004800000,
+        5582
       ]
     ]
   },
   "visitors": {
     "data": [
-      [
-        1704326400000,
-        12099
-      ],
       [
         1704412800000,
         11203
@@ -251,7 +247,11 @@
       ],
       [
         1706918400000,
-        1519
+        11219
+      ],
+      [
+        1707004800000,
+        1632
       ]
     ]
   },
@@ -259,54 +259,48 @@
     "data": [
       {
         "path": "/",
-        "count": 758254
+        "count": 760508
       },
       {
         "path": "/download",
-        "count": 75386
+        "count": 75398
       },
       {
         "path": "/blog/announcements.html",
-        "count": 47191
+        "count": 47388
       },
       {
         "path": "/manual/nixos/stable/",
-        "count": 41853
+        "count": 41780
       },
       {
         "path": "/learn",
-        "count": 35568
+        "count": 35552
       },
       {
         "path": "/manual/nixpkgs/stable/",
-        "count": 33565
+        "count": 33477
       },
       {
         "path": "/manual/nixos/stable/options",
-        "count": 23188
+        "count": 23434
       },
       {
         "path": "/download.html",
-        "count": 18670
+        "count": 18625
       },
       {
         "path": "/explore",
-        "count": 18428
+        "count": 18357
       },
       {
         "path": "/manual/nix/stable/",
-        "count": 15553
+        "count": 15267
       }
     ]
   },
   "bandwidth": {
     "data": [
-      {
-        "start": 1704326400000,
-        "end": 1704412800000,
-        "siteBandwidth": 17434735797,
-        "accountBandwidth": 0
-      },
       {
         "start": 1704412800000,
         "end": 1704499200000,
@@ -484,7 +478,13 @@
       {
         "start": 1706918400000,
         "end": 1707004800000,
-        "siteBandwidth": 1667920043,
+        "siteBandwidth": 16318211578,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1707004800000,
+        "end": 1707091200000,
+        "siteBandwidth": 1823135764,
         "accountBandwidth": 0
       }
     ]
@@ -493,15 +493,15 @@
     "data": [
       {
         "path": "/blogs.xml",
-        "count": 15529
+        "count": 15516
       },
       {
         "path": "/payment/index.php",
-        "count": 12650
+        "count": 12432
       },
       {
         "path": "/.env",
-        "count": 9618
+        "count": 9584
       },
       {
         "path": "/apple-touch-icon.png",
@@ -509,27 +509,27 @@
       },
       {
         "path": "/users/sign_in",
-        "count": 5377
+        "count": 5366
       },
       {
         "path": "/apple-touch-icon-precomposed.png",
-        "count": 4821
+        "count": 4799
       },
       {
         "path": "/wp-login.php",
-        "count": 4110
+        "count": 4130
       },
       {
         "path": "/.git/config",
-        "count": 3525
+        "count": 3445
       },
       {
         "path": "/libs/granite/core/content/login.html/j_security_check",
         "count": 3168
       },
       {
-        "path": "/websvn/nix/",
-        "count": 2962
+        "path": "/webui/",
+        "count": 2985
       }
     ]
   },
@@ -537,43 +537,43 @@
     "data": [
       {
         "path": "",
-        "count": 862928
+        "count": 865462
       },
       {
         "path": "google.com",
-        "count": 169775
+        "count": 169404
       },
       {
         "path": "duckduckgo.com",
-        "count": 45629
+        "count": 45541
       },
       {
         "path": "google.co.uk",
-        "count": 27919
+        "count": 27906
       },
       {
         "path": "nixos.wiki",
-        "count": 13402
+        "count": 13332
       },
       {
         "path": "github.com",
-        "count": 12018
+        "count": 11929
       },
       {
         "path": "discourse.nixos.org",
-        "count": 8695
+        "count": 8798
       },
       {
         "path": "search.nixos.org",
-        "count": 7526
+        "count": 7508
       },
       {
         "path": "search.brave.com",
-        "count": 6456
+        "count": 6478
       },
       {
         "path": "bing.com",
-        "count": 4457
+        "count": 4433
       }
     ]
   }
