@@ -2,10 +2,6 @@
   "pageviews": {
     "data": [
       [
-        1705881600000,
-        47208
-      ],
-      [
         1705968000000,
         50177
       ],
@@ -123,16 +119,16 @@
       ],
       [
         1708473600000,
-        6740
+        66164
+      ],
+      [
+        1708560000000,
+        7222
       ]
     ]
   },
   "visitors": {
     "data": [
-      [
-        1705881600000,
-        12886
-      ],
       [
         1705968000000,
         13051
@@ -251,7 +247,11 @@
       ],
       [
         1708473600000,
-        1769
+        15995
+      ],
+      [
+        1708560000000,
+        1841
       ]
     ]
   },
@@ -259,54 +259,48 @@
     "data": [
       {
         "path": "/",
-        "count": 870028
+        "count": 883241
       },
       {
         "path": "/download",
-        "count": 79230
+        "count": 79779
       },
       {
         "path": "/blog/announcements.html",
-        "count": 49747
+        "count": 50028
       },
       {
         "path": "/manual/nixos/stable/",
-        "count": 43891
+        "count": 43913
       },
       {
         "path": "/learn",
-        "count": 39683
+        "count": 40154
       },
       {
         "path": "/manual/nixpkgs/stable/",
-        "count": 37838
+        "count": 37771
       },
       {
         "path": "/explore",
-        "count": 20605
+        "count": 20882
       },
       {
         "path": "/download.html",
-        "count": 20235
+        "count": 20533
       },
       {
         "path": "/manual/nixos/stable/options",
-        "count": 17682
+        "count": 17643
       },
       {
         "path": "/manual/nixos/stable/index.html",
-        "count": 13960
+        "count": 13933
       }
     ]
   },
   "bandwidth": {
     "data": [
-      {
-        "start": 1705881600000,
-        "end": 1705968000000,
-        "siteBandwidth": 17917354386,
-        "accountBandwidth": 0
-      },
       {
         "start": 1705968000000,
         "end": 1706054400000,
@@ -484,7 +478,13 @@
       {
         "start": 1708473600000,
         "end": 1708560000000,
-        "siteBandwidth": 2081945813,
+        "siteBandwidth": 22297647142,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1708560000000,
+        "end": 1708646400000,
+        "siteBandwidth": 2073075290,
         "accountBandwidth": 0
       }
     ]
@@ -497,19 +497,19 @@
       },
       {
         "path": "/blogs.xml",
-        "count": 15882
+        "count": 16118
       },
       {
         "path": "/payment/index.php",
-        "count": 8974
+        "count": 9119
       },
       {
         "path": "/.env",
-        "count": 8822
+        "count": 8980
       },
       {
         "path": "/apple-touch-icon.png",
-        "count": 8596
+        "count": 8680
       },
       {
         "path": "/fkpYGT1m4Hku4CnLB",
@@ -517,19 +517,19 @@
       },
       {
         "path": "/users/sign_in",
-        "count": 5437
+        "count": 5545
       },
       {
         "path": "/apple-touch-icon-precomposed.png",
-        "count": 4465
+        "count": 4500
       },
       {
         "path": "/wp-login.php",
-        "count": 4071
+        "count": 4070
       },
       {
         "path": "/.git/config",
-        "count": 3982
+        "count": 4031
       }
     ]
   },
@@ -537,43 +537,43 @@
     "data": [
       {
         "path": "",
-        "count": 909491
+        "count": 916968
       },
       {
         "path": "google.com",
-        "count": 166814
+        "count": 167468
       },
       {
         "path": "duckduckgo.com",
-        "count": 47612
+        "count": 47736
       },
       {
         "path": "google.co.uk",
-        "count": 27865
+        "count": 27970
       },
       {
         "path": "3.72.140.173",
-        "count": 14713
-      },
-      {
-        "path": "35.156.224.161",
-        "count": 14391
+        "count": 15702
       },
       {
         "path": "18.192.231.252",
-        "count": 14387
+        "count": 15474
+      },
+      {
+        "path": "35.156.224.161",
+        "count": 15374
       },
       {
         "path": "52.58.254.253",
-        "count": 14346
-      },
-      {
-        "path": "3.70.101.28",
-        "count": 14140
+        "count": 15338
       },
       {
         "path": "18.192.94.96",
-        "count": 14089
+        "count": 15113
+      },
+      {
+        "path": "3.70.101.28",
+        "count": 15100
       }
     ]
   }
