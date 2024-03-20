@@ -5,15 +5,24 @@ updates:
     directory: "/"
     schedule:
       interval: daily
-      time: '00:00'
-      timezone: UTC
     open-pull-requests-limit: 10
     commit-message:
         prefix: "chore"
         include: "scope"
+    groups:
+      all:
+        patterns:
+          - "*"
 
   - package-ecosystem: cargo
     directory: '/'
     schedule:
       interval: daily
     open-pull-requests-limit: 10
+    commit-message:
+        prefix: "chore"
+        include: "scope"
+    groups:
+      all:
+        patterns:
+          - "*"
