@@ -8,7 +8,7 @@ updates:
     open-pull-requests-limit: 10
     commit-message:
         prefix: "chore"
-        include: "scope"
+        include: "github-actions"
     groups:
       all:
         patterns:
@@ -21,7 +21,7 @@ updates:
     open-pull-requests-limit: 10
     commit-message:
         prefix: "chore"
-        include: "scope"
+        include: "cargo"
     groups:
       all:
         patterns:
