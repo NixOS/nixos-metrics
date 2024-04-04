@@ -2,10 +2,6 @@
   "pageviews": {
     "data": [
       [
-        1709510400000,
-        68288
-      ],
-      [
         1709596800000,
         68595
       ],
@@ -123,16 +119,16 @@
       ],
       [
         1712102400000,
-        7349
+        60192
+      ],
+      [
+        1712188800000,
+        5890
       ]
     ]
   },
   "visitors": {
     "data": [
-      [
-        1709510400000,
-        17003
-      ],
       [
         1709596800000,
         16840
@@ -251,7 +247,11 @@
       ],
       [
         1712102400000,
-        1962
+        15029
+      ],
+      [
+        1712188800000,
+        1725
       ]
     ]
   },
@@ -259,54 +259,48 @@
     "data": [
       {
         "path": "/",
-        "count": 1283835
+        "count": 1275814
       },
       {
         "path": "/download/",
-        "count": 74487
+        "count": 78121
       },
       {
         "path": "/manual/nixos/stable/",
-        "count": 58538
+        "count": 58192
       },
       {
         "path": "/download",
-        "count": 45173
+        "count": 41339
       },
       {
         "path": "/manual/nixpkgs/stable/",
-        "count": 38687
+        "count": 39130
       },
       {
         "path": "/learn/",
-        "count": 32667
+        "count": 34126
       },
       {
         "path": "/learn",
-        "count": 29241
+        "count": 27304
       },
       {
         "path": "/explore/",
-        "count": 17319
+        "count": 18168
       },
       {
         "path": "/manual/nix/stable/",
-        "count": 17090
+        "count": 17101
       },
       {
         "path": "/guides/nix-pills/",
-        "count": 15182
+        "count": 15329
       }
     ]
   },
   "bandwidth": {
     "data": [
-      {
-        "start": 1709510400000,
-        "end": 1709596800000,
-        "siteBandwidth": 24567468351,
-        "accountBandwidth": 0
-      },
       {
         "start": 1709596800000,
         "end": 1709683200000,
@@ -484,7 +478,13 @@
       {
         "start": 1712102400000,
         "end": 1712188800000,
-        "siteBandwidth": 1226857054,
+        "siteBandwidth": 11662496721,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1712188800000,
+        "end": 1712275200000,
+        "siteBandwidth": 1092289839,
         "accountBandwidth": 0
       }
     ]
@@ -493,19 +493,19 @@
     "data": [
       {
         "path": "/favicon.ico",
-        "count": 124019
+        "count": 129947
       },
       {
         "path": "/logo/nixos-lores.png",
-        "count": 19534
+        "count": 20312
       },
       {
         "path": "/blogs.xml",
-        "count": 17756
+        "count": 17688
       },
       {
         "path": "/pkgs/misc/vim-plugins",
-        "count": 14869
+        "count": 14871
       },
       {
         "path": "/.well-known/matrix/server",
@@ -513,11 +513,11 @@
       },
       {
         "path": "/logo/",
-        "count": 13980
+        "count": 13976
       },
       {
         "path": "/pkgs/misc/vim-plugins/vim-plugin-names",
-        "count": 13728
+        "count": 13730
       },
       {
         "path": "/js/",
@@ -537,39 +537,39 @@
     "data": [
       {
         "path": "",
-        "count": 1325373
+        "count": 1321853
       },
       {
         "path": "google.com",
-        "count": 1006972
+        "count": 1005991
       },
       {
         "path": "duckduckgo.com",
-        "count": 58797
+        "count": 58432
       },
       {
         "path": "3.70.101.28",
-        "count": 49014
+        "count": 48583
       },
       {
         "path": "18.192.231.252",
-        "count": 48785
+        "count": 48435
       },
       {
         "path": "35.156.224.161",
-        "count": 48754
+        "count": 48413
       },
       {
         "path": "18.192.94.96",
-        "count": 48631
+        "count": 48352
       },
       {
         "path": "52.58.254.253",
-        "count": 48576
+        "count": 48251
       },
       {
         "path": "3.72.140.173",
-        "count": 48396
+        "count": 48017
       },
       {
         "path": "bxss.me",
