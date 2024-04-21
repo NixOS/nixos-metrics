@@ -2,10 +2,6 @@
   "pageviews": {
     "data": [
       [
-        1710979200000,
-        104876
-      ],
-      [
         1711065600000,
         108256
       ],
@@ -123,16 +119,16 @@
       ],
       [
         1713571200000,
-        8553
+        65971
+      ],
+      [
+        1713657600000,
+        7793
       ]
     ]
   },
   "visitors": {
     "data": [
-      [
-        1710979200000,
-        15659
-      ],
       [
         1711065600000,
         15330
@@ -251,7 +247,11 @@
       ],
       [
         1713571200000,
-        1615
+        12318
+      ],
+      [
+        1713657600000,
+        1531
       ]
     ]
   },
@@ -259,54 +259,48 @@
     "data": [
       {
         "path": "/",
-        "count": 1146729
+        "count": 1108811
       },
       {
         "path": "/download/",
-        "count": 99499
+        "count": 99009
       },
       {
         "path": "/manual/nixos/stable/",
-        "count": 51696
+        "count": 51501
       },
       {
         "path": "/learn/",
-        "count": 41886
+        "count": 41499
       },
       {
         "path": "/manual/nixpkgs/stable/",
-        "count": 38430
+        "count": 38234
       },
       {
         "path": "/explore/",
-        "count": 22769
+        "count": 22425
       },
       {
         "path": "/guides/nix-pills/",
-        "count": 16206
+        "count": 16169
       },
       {
         "path": "/manual/nixos/stable/options.html",
-        "count": 15980
+        "count": 16044
       },
       {
         "path": "/manual/nix/stable/",
-        "count": 15816
+        "count": 15688
       },
       {
         "path": "/blog/",
-        "count": 15374
+        "count": 15316
       }
     ]
   },
   "bandwidth": {
     "data": [
-      {
-        "start": 1710979200000,
-        "end": 1711065600000,
-        "siteBandwidth": 11473259460,
-        "accountBandwidth": 0
-      },
       {
         "start": 1711065600000,
         "end": 1711152000000,
@@ -484,7 +478,13 @@
       {
         "start": 1713571200000,
         "end": 1713657600000,
-        "siteBandwidth": 3425479449,
+        "siteBandwidth": 14662951011,
+        "accountBandwidth": 0
+      },
+      {
+        "start": 1713657600000,
+        "end": 1713744000000,
+        "siteBandwidth": 1322055513,
         "accountBandwidth": 0
       }
     ]
@@ -493,27 +493,27 @@
     "data": [
       {
         "path": "/favicon.ico",
-        "count": 171149
+        "count": 171371
       },
       {
         "path": "/logo/nixos-lores.png",
-        "count": 19057
+        "count": 18370
       },
       {
         "path": "/blogs.xml",
-        "count": 16845
+        "count": 16824
       },
       {
         "path": "/pkgs/misc/vim-plugins",
-        "count": 14879
+        "count": 14888
       },
       {
         "path": "/logo/",
-        "count": 13982
+        "count": 13983
       },
       {
         "path": "/pkgs/misc/vim-plugins/vim-plugin-names",
-        "count": 13743
+        "count": 13751
       },
       {
         "path": "/js/",
@@ -525,11 +525,11 @@
       },
       {
         "path": "/teams/",
-        "count": 13452
+        "count": 13453
       },
       {
         "path": "/pkgs/misc/vim-plugins/update.py",
-        "count": 13116
+        "count": 13127
       }
     ]
   },
@@ -537,39 +537,39 @@
     "data": [
       {
         "path": "",
-        "count": 1267430
+        "count": 1231313
       },
       {
         "path": "google.com",
-        "count": 989198
+        "count": 987994
       },
       {
         "path": "duckduckgo.com",
-        "count": 52830
+        "count": 52620
       },
       {
         "path": "35.156.224.161",
-        "count": 38287
+        "count": 38233
       },
       {
         "path": "3.70.101.28",
-        "count": 38276
+        "count": 38225
       },
       {
         "path": "18.192.94.96",
-        "count": 38112
-      },
-      {
-        "path": "52.58.254.253",
-        "count": 37929
+        "count": 38005
       },
       {
         "path": "18.192.231.252",
-        "count": 37854
+        "count": 37962
       },
       {
         "path": "3.72.140.173",
-        "count": 37852
+        "count": 37927
+      },
+      {
+        "path": "52.58.254.253",
+        "count": 37856
       },
       {
         "path": "bxss.me",
