@@ -21,16 +21,14 @@ impl Line {
         K: NumCast + Ord + Copy + Debug,
         V: NumCast + Copy + Debug,
     {
-        let (x, y) = hm
-            .into_iter()
-            .map(|(x, y)| {
-                let x = x.to_f64().ok_or(anyhow!("Failed casting {:?} to f64", x))?;
-                let y = y.to_f64().ok_or(anyhow!("Failed casting {:?} to f64", y))?;
-                Ok((x, y))
-            })
-            .collect::<Result<Vec<_>>>()?
-            .into_iter()
-            .unzip();
+        let (x, y) = hm.into_iter().try_fold(
+            (Vec::with_capacity(hm.len()), Vec::with_capacity(hm.len())),
+            |(mut xs, mut ys), (x, y)| {
+                xs.push(x.to_f64().ok_or(anyhow!("Failed casting {:?} to f64", x))?);
+                ys.push(y.to_f64().ok_or(anyhow!("Failed casting {:?} to f64", y))?);
+                Ok((xs, ys))
+            },
+        )?;
 
         Ok(Line {
             label: label.into(),
