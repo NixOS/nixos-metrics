@@ -352,14 +352,14 @@
           "isPartial": null,
           "time": "1367366400",
           "value": [
-            2,
+            1,
             0,
             0
           ],
           "formattedAxisTime": "May 1, 2013",
           "formattedTime": "May 2013",
           "formattedValue": [
-            "2",
+            "1",
             "0",
             "0"
           ]
@@ -373,14 +373,14 @@
           "isPartial": null,
           "time": "1370044800",
           "value": [
-            2,
+            1,
             0,
             0
           ],
           "formattedAxisTime": "Jun 1, 2013",
           "formattedTime": "Jun 2013",
           "formattedValue": [
-            "2",
+            "1",
             "0",
             "0"
           ]
@@ -557,7 +557,7 @@
           "hasData": [
             true,
             false,
-            true
+            false
           ],
           "isPartial": null,
           "time": "1393632000",
@@ -571,7 +571,7 @@
           "formattedValue": [
             "2",
             "0",
-            "<1"
+            "0"
           ]
         },
         {
@@ -625,14 +625,14 @@
           "isPartial": null,
           "time": "1401580800",
           "value": [
-            3,
+            2,
             0,
             0
           ],
           "formattedAxisTime": "Jun 1, 2014",
           "formattedTime": "Jun 2014",
           "formattedValue": [
-            "3",
+            "2",
             "0",
             "0"
           ]
@@ -646,14 +646,14 @@
           "isPartial": null,
           "time": "1404172800",
           "value": [
-            3,
+            2,
             0,
             0
           ],
           "formattedAxisTime": "Jul 1, 2014",
           "formattedTime": "Jul 2014",
           "formattedValue": [
-            "3",
+            "2",
             "0",
             "0"
           ]
@@ -662,21 +662,21 @@
           "hasData": [
             true,
             false,
-            false
+            true
           ],
           "isPartial": null,
           "time": "1406851200",
           "value": [
-            3,
+            2,
             0,
             0
           ],
           "formattedAxisTime": "Aug 1, 2014",
           "formattedTime": "Aug 2014",
           "formattedValue": [
-            "3",
+            "2",
             "0",
-            "0"
+            "<1"
           ]
         },
         {
@@ -704,7 +704,7 @@
           "hasData": [
             true,
             false,
-            true
+            false
           ],
           "isPartial": null,
           "time": "1412121600",
@@ -718,7 +718,7 @@
           "formattedValue": [
             "3",
             "0",
-            "<1"
+            "0"
           ]
         },
         {
@@ -788,28 +788,28 @@
           "hasData": [
             true,
             false,
-            true
+            false
           ],
           "isPartial": null,
           "time": "1422748800",
           "value": [
-            4,
+            3,
             0,
             0
           ],
           "formattedAxisTime": "Feb 1, 2015",
           "formattedTime": "Feb 2015",
           "formattedValue": [
-            "4",
+            "3",
             "0",
-            "<1"
+            "0"
           ]
         },
         {
           "hasData": [
             true,
             false,
-            false
+            true
           ],
           "isPartial": null,
           "time": "1425168000",
@@ -823,14 +823,14 @@
           "formattedValue": [
             "3",
             "0",
-            "0"
+            "<1"
           ]
         },
         {
           "hasData": [
             true,
-            true,
-            true
+            false,
+            false
           ],
           "isPartial": null,
           "time": "1427846400",
@@ -843,8 +843,8 @@
           "formattedTime": "Apr 2015",
           "formattedValue": [
             "3",
-            "<1",
-            "<1"
+            "0",
+            "0"
           ]
         },
         {
@@ -856,14 +856,14 @@
           "isPartial": null,
           "time": "1430438400",
           "value": [
-            4,
+            3,
             0,
             0
           ],
           "formattedAxisTime": "May 1, 2015",
           "formattedTime": "May 2015",
           "formattedValue": [
-            "4",
+            "3",
             "0",
             "<1"
           ]
@@ -892,21 +892,21 @@
         {
           "hasData": [
             true,
-            true,
+            false,
             true
           ],
           "isPartial": null,
           "time": "1435708800",
           "value": [
-            4,
+            3,
             0,
             0
           ],
           "formattedAxisTime": "Jul 1, 2015",
           "formattedTime": "Jul 2015",
           "formattedValue": [
-            "4",
-            "<1",
+            "3",
+            "0",
             "<1"
           ]
         },
@@ -935,7 +935,7 @@
           "hasData": [
             true,
             false,
-            false
+            true
           ],
           "isPartial": null,
           "time": "1441065600",
@@ -949,7 +949,7 @@
           "formattedValue": [
             "3",
             "0",
-            "0"
+            "<1"
           ]
         },
         {
@@ -961,14 +961,14 @@
           "isPartial": null,
           "time": "1443657600",
           "value": [
-            5,
+            4,
             0,
             0
           ],
           "formattedAxisTime": "Oct 1, 2015",
           "formattedTime": "Oct 2015",
           "formattedValue": [
-            "5",
+            "4",
             "0",
             "<1"
           ]
@@ -1019,7 +1019,7 @@
           "hasData": [
             true,
             false,
-            true
+            false
           ],
           "isPartial": null,
           "time": "1451606400",
@@ -1033,14 +1033,14 @@
           "formattedValue": [
             "4",
             "0",
-            "<1"
+            "0"
           ]
         },
         {
           "hasData": [
             true,
             false,
-            false
+            true
           ],
           "isPartial": null,
           "time": "1454284800",
@@ -1054,7 +1054,7 @@
           "formattedValue": [
             "4",
             "0",
-            "0"
+            "<1"
           ]
         },
         {
@@ -1108,14 +1108,14 @@
           "isPartial": null,
           "time": "1462060800",
           "value": [
-            5,
+            4,
             0,
             0
           ],
           "formattedAxisTime": "May 1, 2016",
           "formattedTime": "May 2016",
           "formattedValue": [
-            "5",
+            "4",
             "0",
             "<1"
           ]
@@ -1129,14 +1129,14 @@
           "isPartial": null,
           "time": "1464739200",
           "value": [
-            5,
+            4,
             0,
             0
           ],
           "formattedAxisTime": "Jun 1, 2016",
           "formattedTime": "Jun 2016",
           "formattedValue": [
-            "5",
+            "4",
             "0",
             "<1"
           ]
@@ -1150,14 +1150,14 @@
           "isPartial": null,
           "time": "1467331200",
           "value": [
-            4,
+            3,
             0,
             0
           ],
           "formattedAxisTime": "Jul 1, 2016",
           "formattedTime": "Jul 2016",
           "formattedValue": [
-            "4",
+            "3",
             "0",
             "<1"
           ]
@@ -1171,14 +1171,14 @@
           "isPartial": null,
           "time": "1470009600",
           "value": [
-            4,
+            3,
             0,
             0
           ],
           "formattedAxisTime": "Aug 1, 2016",
           "formattedTime": "Aug 2016",
           "formattedValue": [
-            "4",
+            "3",
             "0",
             "<1"
           ]
@@ -1213,14 +1213,14 @@
           "isPartial": null,
           "time": "1475280000",
           "value": [
-            5,
+            4,
             0,
             0
           ],
           "formattedAxisTime": "Oct 1, 2016",
           "formattedTime": "Oct 2016",
           "formattedValue": [
-            "5",
+            "4",
             "0",
             "<1"
           ]
@@ -1236,14 +1236,14 @@
           "value": [
             4,
             0,
-            0
+            1
           ],
           "formattedAxisTime": "Nov 1, 2016",
           "formattedTime": "Nov 2016",
           "formattedValue": [
             "4",
             "0",
-            "<1"
+            "1"
           ]
         },
         {
@@ -1257,10 +1257,31 @@
           "value": [
             4,
             0,
-            1
+            0
           ],
           "formattedAxisTime": "Dec 1, 2016",
           "formattedTime": "Dec 2016",
+          "formattedValue": [
+            "4",
+            "0",
+            "<1"
+          ]
+        },
+        {
+          "hasData": [
+            true,
+            false,
+            true
+          ],
+          "isPartial": null,
+          "time": "1483228800",
+          "value": [
+            4,
+            0,
+            1
+          ],
+          "formattedAxisTime": "Jan 1, 2017",
+          "formattedTime": "Jan 2017",
           "formattedValue": [
             "4",
             "0",
@@ -1274,37 +1295,16 @@
             true
           ],
           "isPartial": null,
-          "time": "1483228800",
-          "value": [
-            5,
-            0,
-            1
-          ],
-          "formattedAxisTime": "Jan 1, 2017",
-          "formattedTime": "Jan 2017",
-          "formattedValue": [
-            "5",
-            "0",
-            "1"
-          ]
-        },
-        {
-          "hasData": [
-            true,
-            false,
-            true
-          ],
-          "isPartial": null,
           "time": "1485907200",
           "value": [
-            5,
+            4,
             0,
             1
           ],
           "formattedAxisTime": "Feb 1, 2017",
           "formattedTime": "Feb 2017",
           "formattedValue": [
-            "5",
+            "4",
             "0",
             "1"
           ]
@@ -1312,7 +1312,7 @@
         {
           "hasData": [
             true,
-            false,
+            true,
             true
           ],
           "isPartial": null,
@@ -1326,7 +1326,7 @@
           "formattedTime": "Mar 2017",
           "formattedValue": [
             "5",
-            "0",
+            "<1",
             "1"
           ]
         },
@@ -1381,16 +1381,16 @@
           "isPartial": null,
           "time": "1496275200",
           "value": [
-            5,
+            4,
             0,
-            1
+            0
           ],
           "formattedAxisTime": "Jun 1, 2017",
           "formattedTime": "Jun 2017",
           "formattedValue": [
-            "5",
+            "4",
             "0",
-            "1"
+            "<1"
           ]
         },
         {
@@ -1402,14 +1402,14 @@
           "isPartial": null,
           "time": "1498867200",
           "value": [
-            5,
+            4,
             0,
             1
           ],
           "formattedAxisTime": "Jul 1, 2017",
           "formattedTime": "Jul 2017",
           "formattedValue": [
-            "5",
+            "4",
             "0",
             "1"
           ]
@@ -1417,21 +1417,21 @@
         {
           "hasData": [
             true,
-            false,
+            true,
             true
           ],
           "isPartial": null,
           "time": "1501545600",
           "value": [
-            5,
+            4,
             0,
             1
           ],
           "formattedAxisTime": "Aug 1, 2017",
           "formattedTime": "Aug 2017",
           "formattedValue": [
-            "5",
-            "0",
+            "4",
+            "<1",
             "1"
           ]
         },
@@ -1444,16 +1444,16 @@
           "isPartial": null,
           "time": "1504224000",
           "value": [
-            5,
+            4,
             0,
-            1
+            0
           ],
           "formattedAxisTime": "Sep 1, 2017",
           "formattedTime": "Sep 2017",
           "formattedValue": [
-            "5",
+            "4",
             "0",
-            "1"
+            "<1"
           ]
         },
         {
@@ -1465,14 +1465,14 @@
           "isPartial": null,
           "time": "1506816000",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Oct 1, 2017",
           "formattedTime": "Oct 2017",
           "formattedValue": [
-            "6",
+            "5",
             "0",
             "1"
           ]
@@ -1501,21 +1501,21 @@
         {
           "hasData": [
             true,
-            true,
+            false,
             true
           ],
           "isPartial": null,
           "time": "1512086400",
           "value": [
-            5,
+            4,
             0,
             1
           ],
           "formattedAxisTime": "Dec 1, 2017",
           "formattedTime": "Dec 2017",
           "formattedValue": [
-            "5",
-            "<1",
+            "4",
+            "0",
             "1"
           ]
         },
@@ -1549,14 +1549,14 @@
           "isPartial": null,
           "time": "1517443200",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Feb 1, 2018",
           "formattedTime": "Feb 2018",
           "formattedValue": [
-            "6",
+            "5",
             "0",
             "1"
           ]
@@ -1564,7 +1564,7 @@
         {
           "hasData": [
             true,
-            false,
+            true,
             true
           ],
           "isPartial": null,
@@ -1578,28 +1578,28 @@
           "formattedTime": "Mar 2018",
           "formattedValue": [
             "5",
-            "0",
+            "<1",
             "1"
           ]
         },
         {
           "hasData": [
             true,
-            false,
+            true,
             true
           ],
           "isPartial": null,
           "time": "1522540800",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Apr 1, 2018",
           "formattedTime": "Apr 2018",
           "formattedValue": [
-            "6",
-            "0",
+            "5",
+            "<1",
             "1"
           ]
         },
@@ -1627,21 +1627,21 @@
         {
           "hasData": [
             true,
-            false,
+            true,
             true
           ],
           "isPartial": null,
           "time": "1527811200",
           "value": [
-            5,
+            4,
             0,
             1
           ],
           "formattedAxisTime": "Jun 1, 2018",
           "formattedTime": "Jun 2018",
           "formattedValue": [
-            "5",
-            "0",
+            "4",
+            "<1",
             "1"
           ]
         },
@@ -1675,14 +1675,14 @@
           "isPartial": null,
           "time": "1533081600",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Aug 1, 2018",
           "formattedTime": "Aug 2018",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -1738,14 +1738,14 @@
           "isPartial": null,
           "time": "1541030400",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Nov 1, 2018",
           "formattedTime": "Nov 2018",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -1759,14 +1759,14 @@
           "isPartial": null,
           "time": "1543622400",
           "value": [
-            5,
+            4,
             0,
             1
           ],
           "formattedAxisTime": "Dec 1, 2018",
           "formattedTime": "Dec 2018",
           "formattedValue": [
-            "5",
+            "4",
             "0",
             "1"
           ]
@@ -1780,14 +1780,14 @@
           "isPartial": null,
           "time": "1546300800",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Jan 1, 2019",
           "formattedTime": "Jan 2019",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -1816,7 +1816,7 @@
         {
           "hasData": [
             true,
-            false,
+            true,
             true
           ],
           "isPartial": null,
@@ -1830,7 +1830,7 @@
           "formattedTime": "Mar 2019",
           "formattedValue": [
             "5",
-            "0",
+            "<1",
             "1"
           ]
         },
@@ -1843,14 +1843,14 @@
           "isPartial": null,
           "time": "1554076800",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Apr 1, 2019",
           "formattedTime": "Apr 2019",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -1858,21 +1858,21 @@
         {
           "hasData": [
             true,
-            false,
+            true,
             true
           ],
           "isPartial": null,
           "time": "1556668800",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "May 1, 2019",
           "formattedTime": "May 2019",
           "formattedValue": [
-            "6",
-            "0",
+            "5",
+            "<1",
             "1"
           ]
         },
@@ -1885,14 +1885,14 @@
           "isPartial": null,
           "time": "1559347200",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Jun 1, 2019",
           "formattedTime": "Jun 2019",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -1906,14 +1906,14 @@
           "isPartial": null,
           "time": "1561939200",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Jul 1, 2019",
           "formattedTime": "Jul 2019",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -1948,14 +1948,14 @@
           "isPartial": null,
           "time": "1567296000",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Sep 1, 2019",
           "formattedTime": "Sep 2019",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -1969,14 +1969,14 @@
           "isPartial": null,
           "time": "1569888000",
           "value": [
-            7,
+            6,
             0,
             1
           ],
           "formattedAxisTime": "Oct 1, 2019",
           "formattedTime": "Oct 2019",
           "formattedValue": [
-            "7",
+            "6",
             "<1",
             "1"
           ]
@@ -2011,14 +2011,14 @@
           "isPartial": null,
           "time": "1575158400",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Dec 1, 2019",
           "formattedTime": "Dec 2019",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -2095,14 +2095,14 @@
           "isPartial": null,
           "time": "1585699200",
           "value": [
-            8,
+            7,
             0,
             1
           ],
           "formattedAxisTime": "Apr 1, 2020",
           "formattedTime": "Apr 2020",
           "formattedValue": [
-            "8",
+            "7",
             "<1",
             "1"
           ]
@@ -2116,14 +2116,14 @@
           "isPartial": null,
           "time": "1588291200",
           "value": [
-            8,
+            7,
             0,
             1
           ],
           "formattedAxisTime": "May 1, 2020",
           "formattedTime": "May 2020",
           "formattedValue": [
-            "8",
+            "7",
             "<1",
             "1"
           ]
@@ -2158,14 +2158,14 @@
           "isPartial": null,
           "time": "1593561600",
           "value": [
-            8,
+            7,
             0,
             1
           ],
           "formattedAxisTime": "Jul 1, 2020",
           "formattedTime": "Jul 2020",
           "formattedValue": [
-            "8",
+            "7",
             "<1",
             "1"
           ]
@@ -2179,14 +2179,14 @@
           "isPartial": null,
           "time": "1596240000",
           "value": [
-            7,
+            6,
             0,
             1
           ],
           "formattedAxisTime": "Aug 1, 2020",
           "formattedTime": "Aug 2020",
           "formattedValue": [
-            "7",
+            "6",
             "<1",
             "1"
           ]
@@ -2200,14 +2200,14 @@
           "isPartial": null,
           "time": "1598918400",
           "value": [
-            7,
+            6,
             0,
             1
           ],
           "formattedAxisTime": "Sep 1, 2020",
           "formattedTime": "Sep 2020",
           "formattedValue": [
-            "7",
+            "6",
             "<1",
             "1"
           ]
@@ -2221,14 +2221,14 @@
           "isPartial": null,
           "time": "1601510400",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Oct 1, 2020",
           "formattedTime": "Oct 2020",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -2305,14 +2305,14 @@
           "isPartial": null,
           "time": "1612137600",
           "value": [
-            6,
+            5,
             0,
             1
           ],
           "formattedAxisTime": "Feb 1, 2021",
           "formattedTime": "Feb 2021",
           "formattedValue": [
-            "6",
+            "5",
             "<1",
             "1"
           ]
@@ -2320,7 +2320,7 @@
         {
           "hasData": [
             true,
-            false,
+            true,
             true
           ],
           "isPartial": null,
@@ -2334,14 +2334,14 @@
           "formattedTime": "Mar 2021",
           "formattedValue": [
             "5",
-            "0",
+            "<1",
             "1"
           ]
         },
         {
           "hasData": [
             true,
-            true,
+            false,
             true
           ],
           "isPartial": null,
@@ -2355,7 +2355,7 @@
           "formattedTime": "Apr 2021",
           "formattedValue": [
             "6",
-            "<1",
+            "0",
             "1"
           ]
         },
@@ -2389,14 +2389,14 @@
           "isPartial": null,
           "time": "1622505600",
           "value": [
-            8,
+            7,
             0,
             1
           ],
           "formattedAxisTime": "Jun 1, 2021",
           "formattedTime": "Jun 2021",
           "formattedValue": [
-            "8",
+            "7",
             "<1",
             "1"
           ]
@@ -2431,14 +2431,14 @@
           "isPartial": null,
           "time": "1627776000",
           "value": [
-            7,
+            6,
             0,
             1
           ],
           "formattedAxisTime": "Aug 1, 2021",
           "formattedTime": "Aug 2021",
           "formattedValue": [
-            "7",
+            "6",
             "<1",
             "1"
           ]
@@ -2452,14 +2452,14 @@
           "isPartial": null,
           "time": "1630454400",
           "value": [
-            7,
+            6,
             0,
             1
           ],
           "formattedAxisTime": "Sep 1, 2021",
           "formattedTime": "Sep 2021",
           "formattedValue": [
-            "7",
+            "6",
             "<1",
             "1"
           ]
@@ -2473,14 +2473,14 @@
           "isPartial": null,
           "time": "1633046400",
           "value": [
-            8,
+            7,
             0,
             1
           ],
           "formattedAxisTime": "Oct 1, 2021",
           "formattedTime": "Oct 2021",
           "formattedValue": [
-            "8",
+            "7",
             "<1",
             "1"
           ]
@@ -2494,14 +2494,14 @@
           "isPartial": null,
           "time": "1635724800",
           "value": [
-            8,
+            7,
             0,
             1
           ],
           "formattedAxisTime": "Nov 1, 2021",
           "formattedTime": "Nov 2021",
           "formattedValue": [
-            "8",
+            "7",
             "<1",
             "1"
           ]
@@ -2515,14 +2515,14 @@
           "isPartial": null,
           "time": "1638316800",
           "value": [
-            9,
+            8,
             0,
             1
           ],
           "formattedAxisTime": "Dec 1, 2021",
           "formattedTime": "Dec 2021",
           "formattedValue": [
-            "9",
+            "8",
             "<1",
             "1"
           ]
@@ -2536,14 +2536,14 @@
           "isPartial": null,
           "time": "1640995200",
           "value": [
-            11,
+            10,
             0,
             2
           ],
           "formattedAxisTime": "Jan 1, 2022",
           "formattedTime": "Jan 2022",
           "formattedValue": [
-            "11",
+            "10",
             "<1",
             "2"
           ]
@@ -2557,16 +2557,16 @@
           "isPartial": null,
           "time": "1643673600",
           "value": [
-            11,
+            10,
             0,
-            2
+            1
           ],
           "formattedAxisTime": "Feb 1, 2022",
           "formattedTime": "Feb 2022",
           "formattedValue": [
-            "11",
+            "10",
             "<1",
-            "2"
+            "1"
           ]
         },
         {
@@ -2578,14 +2578,14 @@
           "isPartial": null,
           "time": "1646092800",
           "value": [
-            11,
+            10,
             0,
             1
           ],
           "formattedAxisTime": "Mar 1, 2022",
           "formattedTime": "Mar 2022",
           "formattedValue": [
-            "11",
+            "10",
             "<1",
             "1"
           ]
@@ -2599,14 +2599,14 @@
           "isPartial": null,
           "time": "1648771200",
           "value": [
-            12,
+            11,
             0,
             2
           ],
           "formattedAxisTime": "Apr 1, 2022",
           "formattedTime": "Apr 2022",
           "formattedValue": [
-            "12",
+            "11",
             "<1",
             "2"
           ]
@@ -2620,16 +2620,16 @@
           "isPartial": null,
           "time": "1651363200",
           "value": [
-            12,
+            11,
             0,
-            2
+            1
           ],
           "formattedAxisTime": "May 1, 2022",
           "formattedTime": "May 2022",
           "formattedValue": [
-            "12",
+            "11",
             "<1",
-            "2"
+            "1"
           ]
         },
         {
@@ -2641,16 +2641,16 @@
           "isPartial": null,
           "time": "1654041600",
           "value": [
-            14,
+            13,
             0,
-            2
+            1
           ],
           "formattedAxisTime": "Jun 1, 2022",
           "formattedTime": "Jun 2022",
           "formattedValue": [
-            "14",
+            "13",
             "<1",
-            "2"
+            "1"
           ]
         },
         {
@@ -2662,14 +2662,14 @@
           "isPartial": null,
           "time": "1656633600",
           "value": [
-            12,
+            11,
             0,
             1
           ],
           "formattedAxisTime": "Jul 1, 2022",
           "formattedTime": "Jul 2022",
           "formattedValue": [
-            "12",
+            "11",
             "<1",
             "1"
           ]
@@ -2683,16 +2683,16 @@
           "isPartial": null,
           "time": "1659312000",
           "value": [
-            12,
+            11,
             0,
-            2
+            1
           ],
           "formattedAxisTime": "Aug 1, 2022",
           "formattedTime": "Aug 2022",
           "formattedValue": [
-            "12",
+            "11",
             "<1",
-            "2"
+            "1"
           ]
         },
         {
@@ -2704,14 +2704,14 @@
           "isPartial": null,
           "time": "1661990400",
           "value": [
-            12,
+            11,
             0,
             1
           ],
           "formattedAxisTime": "Sep 1, 2022",
           "formattedTime": "Sep 2022",
           "formattedValue": [
-            "12",
+            "11",
             "<1",
             "1"
           ]
@@ -2725,14 +2725,14 @@
           "isPartial": null,
           "time": "1664582400",
           "value": [
-            13,
+            11,
             0,
             2
           ],
           "formattedAxisTime": "Oct 1, 2022",
           "formattedTime": "Oct 2022",
           "formattedValue": [
-            "13",
+            "11",
             "<1",
             "2"
           ]
@@ -2746,14 +2746,14 @@
           "isPartial": null,
           "time": "1667260800",
           "value": [
-            13,
+            12,
             0,
             2
           ],
           "formattedAxisTime": "Nov 1, 2022",
           "formattedTime": "Nov 2022",
           "formattedValue": [
-            "13",
+            "12",
             "<1",
             "2"
           ]
@@ -2767,16 +2767,16 @@
           "isPartial": null,
           "time": "1669852800",
           "value": [
-            14,
-            1,
-            2
+            13,
+            0,
+            1
           ],
           "formattedAxisTime": "Dec 1, 2022",
           "formattedTime": "Dec 2022",
           "formattedValue": [
-            "14",
-            "1",
-            "2"
+            "13",
+            "<1",
+            "1"
           ]
         },
         {
@@ -2788,14 +2788,14 @@
           "isPartial": null,
           "time": "1672531200",
           "value": [
-            15,
+            13,
             0,
             2
           ],
           "formattedAxisTime": "Jan 1, 2023",
           "formattedTime": "Jan 2023",
           "formattedValue": [
-            "15",
+            "13",
             "<1",
             "2"
           ]
@@ -2809,14 +2809,14 @@
           "isPartial": null,
           "time": "1675209600",
           "value": [
-            15,
+            14,
             1,
             2
           ],
           "formattedAxisTime": "Feb 1, 2023",
           "formattedTime": "Feb 2023",
           "formattedValue": [
-            "15",
+            "14",
             "1",
             "2"
           ]
@@ -2830,54 +2830,12 @@
           "isPartial": null,
           "time": "1677628800",
           "value": [
-            15,
+            14,
             0,
             2
           ],
           "formattedAxisTime": "Mar 1, 2023",
           "formattedTime": "Mar 2023",
-          "formattedValue": [
-            "15",
-            "<1",
-            "2"
-          ]
-        },
-        {
-          "hasData": [
-            true,
-            true,
-            true
-          ],
-          "isPartial": null,
-          "time": "1680307200",
-          "value": [
-            15,
-            0,
-            2
-          ],
-          "formattedAxisTime": "Apr 1, 2023",
-          "formattedTime": "Apr 2023",
-          "formattedValue": [
-            "15",
-            "<1",
-            "2"
-          ]
-        },
-        {
-          "hasData": [
-            true,
-            true,
-            true
-          ],
-          "isPartial": null,
-          "time": "1682899200",
-          "value": [
-            14,
-            0,
-            2
-          ],
-          "formattedAxisTime": "May 1, 2023",
-          "formattedTime": "May 2023",
           "formattedValue": [
             "14",
             "<1",
@@ -2891,16 +2849,58 @@
             true
           ],
           "isPartial": null,
+          "time": "1680307200",
+          "value": [
+            13,
+            0,
+            1
+          ],
+          "formattedAxisTime": "Apr 1, 2023",
+          "formattedTime": "Apr 2023",
+          "formattedValue": [
+            "13",
+            "<1",
+            "1"
+          ]
+        },
+        {
+          "hasData": [
+            true,
+            true,
+            true
+          ],
+          "isPartial": null,
+          "time": "1682899200",
+          "value": [
+            12,
+            0,
+            1
+          ],
+          "formattedAxisTime": "May 1, 2023",
+          "formattedTime": "May 2023",
+          "formattedValue": [
+            "12",
+            "<1",
+            "1"
+          ]
+        },
+        {
+          "hasData": [
+            true,
+            true,
+            true
+          ],
+          "isPartial": null,
           "time": "1685577600",
           "value": [
-            22,
+            21,
             0,
             2
           ],
           "formattedAxisTime": "Jun 1, 2023",
           "formattedTime": "Jun 2023",
           "formattedValue": [
-            "22",
+            "21",
             "<1",
             "2"
           ]
@@ -2914,15 +2914,15 @@
           "isPartial": null,
           "time": "1688169600",
           "value": [
-            26,
-            1,
+            24,
+            0,
             2
           ],
           "formattedAxisTime": "Jul 1, 2023",
           "formattedTime": "Jul 2023",
           "formattedValue": [
-            "26",
-            "1",
+            "24",
+            "<1",
             "2"
           ]
         },
@@ -2935,14 +2935,14 @@
           "isPartial": null,
           "time": "1690848000",
           "value": [
-            26,
+            23,
             1,
             2
           ],
           "formattedAxisTime": "Aug 1, 2023",
           "formattedTime": "Aug 2023",
           "formattedValue": [
-            "26",
+            "23",
             "1",
             "2"
           ]
@@ -2957,14 +2957,14 @@
           "time": "1693526400",
           "value": [
             26,
-            1,
+            0,
             2
           ],
           "formattedAxisTime": "Sep 1, 2023",
           "formattedTime": "Sep 2023",
           "formattedValue": [
             "26",
-            "1",
+            "<1",
             "2"
           ]
         },
@@ -2977,14 +2977,14 @@
           "isPartial": null,
           "time": "1696118400",
           "value": [
-            27,
+            24,
             0,
             2
           ],
           "formattedAxisTime": "Oct 1, 2023",
           "formattedTime": "Oct 2023",
           "formattedValue": [
-            "27",
+            "24",
             "<1",
             "2"
           ]
@@ -2998,16 +2998,16 @@
           "isPartial": null,
           "time": "1698796800",
           "value": [
-            28,
+            24,
             0,
-            3
+            2
           ],
           "formattedAxisTime": "Nov 1, 2023",
           "formattedTime": "Nov 2023",
           "formattedValue": [
-            "28",
+            "24",
             "<1",
-            "3"
+            "2"
           ]
         },
         {
@@ -3019,14 +3019,14 @@
           "isPartial": null,
           "time": "1701388800",
           "value": [
-            28,
+            26,
             0,
             2
           ],
           "formattedAxisTime": "Dec 1, 2023",
           "formattedTime": "Dec 2023",
           "formattedValue": [
-            "28",
+            "26",
             "<1",
             "2"
           ]
@@ -3040,14 +3040,14 @@
           "isPartial": null,
           "time": "1704067200",
           "value": [
-            29,
+            27,
             1,
             3
           ],
           "formattedAxisTime": "Jan 1, 2024",
           "formattedTime": "Jan 2024",
           "formattedValue": [
-            "29",
+            "27",
             "1",
             "3"
           ]
@@ -3061,14 +3061,14 @@
           "isPartial": null,
           "time": "1706745600",
           "value": [
-            38,
+            34,
             1,
             3
           ],
           "formattedAxisTime": "Feb 1, 2024",
           "formattedTime": "Feb 2024",
           "formattedValue": [
-            "38",
+            "34",
             "1",
             "3"
           ]
@@ -3082,16 +3082,16 @@
           "isPartial": null,
           "time": "1709251200",
           "value": [
-            46,
+            42,
             1,
-            4
+            3
           ],
           "formattedAxisTime": "Mar 1, 2024",
           "formattedTime": "Mar 2024",
           "formattedValue": [
-            "46",
+            "42",
             "1",
-            "4"
+            "3"
           ]
         },
         {
@@ -3103,16 +3103,16 @@
           "isPartial": null,
           "time": "1711929600",
           "value": [
-            42,
+            36,
             1,
-            4
+            3
           ],
           "formattedAxisTime": "Apr 1, 2024",
           "formattedTime": "Apr 2024",
           "formattedValue": [
-            "42",
+            "36",
             "1",
-            "4"
+            "3"
           ]
         },
         {
@@ -3124,16 +3124,16 @@
           "isPartial": null,
           "time": "1714521600",
           "value": [
-            44,
+            40,
             1,
-            4
+            3
           ],
           "formattedAxisTime": "May 1, 2024",
           "formattedTime": "May 2024",
           "formattedValue": [
-            "44",
+            "40",
             "1",
-            "4"
+            "3"
           ]
         },
         {
@@ -3145,14 +3145,14 @@
           "isPartial": null,
           "time": "1717200000",
           "value": [
-            45,
+            41,
             1,
             4
           ],
           "formattedAxisTime": "Jun 1, 2024",
           "formattedTime": "Jun 2024",
           "formattedValue": [
-            "45",
+            "41",
             "1",
             "4"
           ]
@@ -3166,16 +3166,16 @@
           "isPartial": null,
           "time": "1719792000",
           "value": [
-            42,
-            1,
-            4
+            40,
+            0,
+            3
           ],
           "formattedAxisTime": "Jul 1, 2024",
           "formattedTime": "Jul 2024",
           "formattedValue": [
-            "42",
-            "1",
-            "4"
+            "40",
+            "<1",
+            "3"
           ]
         },
         {
@@ -3187,16 +3187,16 @@
           "isPartial": null,
           "time": "1722470400",
           "value": [
-            47,
+            38,
             1,
-            4
+            3
           ],
           "formattedAxisTime": "Aug 1, 2024",
           "formattedTime": "Aug 2024",
           "formattedValue": [
-            "47",
+            "38",
             "1",
-            "4"
+            "3"
           ]
         },
         {
@@ -3208,14 +3208,14 @@
           "isPartial": null,
           "time": "1725148800",
           "value": [
-            51,
+            45,
             1,
             4
           ],
           "formattedAxisTime": "Sep 1, 2024",
           "formattedTime": "Sep 2024",
           "formattedValue": [
-            "51",
+            "45",
             "1",
             "4"
           ]
@@ -3229,16 +3229,16 @@
           "isPartial": null,
           "time": "1727740800",
           "value": [
-            48,
+            44,
             1,
-            5
+            4
           ],
           "formattedAxisTime": "Oct 1, 2024",
           "formattedTime": "Oct 2024",
           "formattedValue": [
-            "48",
+            "44",
             "1",
-            "5"
+            "4"
           ]
         },
         {
@@ -3250,14 +3250,14 @@
           "isPartial": null,
           "time": "1730419200",
           "value": [
-            47,
+            43,
             1,
             5
           ],
           "formattedAxisTime": "Nov 1, 2024",
           "formattedTime": "Nov 2024",
           "formattedValue": [
-            "47",
+            "43",
             "1",
             "5"
           ]
@@ -3271,16 +3271,16 @@
           "isPartial": null,
           "time": "1733011200",
           "value": [
-            51,
+            45,
             1,
-            5
+            4
           ],
           "formattedAxisTime": "Dec 1, 2024",
           "formattedTime": "Dec 2024",
           "formattedValue": [
-            "51",
+            "45",
             "1",
-            "5"
+            "4"
           ]
         },
         {
@@ -3292,14 +3292,14 @@
           "isPartial": null,
           "time": "1735689600",
           "value": [
-            53,
+            48,
             1,
             5
           ],
           "formattedAxisTime": "Jan 1, 2025",
           "formattedTime": "Jan 2025",
           "formattedValue": [
-            "53",
+            "48",
             "1",
             "5"
           ]
@@ -3313,14 +3313,14 @@
           "isPartial": null,
           "time": "1738368000",
           "value": [
-            50,
+            44,
             1,
             5
           ],
           "formattedAxisTime": "Feb 1, 2025",
           "formattedTime": "Feb 2025",
           "formattedValue": [
-            "50",
+            "44",
             "1",
             "5"
           ]
@@ -3334,14 +3334,14 @@
           "isPartial": null,
           "time": "1740787200",
           "value": [
-            49,
+            45,
             1,
             5
           ],
           "formattedAxisTime": "Mar 1, 2025",
           "formattedTime": "Mar 2025",
           "formattedValue": [
-            "49",
+            "45",
             "1",
             "5"
           ]
@@ -3355,16 +3355,16 @@
           "isPartial": null,
           "time": "1743465600",
           "value": [
-            49,
+            44,
             1,
-            5
+            4
           ],
           "formattedAxisTime": "Apr 1, 2025",
           "formattedTime": "Apr 2025",
           "formattedValue": [
-            "49",
+            "44",
             "1",
-            "5"
+            "4"
           ]
         },
         {
@@ -3376,16 +3376,16 @@
           "isPartial": null,
           "time": "1746057600",
           "value": [
-            62,
-            1,
-            5
+            54,
+            0,
+            4
           ],
           "formattedAxisTime": "May 1, 2025",
           "formattedTime": "May 2025",
           "formattedValue": [
-            "62",
-            "1",
-            "5"
+            "54",
+            "<1",
+            "4"
           ]
         },
         {
@@ -3397,14 +3397,14 @@
           "isPartial": null,
           "time": "1748736000",
           "value": [
-            60,
+            55,
             1,
             5
           ],
           "formattedAxisTime": "Jun 1, 2025",
           "formattedTime": "Jun 2025",
           "formattedValue": [
-            "60",
+            "55",
             "1",
             "5"
           ]
@@ -3418,16 +3418,16 @@
           "isPartial": null,
           "time": "1751328000",
           "value": [
-            59,
+            53,
             1,
-            6
+            5
           ],
           "formattedAxisTime": "Jul 1, 2025",
           "formattedTime": "Jul 2025",
           "formattedValue": [
-            "59",
+            "53",
             "1",
-            "6"
+            "5"
           ]
         },
         {
@@ -3439,16 +3439,16 @@
           "isPartial": null,
           "time": "1754006400",
           "value": [
-            78,
+            68,
             1,
-            14
+            12
           ],
           "formattedAxisTime": "Aug 1, 2025",
           "formattedTime": "Aug 2025",
           "formattedValue": [
-            "78",
+            "68",
             "1",
-            "14"
+            "12"
           ]
         },
         {
@@ -3460,56 +3460,14 @@
           "isPartial": null,
           "time": "1756684800",
           "value": [
-            81,
+            71,
             1,
-            12
+            10
           ],
           "formattedAxisTime": "Sep 1, 2025",
           "formattedTime": "Sep 2025",
           "formattedValue": [
-            "81",
-            "1",
-            "12"
-          ]
-        },
-        {
-          "hasData": [
-            true,
-            true,
-            true
-          ],
-          "isPartial": null,
-          "time": "1759276800",
-          "value": [
-            79,
-            1,
-            12
-          ],
-          "formattedAxisTime": "Oct 1, 2025",
-          "formattedTime": "Oct 2025",
-          "formattedValue": [
-            "79",
-            "1",
-            "12"
-          ]
-        },
-        {
-          "hasData": [
-            true,
-            true,
-            true
-          ],
-          "isPartial": null,
-          "time": "1761955200",
-          "value": [
-            73,
-            1,
-            10
-          ],
-          "formattedAxisTime": "Nov 1, 2025",
-          "formattedTime": "Nov 2025",
-          "formattedValue": [
-            "73",
+            "71",
             "1",
             "10"
           ]
@@ -3521,18 +3479,60 @@
             true
           ],
           "isPartial": null,
+          "time": "1759276800",
+          "value": [
+            71,
+            0,
+            11
+          ],
+          "formattedAxisTime": "Oct 1, 2025",
+          "formattedTime": "Oct 2025",
+          "formattedValue": [
+            "71",
+            "<1",
+            "11"
+          ]
+        },
+        {
+          "hasData": [
+            true,
+            true,
+            true
+          ],
+          "isPartial": null,
+          "time": "1761955200",
+          "value": [
+            65,
+            0,
+            9
+          ],
+          "formattedAxisTime": "Nov 1, 2025",
+          "formattedTime": "Nov 2025",
+          "formattedValue": [
+            "65",
+            "<1",
+            "9"
+          ]
+        },
+        {
+          "hasData": [
+            true,
+            true,
+            true
+          ],
+          "isPartial": null,
           "time": "1764547200",
           "value": [
-            75,
+            67,
             1,
-            11
+            10
           ],
           "formattedAxisTime": "Dec 1, 2025",
           "formattedTime": "Dec 2025",
           "formattedValue": [
-            "75",
+            "67",
             "1",
-            "11"
+            "10"
           ]
         },
         {
@@ -3544,16 +3544,16 @@
           "isPartial": null,
           "time": "1767225600",
           "value": [
-            78,
+            74,
             1,
-            13
+            12
           ],
           "formattedAxisTime": "Jan 1, 2026",
           "formattedTime": "Jan 2026",
           "formattedValue": [
-            "78",
+            "74",
             "1",
-            "13"
+            "12"
           ]
         },
         {
@@ -3565,16 +3565,16 @@
           "isPartial": null,
           "time": "1769904000",
           "value": [
-            83,
+            75,
             1,
-            15
+            14
           ],
           "formattedAxisTime": "Feb 1, 2026",
           "formattedTime": "Feb 2026",
           "formattedValue": [
-            "83",
+            "75",
             "1",
-            "15"
+            "14"
           ]
         },
         {
@@ -3586,16 +3586,16 @@
           "isPartial": null,
           "time": "1772323200",
           "value": [
-            83,
+            75,
             1,
-            17
+            15
           ],
           "formattedAxisTime": "Mar 1, 2026",
           "formattedTime": "Mar 2026",
           "formattedValue": [
-            "83",
+            "75",
             "1",
-            "17"
+            "15"
           ]
         },
         {
@@ -3607,16 +3607,16 @@
           "isPartial": null,
           "time": "1775001600",
           "value": [
-            86,
+            76,
             1,
-            16
+            14
           ],
           "formattedAxisTime": "Apr 1, 2026",
           "formattedTime": "Apr 2026",
           "formattedValue": [
-            "86",
+            "76",
             "1",
-            "16"
+            "14"
           ]
         },
         {
@@ -3628,12 +3628,33 @@
           "isPartial": null,
           "time": "1777593600",
           "value": [
+            89,
+            1,
+            17
+          ],
+          "formattedAxisTime": "May 1, 2026",
+          "formattedTime": "May 2026",
+          "formattedValue": [
+            "89",
+            "1",
+            "17"
+          ]
+        },
+        {
+          "hasData": [
+            true,
+            true,
+            true
+          ],
+          "isPartial": null,
+          "time": "1780272000",
+          "value": [
             100,
             1,
             19
           ],
-          "formattedAxisTime": "May 1, 2026",
-          "formattedTime": "May 2026",
+          "formattedAxisTime": "Jun 1, 2026",
+          "formattedTime": "Jun 2026",
           "formattedValue": [
             "100",
             "1",
@@ -3647,18 +3668,39 @@
             true
           ],
           "isPartial": null,
-          "time": "1780272000",
+          "time": "1782864000",
           "value": [
-            87,
+            77,
             1,
             14
           ],
-          "formattedAxisTime": "Jun 1, 2026",
-          "formattedTime": "Jun 2026",
+          "formattedAxisTime": "Jul 1, 2026",
+          "formattedTime": "Jul 2026",
           "formattedValue": [
-            "87",
+            "77",
             "1",
             "14"
+          ]
+        },
+        {
+          "hasData": [
+            true,
+            true,
+            true
+          ],
+          "isPartial": null,
+          "time": "1785542400",
+          "value": [
+            51,
+            0,
+            6
+          ],
+          "formattedAxisTime": "Aug 1, 2026",
+          "formattedTime": "Aug 2026",
+          "formattedValue": [
+            "51",
+            "<1",
+            "6"
           ]
         },
         {
@@ -3668,18 +3710,18 @@
             true
           ],
           "isPartial": true,
-          "time": "1782864000",
+          "time": "1788220800",
           "value": [
-            40,
+            42,
             0,
-            6
+            5
           ],
-          "formattedAxisTime": "Jul 1, 2026",
-          "formattedTime": "Jul 2026",
+          "formattedAxisTime": "Sep 1, 2026",
+          "formattedTime": "Sep 2026",
           "formattedValue": [
-            "40",
+            "42",
             "0",
-            "6"
+            "5"
           ]
         }
       ]
